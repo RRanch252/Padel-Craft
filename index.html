@@ -918,9 +918,60 @@
         footer {
             background: #030712;
             color: rgba(255,255,255,0.6);
-            padding: 2rem 0;
+            padding: 3rem 0;
             text-align: center;
             border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .social-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+        }
+        
+        .social-links a:hover {
+            color: var(--accent);
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-3px);
+        }
+        
+        /* Specific social media hover colors */
+        .social-links a[title="Facebook"]:hover { color: #1877f2; }
+        .social-links a[title="Instagram"]:hover { color: #E4405F; }
+        .social-links a[title="LinkedIn"]:hover { color: #0077b5; }
+        .social-links a[title="WhatsApp"]:hover { color: #25D366; }
+        .social-links a[title="Email"]:hover { color: #fbbf24; }
+        
+        .footer-copyright {
+            font-size: 0.875rem;
+            margin: 0;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            width: 100%;
+            max-width: 600px;
         }
 
         /* Responsive Design */
@@ -1020,6 +1071,17 @@
 
             .section {
                 padding: 5rem 0;
+            }
+            
+            /* Mobile footer */
+            .social-links {
+                gap: 1.5rem !important;
+            }
+            
+            .social-links a {
+                width: 35px !important;
+                height: 35px !important;
+                font-size: 1.2rem !important;
             }
 
             /* Mobile Installation Timeline Layout */
@@ -1825,9 +1887,29 @@
     </section>
 
     <!-- Footer -->
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 Padel-Craft. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="social-links">
+                    <a href="https://facebook.com/padelcraft" target="_blank" rel="noopener noreferrer" title="Facebook">
+                        <span style="font-weight: bold;">f</span>
+                    </a>
+                    <a href="https://instagram.com/padelcraft" target="_blank" rel="noopener noreferrer" title="Instagram">
+                        <span>📸</span>
+                    </a>
+                    <a href="https://linkedin.com/company/padelcraft" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                        <span style="font-weight: bold; font-size: 0.9rem;">in</span>
+                    </a>
+                    <a href="https://wa.me/353876021637" target="_blank" rel="noopener noreferrer" title="WhatsApp">
+                        <span>📱</span>
+                    </a>
+                    <a href="mailto:dan@padel-craft.com" title="Email">
+                        <span>✉️</span>
+                    </a>
+                </div>
+                <p class="footer-copyright">&copy; 2024 Padel-Craft. All rights reserved.</p>
+            </div>
         </div>
     </footer>
     
