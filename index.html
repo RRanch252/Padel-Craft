@@ -11,28 +11,22 @@
     <!-- 
     IMPORTANT: Image Integration Instructions
     ========================================
-    To replace placeholder images with actual MANZA SPORT product images:
+    The website now uses images from your GitHub repository.
     
-    1. Contact MANZA SPORT for official supplier marketing materials
-    2. Obtain high-resolution images for each court model:
-       - MANZA MODEL
-       - PRO MODEL
-       - MIAMI MODEL (Panoramic)
-       - PAQUITO NAVARRO MODEL
-       - FULL PANORAMIC MODEL
-       - SINGLES COURT MODEL
-       - PORTABLE COURTS
+    Current court images loaded:
+    - MANZA MODEL (3 images)
+    - PRO MODEL (3 images)  
+    - MIAMI MODEL (3 images)
+    - PAQUITO NAVARRO MODEL (3 images)
+    - CENTER COURT MODEL (3 images)
     
-    3. Replace the placeholder URLs in the court cards section:
-       - Look for: src="https://via.placeholder.com/..."
-       - Replace with: src="path/to/your/manza-court-image.jpg"
+    Still using placeholder:
+    - SINGLES COURT MODEL (no images uploaded yet)
     
-    4. Ensure images are:
-       - Optimized for web (compressed, appropriate size)
-       - At least 800x600px for good quality on all devices
-       - Named descriptively (e.g., manza-pro-model.jpg)
-    
-    5. Update alt text to be descriptive of each specific court
+    To add more images:
+    1. Upload to appropriate folder in GitHub
+    2. Follow naming convention: model-name-##-description.jpg
+    3. Update the courtGalleries object in the JavaScript
     -->
     
     <style>
@@ -323,7 +317,7 @@
 
         .hero h1 {
             font-size: 4rem;
-            font-weight: 200;
+            font-weight: 100;
             letter-spacing: 0.15em;
             margin-bottom: 1.5rem;
             color: white;
@@ -544,6 +538,8 @@
             border-radius: 4px;
             overflow: hidden;
             background: rgba(255,255,255,0.05);
+            position: relative;
+            cursor: pointer;
         }
 
         .court-image {
@@ -563,6 +559,116 @@
             font-size: 0.9375rem;
             color: rgba(255,255,255,0.85);
             line-height: 1.6;
+        }
+        
+        /* Gallery Hover Overlay */
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .court-image-container:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-indicator {
+            color: white;
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
+            padding: 0.75rem 1.5rem;
+            border: 1px solid rgba(255,255,255,0.8);
+            background: rgba(201, 169, 97, 0.1);
+            font-weight: 300;
+            pointer-events: none;
+        }
+
+        /* Modal Styles */
+        .court-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 2000;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .court-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            max-width: 1200px;
+            width: 100%;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: -2rem;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            opacity: 0.7;
+            transition: opacity 0.2s ease;
+        }
+
+        .modal-close:hover {
+            opacity: 1;
+        }
+
+        .modal-image-main {
+            width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .modal-thumbnails {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .modal-thumbnail {
+            width: 80px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 2px;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: opacity 0.2s ease;
+            border: 2px solid transparent;
+        }
+
+        .modal-thumbnail.active {
+            opacity: 1;
+            border-color: var(--accent);
+        }
+
+        .modal-thumbnail:hover {
+            opacity: 0.9;
         }
 
         /* Installation Timeline Section */
@@ -898,7 +1004,7 @@
             }
 
             .section {
-                padding: 4rem 0;
+                padding: 5rem 0;
             }
 
             /* Mobile Installation Timeline Layout */
@@ -943,6 +1049,21 @@
             #about .container > div:last-child > div:last-child > div > div {
                 grid-template-columns: 1fr !important;
                 gap: 2rem !important;
+            }
+            
+            /* Mobile modal adjustments */
+            .modal-content {
+                padding: 1rem;
+            }
+            
+            .modal-close {
+                top: -1.5rem;
+                right: -0.5rem;
+            }
+            
+            .modal-thumbnail {
+                width: 60px;
+                height: 45px;
             }
         }
 
@@ -995,6 +1116,11 @@
                         <a href="#courts">Court Models</a>
                         <a href="https://manzasport.com" target="_blank">Visit MANZA</a>
                     </div>
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);">
+                        <p style="color: rgba(255,255,255,0.9); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                            Each project begins with a comprehensive site evaluation and investment consultation at your location.
+                        </p>
+                    </div>
                 </li>
                 <li class="dropdown">
                     <a href="#courts" class="dropdown-toggle">Padel Courts</a>
@@ -1005,7 +1131,7 @@
                         <a href="#courts">PRO Model</a>
                         <a href="#courts">Miami Model</a>
                         <a href="#courts">Paquito Navarro</a>
-                        <a href="#courts">Full Panoramic</a>
+                        <a href="#courts">Center Court</a>
                         <a href="#courts">Singles Court</a>
                     </div>
                 </li>
@@ -1013,9 +1139,9 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">Resources</a>
                     <div class="dropdown-menu">
-                        <a href="#contact">Get Quote</a>
-                        <a href="#contact">Financing</a>
-                        <a href="#contact">Specifications</a>
+                        <a href="#contact">Request Proposal</a>
+                        <a href="#contact">Financing Options</a>
+                        <a href="#contact">Technical Specifications</a>
                         <div class="dropdown-divider"></div>
                         <a href="#contact">Downloads</a>
                     </div>
@@ -1068,11 +1194,11 @@
                     </div>
                     <div>
                         <strong style="color: var(--gray); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Insurance</strong>
-                        <div style="font-size: 0.875rem; color: var(--text-primary);">Comprehensive Coverage • Professional Protection</div>
+                        <div style="font-size: 0.875rem; color: var(--text-primary);">€5M Project Insurance • Bonded Installers</div>
                     </div>
                     <div>
                         <strong style="color: var(--gray); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Warranty</strong>
-                        <div style="font-size: 0.875rem; color: var(--text-primary);">Long-term Protection • Installation Guarantee</div>
+                        <div style="font-size: 0.875rem; color: var(--text-primary);">10-Year Structural Warranty</div>
                     </div>
                 </div>
                 <a href="#contact" style="color: var(--accent); font-weight: 500; text-decoration: none; font-size: 0.875rem;">
@@ -1306,7 +1432,7 @@
                     </div>
                 </div>
                 <div style="text-align: center; margin-top: 2rem;">
-                    <a href="#contact" class="btn" style="padding: 1rem 2rem;">Discuss Your Requirements</a>
+                    <a href="#contact" class="btn" style="padding: 1rem 2rem;">Schedule Consultation</a>
                 </div>
             </div>
 
@@ -1432,7 +1558,7 @@
                 </div>
                 
                 <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <a href="#contact" class="btn" style="padding: 0.8rem 1.8rem;">Discuss Your Project</a>
+                    <a href="#contact" class="btn" style="padding: 0.8rem 1.8rem;">Schedule Consultation</a>
                     <a href="https://www.newsletter.co.uk/business/our-goal-is-to-lead-padels-growth-in-northern-ireland-major-investment-brings-world-class-padel-facilities-and-community-focus-to-antrim-with-belfast-locations-to-follow-5162435" 
                        target="_blank" 
                        rel="noopener noreferrer" 
@@ -1546,9 +1672,9 @@
                 <!-- Bottom CTA -->
                 <div style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
                     <p style="color: rgba(255,255,255,0.8); margin-bottom: 1rem;">
-                        Want to see your project featured here? Partner with Padel-Craft for your Irish installation.
+                        Partner with Padel-Craft for your premium Irish installation. By invitation and referral.
                     </p>
-                    <a href="#contact" class="btn">Start Your Project</a>
+                    <a href="#contact" class="btn">Request Proposal</a>
                 </div>
             </div>
         </div>
@@ -1640,11 +1766,14 @@
                             <label for="message">Project Details</label>
                             <textarea id="message" name="message" placeholder="Tell us about your project requirements, timeline, and any specific needs..."></textarea>
                         </div>
-                        <button type="submit" class="btn" style="width: 100%;">Submit Enquiry</button>
+                        <p style="font-size: 0.875rem; color: rgba(255,255,255,0.6); margin-bottom: 1rem; text-align: center;">
+                            Limited installation slots available for 2025
+                        </p>
+                        <button type="submit" class="btn" style="width: 100%;">Schedule Consultation</button>
                     </form>
                 </div>
                 <div class="contact-info">
-                    <h3>Contact Details</h3>
+                    <h3>Direct Consultation</h3>
                     <div class="contact-details">
                         <div class="contact-item">
                             <div class="contact-icon">📧</div>
@@ -1667,18 +1796,11 @@
                                 <p>Ireland</p>
                             </div>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">🌐</div>
-                            <div class="contact-text">
-                                <strong>Social Media</strong>
-                                <p>Follow us for updates and projects</p>
-                            </div>
-                        </div>
                     </div>
                     <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);">
-                        <h4 style="color: #fbbf24; margin-bottom: 1rem;">Clear Calls-to-Action:</h4>
+                        <h4 style="color: #fbbf24; margin-bottom: 1rem;">Next Steps:</h4>
                         <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                            <a href="#contact" class="btn" style="flex: 1; min-width: 120px; text-align: center;">Get Quote</a>
+                            <a href="#contact" class="btn" style="flex: 1; min-width: 120px; text-align: center;">Request Proposal</a>
                             <a href="#courts" class="btn btn-secondary" style="flex: 1; min-width: 120px; text-align: center;">View Courts</a>
                         </div>
                     </div>
@@ -1690,11 +1812,103 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 Padel-Craft. Official MANZA SPORT Supplier in Ireland. All rights reserved.</p>
+            <p>&copy; 2024 Padel-Craft. Official MANZA SPORT Supplier in Ireland. Crafting Premium Padel Experiences Since 2009.</p>
         </div>
     </footer>
+    
+    <!-- Court Gallery Modal -->
+    <div class="court-modal" id="courtModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeCourtGallery()">&times;</button>
+            <img src="" alt="Court view" class="modal-image-main" id="modalMainImage">
+            <div class="modal-thumbnails" id="modalThumbnails"></div>
+        </div>
+    </div>
 
     <script>
+        // Court Gallery Data
+        const courtGalleries = {
+            'manza-model': [
+                'https://raw.githubusercontent.com/RRanch252/Padel-Craft/main/images/courts/manza-model/manza-model-01-hero.jpg',
+                'https://raw.githubusercontent.com/RRanch252/Padel-Craft/main/images/courts/manza-model/manza-model-02-detail.jpg',
+                'https://raw.githubusercontent.com/RRanch252/Padel-Craft/main/images/courts/manza-model/manza-model-03-aerial.jpg'
+            ],
+            'pro-model': [
+                'https://raw.githubusercontent.com/RRanch252/Padel-Craft/main/images/courts/pro-model/pro-model-01-hero.jpg',
+                'https://raw.githubusercontent.com/RRanch252/Padel-Craft/main/images/courts/pro-model/pro-model-02-detail.jpg',
+                'https://raw.githubusercontent.com/RRanch252/Padel-Craft/main/images/courts/pro-model/pro-model-03-side.jpg'
+            ],
+            'miami-model': [
+                'https://raw.githubusercontent.com/RRanch252/Padel-Craft/main/images/courts/miami-model/miami-model-01-hero.jpg',
+                'https://raw.githubusercontent.com/RRanch252/Padel-Craft/main/images/courts/miami-model/miami-model-02-aerial.jpg',
+                'https://raw.githubusercontent.com/RRanch252/Padel-Craft/main/images/courts/miami-model/miami-model-03-detail.jpg'
+            ],
+            'paquito-navarro': [
+                'https://raw.githubusercontent.com/RRanch252/Padel-Craft/main/images/courts/paquito-navarro/paquito-navarro-01-hero.jpg',
+                'https://raw.githubusercontent.com/RRanch252/Padel-Craft/main/images/courts/paquito-navarro/paquito-navarro-02-detail.jpg',
+                'https://raw.githubusercontent.com/RRanch252/Padel-Craft/main/images/courts/paquito-navarro/paquito-navarro-03-aerial.jpg'
+            ],
+            'center-court': [
+                'https://raw.githubusercontent.com/RRanch252/Padel-Craft/main/images/courts/center-court/center-court-01-hero.jpg',
+                'https://raw.githubusercontent.com/RRanch252/Padel-Craft/main/images/courts/center-court/center-court-02-aerial.jpg',
+                'https://raw.githubusercontent.com/RRanch252/Padel-Craft/main/images/courts/center-court/center-court-03-detail.jpg'
+            ]
+        };
+
+        // Open court gallery
+        function openCourtGallery(courtType) {
+            const modal = document.getElementById('courtModal');
+            const mainImage = document.getElementById('modalMainImage');
+            const thumbnailsContainer = document.getElementById('modalThumbnails');
+            
+            // Get images for this court type
+            const images = courtGalleries[courtType];
+            if (!images) return;
+            
+            // Set first image as main
+            mainImage.src = images[0];
+            
+            // Clear and populate thumbnails
+            thumbnailsContainer.innerHTML = '';
+            images.forEach((img, index) => {
+                const thumb = document.createElement('img');
+                thumb.src = img;
+                thumb.className = 'modal-thumbnail' + (index === 0 ? ' active' : '');
+                thumb.onclick = () => {
+                    mainImage.src = img;
+                    // Update active thumbnail
+                    document.querySelectorAll('.modal-thumbnail').forEach(t => t.classList.remove('active'));
+                    thumb.classList.add('active');
+                };
+                thumbnailsContainer.appendChild(thumb);
+            });
+            
+            // Show modal
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close court gallery
+        function closeCourtGallery() {
+            const modal = document.getElementById('courtModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeCourtGallery();
+            }
+        });
+
+        // Close modal on background click
+        document.getElementById('courtModal').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                closeCourtGallery();
+            }
+        });
+
         // Dismiss announcement banner
         function dismissBanner() {
             const banner = document.getElementById('announcementBanner');
@@ -1796,7 +2010,7 @@
             console.log('Form submitted with data:', data);
             
             // Show success message
-            alert('Thank you for your enquiry! We will get back to you soon to discuss your padel court project in detail.');
+            alert('Thank you for your consultation request. We will contact you within one business day to schedule your site evaluation.');
             
             // Reset form
             event.target.reset();
@@ -1810,7 +2024,7 @@
             
             console.log('Quick form submitted with data:', data);
             
-            alert('Thank you for your enquiry! We will contact you soon.');
+            alert('Thank you for your consultation request. We will contact you soon.');
             
             event.target.reset();
         }
