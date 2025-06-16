@@ -244,6 +244,21 @@
             letter-spacing: 0.05em;
             font-weight: 500;
         }
+        
+        .dropdown-info {
+            margin: 0.5rem 1rem;
+            padding: 0.75rem;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .dropdown-info p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.5;
+            margin: 0;
+        }
 
         /* Ensure dropdowns don't overflow on smaller screens */
         @media (max-width: 1200px) {
@@ -1115,11 +1130,9 @@
                         <div class="dropdown-header">MANZA SPORT</div>
                         <a href="#courts">Court Models</a>
                         <a href="https://manzasport.com" target="_blank">Visit MANZA</a>
-                    </div>
-                    <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);">
-                        <p style="color: rgba(255,255,255,0.9); font-size: 0.95rem; line-height: 1.6; margin: 0;">
-                            Each project begins with a comprehensive site evaluation and investment consultation at your location.
-                        </p>
+                        <div class="dropdown-info">
+                            <p>Each project begins with a comprehensive site evaluation and investment consultation at your location.</p>
+                        </div>
                     </div>
                 </li>
                 <li class="dropdown">
@@ -1292,17 +1305,14 @@
             <!-- Court Models Grid -->
             <div class="courts-grid">
                 <div class="court-card">
-                    <div class="court-image-container">
-                        <!-- Replace with actual MANZA SPORT image URL -->
-                        <!-- Example replacements:
-                             Option 1 - Direct URL: src="https://manzasport.com/images/courts/manza-model.jpg"
-                             Option 2 - Local file: src="images/manza-model.jpg"
-                             Option 3 - CDN: src="https://your-cdn.com/padel-craft/manza-model.jpg"
-                        -->
-                        <img src="https://via.placeholder.com/400x300/1e293b/fbbf24?text=MANZA+MODEL" 
+                    <div class="court-image-container" onclick="openCourtGallery('manza-model')">
+                        <img src="https://raw.githubusercontent.com/RRanch252/Padel-Craft/main/images/courts/manza-model/manza-model-01-hero.jpg" 
                              alt="MANZA MODEL Padel Court - Versatile design with standard mesh panels" 
                              class="court-image"
                              loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-indicator">VIEW GALLERY</div>
+                        </div>
                     </div>
                     <h4>MANZA MODEL</h4>
                     <p><strong>Technical Specifications:</strong> Versatile and durable design for easy installation and long-term performance. Ideal for clubs and facilities seeking reliability and value. Features standard mesh panels and robust structural engineering.</p>
@@ -1312,12 +1322,14 @@
                 </div>
 
                 <div class="court-card">
-                    <div class="court-image-container">
-                        <!-- Replace with actual MANZA SPORT image URL -->
-                        <img src="https://via.placeholder.com/400x300/1e293b/3b82f6?text=PRO+MODEL" 
+                    <div class="court-image-container" onclick="openCourtGallery('pro-model')">
+                        <img src="https://raw.githubusercontent.com/RRanch252/Padel-Craft/main/images/courts/pro-model/pro-model-01-hero.jpg" 
                              alt="PRO MODEL Padel Court" 
                              class="court-image"
                              loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-indicator">VIEW GALLERY</div>
+                        </div>
                     </div>
                     <h4>PRO MODEL</h4>
                     <div style="margin-bottom: 1rem;">
@@ -1330,12 +1342,14 @@
                 </div>
 
                 <div class="court-card">
-                    <div class="court-image-container">
-                        <!-- Replace with actual MANZA SPORT image URL -->
-                        <img src="https://via.placeholder.com/400x300/1e293b/10b981?text=MIAMI+MODEL" 
+                    <div class="court-image-container" onclick="openCourtGallery('miami-model')">
+                        <img src="https://raw.githubusercontent.com/RRanch252/Padel-Craft/main/images/courts/miami-model/miami-model-01-hero.jpg" 
                              alt="MIAMI MODEL Panoramic Padel Court" 
                              class="court-image"
                              loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-indicator">VIEW GALLERY</div>
+                        </div>
                     </div>
                     <h4>MIAMI MODEL</h4>
                     <div style="margin-bottom: 1rem;">
@@ -1348,12 +1362,14 @@
                 </div>
 
                 <div class="court-card">
-                    <div class="court-image-container">
-                        <!-- Replace with actual MANZA SPORT image URL -->
-                        <img src="https://via.placeholder.com/400x300/1e293b/8b5cf6?text=PAQUITO+NAVARRO" 
+                    <div class="court-image-container" onclick="openCourtGallery('paquito-navarro')">
+                        <img src="https://raw.githubusercontent.com/RRanch252/Padel-Craft/main/images/courts/paquito-navarro/paquito-navarro-01-hero.jpg" 
                              alt="PAQUITO NAVARRO Signature Padel Court" 
                              class="court-image"
                              loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-indicator">VIEW GALLERY</div>
+                        </div>
                     </div>
                     <h4>PAQUITO NAVARRO MODEL</h4>
                     <div style="margin-bottom: 1rem;">
@@ -1366,14 +1382,16 @@
                 </div>
 
                 <div class="court-card">
-                    <div class="court-image-container">
-                        <!-- Replace with actual MANZA SPORT image URL -->
-                        <img src="https://via.placeholder.com/400x300/1e293b/ef4444?text=FULL+PANORAMIC" 
-                             alt="FULL PANORAMIC Tournament Padel Court" 
+                    <div class="court-image-container" onclick="openCourtGallery('center-court')">
+                        <img src="https://raw.githubusercontent.com/RRanch252/Padel-Craft/main/images/courts/center-court/center-court-01-hero.jpg" 
+                             alt="CENTER COURT Tournament Padel Court" 
                              class="court-image"
                              loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-indicator">VIEW GALLERY</div>
+                        </div>
                     </div>
-                    <h4>FULL PANORAMIC MODEL</h4>
+                    <h4>CENTER COURT MODEL</h4>
                     <div style="margin-bottom: 1rem;">
                         <span style="display: inline-block; background: #ef4444; color: white; padding: 0.2rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 500;">TOURNAMENT</span>
                     </div>
@@ -1385,11 +1403,13 @@
 
                 <div class="court-card">
                     <div class="court-image-container">
-                        <!-- Replace with actual MANZA SPORT image URL -->
                         <img src="https://via.placeholder.com/400x300/1e293b/f97316?text=SINGLES+COURT" 
                              alt="SINGLES COURT Compact Padel Court" 
                              class="court-image"
                              loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-indicator">IMAGES COMING SOON</div>
+                        </div>
                     </div>
                     <h4>SINGLES COURT MODEL</h4>
                     <div style="margin-bottom: 1rem;">
@@ -1400,8 +1420,6 @@
                         <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin: 0;"><strong>Best For:</strong> Training facilities, private residences, limited space installations</p>
                     </div>
                 </div>
-
-
             </div>
 
             <!-- Customisation Section -->
@@ -1435,8 +1453,6 @@
                     <a href="#contact" class="btn" style="padding: 1rem 2rem;">Schedule Consultation</a>
                 </div>
             </div>
-
-
         </div>
     </section>
 
@@ -1548,9 +1564,10 @@
                         <div style="margin-top: 1.5rem; padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 12px;">
                             <h5 style="color: #fbbf24; margin-bottom: 0.8rem;">Project Metrics:</h5>
                             <ul style="color: rgba(255,255,255,0.8); font-size: 0.9rem; line-height: 1.7; margin: 0; padding-left: 1.2rem;">
+                                <li>Investment: €400,000+</li>
                                 <li>Timeline: July 2025 opening</li>
                                 <li>Expected ROI: 24-36 months</li>
-                                <li>Project Investment: €1m+</li>
+                                <li>Projected annual revenue: €300,000+</li>
                             </ul>
                         </div>
                     </div>
