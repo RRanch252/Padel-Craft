@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Padel-Craft - Official MANZA SPORT Supplier in Ireland. Premium padel court infrastructure, turnkey solutions, and professional installation services.">
+    <meta name="keywords" content="padel courts, MANZA SPORT, Ireland, padel installation, sports facilities">
+    <meta name="author" content="Padel-Craft">
+    <title>PADEL CRAFT - Official MANZA SPORT Supplier Ireland</title>
+    
+    <style>
+        /* PREMIUM DESIGN SYSTEM */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Premium Color System */
+            --primary-900: #0f172a;
+            --primary-800: #1e293b;
+            --primary-700: #334155;
+            --primary-600: #475569;
+            --accent-gold: #D4AF37;
+            --accent-gold-light: #F4E4A6;
+            --accent-blue: #2563eb;
+            --surface-light: #ffffff;
+            --surface-gray-50: #f8fafc;
+            --surface-gray-100: #f1f5f9;
+            --surface-gray-200: #e2e8f0;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Premium Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2.5rem;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 300;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 0.15em;
+            position: relative;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+
+        .logo:hover::after {
+            width: 100%;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 2px;
+            background: white;
+            transition: all 0.3s ease;
+        }
+
+        /* Premium Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, 
+                var(--primary-900) 0%, 
+                var(--primary-800) 50%, 
+                var(--primary-700) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(212,175,55,0.1)"/><circle cx="80" cy="30" r="1.5" fill="rgba(212,175,55,0.08)"/><circle cx="60" cy="70" r="2.5" fill="rgba(212,175,55,0.12)"/><circle cx="30" cy="80" r="1" fill="rgba(212,175,55,0.06)"/><circle cx="90" cy="60" r="1.8" fill="rgba(212,175,55,0.1)"/></svg>') repeat;
+            animation: float 30s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+            100% { transform: translateY(0px) rotate(360deg); }
+        }
+
+        .hero-content {
+            max-width: 900px;
+            z-index: 2;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 5.5rem;
+            font-weight: 200;
+            letter-spacing: 0.15em;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: none;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            font-weight: 300;
+            letter-spacing: 0.08em;
+            margin-bottom: 2.5rem;
+            color: var(--accent-gold);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            opacity: 0.92;
+            font-weight: 300;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Premium Button System */
+        .btn {
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, var(--accent-gold) 0%, #B8941F 100%);
+            color: var(--primary-900);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            display: inline-block;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+            background: linear-gradient(135deg, #F4E4A6 0%, var(--accent-gold) 100%);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.6);
+            color: white;
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Premium Sections */
+        .section {
+            padding: 8rem 0;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2.5rem;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            font-weight: 200;
+            letter-spacing: 0.02em;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--text-primary);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--accent-gold);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.25rem;
+            margin-bottom: 4rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        /* Premium About Section */
+        .about {
+            background: var(--surface-gray-50);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .about-text h3 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+            letter-spacing: 0.01em;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.8rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+
+        .about-placeholder {
+            height: 500px;
+            background: linear-gradient(135deg, var(--surface-gray-200) 0%, var(--surface-gray-100) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            border: 2px dashed var(--surface-gray-200);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+        }
+
+        /* Premium Feature Cards */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 3rem 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid var(--surface-gray-200);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212,175,55,0.05), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .feature-card:hover::before {
+            left: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            border-color: var(--accent-gold);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--accent-gold), #B8941F);
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .feature-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 1.2rem;
+            color: var(--text-primary);
+            font-weight: 500;
+            letter-spacing: 0.01em;
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* Courts Section */
+        .courts {
+            background: #1e293b;
+            color: white;
+        }
+
+        .courts .section-title {
+            color: white;
+        }
+
+        .courts .section-subtitle {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .courts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .court-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .court-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-6px);
+        }
+
+        .court-placeholder {
+            width: 100%;
+            height: 180px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed rgba(255,255,255,0.3);
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+
+        .court-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 1.2rem;
+            color: #fbbf24;
+            font-weight: 400;
+            letter-spacing: 0.03em;
+        }
+
+        .court-card p {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.85);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* Services Section */
+        .services {
+            background: #f8fafc;
+        }
+
+        /* Projects Section */
+        .projects {
+            background: #0f172a;
+            color: white;
+        }
+
+        .projects .section-title {
+            color: white;
+        }
+
+        .projects .section-subtitle {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .project-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-8px);
+        }
+
+        .project-placeholder {
+            height: 200px;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-content h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: #fbbf24;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+
+        .project-content p {
+            color: rgba(255,255,255,0.85);
+            font-size: 1rem;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            background: #1e293b;
+            color: white;
+        }
+
+        .why-choose .section-title {
+            color: white;
+        }
+
+        .why-choose .feature-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: white;
+        }
+
+        .why-choose .feature-card h4 {
+            color: #fbbf24;
+        }
+
+        .why-choose .feature-card p {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .why-choose .feature-icon {
+            background: #3b82f6;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #0f172a;
+            color: white;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact .section-subtitle {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .contact-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: #fbbf24;
+            font-weight: 300;
+            letter-spacing: 0.03em;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: rgba(255,255,255,0.9);
+            font-weight: 300;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            background: rgba(255,255,255,0.05);
+            color: white;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            background: rgba(255,255,255,0.08);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: #fbbf24;
+            font-weight: 300;
+            letter-spacing: 0.03em;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(255,255,255,0.03);
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: #3b82f6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-text strong {
+            color: white;
+            font-weight: 400;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-text p {
+            margin: 0;
+            color: rgba(255,255,255,0.8);
+            font-weight: 300;
+        }
+
+        /* Footer */
+        footer {
+            background: #030712;
+            color: rgba(255,255,255,0.6);
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: rgba(30, 41, 59, 0.98);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 3rem;
+                gap: 2rem;
+                transition: left 0.3s ease;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+                letter-spacing: 0.2em;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .courts-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form,
+            .contact-info {
+                padding: 2rem;
+            }
+
+            .section {
+                padding: 4rem 0;
+            }
+
+            /* Mobile Turnkey Services Layout */
+            #services .container > div:first-of-type {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+
+            #services .container > div:first-of-type > div:first-child {
+                grid-template-columns: 1fr !important;
+            }
+
+            #services .container > div:first-of-type > div:last-child {
+                position: static !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.5rem;
+                letter-spacing: 0.1em;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .court-placeholder,
+            .project-placeholder {
+                height: 140px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#home" class="logo">PADEL / CRAFT</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#courts">Our Courts</a></li>
+                <li><a href="#services">Turnkey Services</a></li>
+                <li><a href="#projects">Case Studies</a></li>
+                <li><a href="#why-choose">Why Choose Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>PADEL / CRAFT</h1>
+            <p class="hero-subtitle">Official MANZA SPORT Supplier Ireland</p>
+            <p class="hero-description">
+                Padel-Craft is the official supplier of MANZA SPORT padel courts in Ireland, providing 
+                world-class padel court infrastructure to clubs, sports facilities, and private clients 
+                nationwide. We specialise in turnkey solutions, managing the entire process from planning, 
+                design, supply, and installation through to aftercare and ongoing support.
+            </p>
+            <div style="margin: 2rem 0; padding: 1.5rem; background: rgba(255,255,255,0.1); border-radius: 10px; border: 1px solid rgba(255,255,255,0.2);">
+                <p style="margin: 0; font-size: 1rem; opacity: 0.9;">
+                    We promote MANZA SPORT's proven international track record, with projects across Europe, the US, and the Middle East, including high-profile venues like <strong>Sport City Valencia</strong>, <strong>Padel Haus New York</strong>, and the <strong>Rafa Nadal Academy Kuwait</strong>.
+                </p>
+            </div>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn">Enquire Now</a>
+                <a href="#contact" class="btn btn-secondary">Get a Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">About Padel-Craft</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Official MANZA SPORT Supplier</h3>
+                    <p>
+                        Padel-Craft is the official supplier of MANZA SPORT courts in Ireland, 
+                        bringing world-class padel infrastructure to the Irish market. We are dedicated to supporting 
+                        the growth of padel across Ireland through premium-quality court installations.
+                    </p>
+                    <p>
+                        As the official supplier of MANZA SPORT courts, we provide comprehensive 
+                        turnkey solutions from initial planning and design through to installation, aftercare, and ongoing support. 
+                        Our expertise ensures every project meets international standards while being tailored to local requirements.
+                    </p>
+                    <p>
+                        We manage the entire process from planning to aftercare, 
+                        providing a seamless experience for our clients. Whether you're establishing a new padel club, 
+                        upgrading sports facilities, or installing private courts, we deliver complete project management solutions.
+                    </p>
+                </div>
+                <div class="about-placeholder">
+                    [Professional Court Installation Photo]
+                </div>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏅</div>
+                    <h4>Official Supplier</h4>
+                    <p>Official supplier of MANZA SPORT courts in Ireland - authentic products, guaranteed quality</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h4>Turnkey Service</h4>
+                    <p>Complete project management from planning and design through to aftercare and ongoing support</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h4>Customisation Options</h4>
+                    <p>Turf colours, branded nets, additional zinc coating, and technical specifications to meet your needs</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h4>Global Track Record</h4>
+                    <p>MANZA SPORT's proven international experience across Europe, US, and Middle East</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🇮🇪</div>
+                    <h4>Leading National Groundworks Expertise</h4>
+                    <p>Ireland's leading expertise in padel court groundworks and site preparation for optimal installations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courts Section - MANZA SPORT Court Range -->
+    <section id="courts" class="section courts">
+        <div class="container">
+            <h2 class="section-title">MANZA SPORT Court Range</h2>
+            <p class="section-subtitle">
+                Premium padel courts engineered for excellence. Each model features technical specifications and customisation options to meet your exact requirements.
+            </p>
+            
+            <!-- Court Models Grid -->
+            <div class="courts-grid">
+                <div class="court-card">
+                    <div class="court-placeholder">
+                        <div style="text-align: center; padding: 2rem;">
+                            <h5 style="color: #fbbf24; margin-bottom: 1rem;">MANZA MODEL</h5>
+                            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7);">Professional Court Image</p>
+                        </div>
+                    </div>
+                    <h4>MANZA MODEL</h4>
+                    <div style="margin-bottom: 1rem;">
+                        <span style="display: inline-block; background: #fbbf24; color: #1e293b; padding: 0.2rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 500;">VERSATILE</span>
+                    </div>
+                    <p><strong>Technical Specifications:</strong> Versatile and durable design for easy installation and long-term performance. Ideal for clubs and facilities seeking reliability and value. Features standard mesh panels and robust structural engineering.</p>
+                    <div style="margin-top: 1rem; padding: 1rem; background: rgba(255,255,255,0.03); border-radius: 8px;">
+                        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin: 0;"><strong>Best For:</strong> New clubs, community facilities, recreational use</p>
+                    </div>
+                </div>
+
+                <div class="court-card">
+                    <div class="court-placeholder">
+                        <div style="text-align: center; padding: 2rem;">
+                            <h5 style="color: #fbbf24; margin-bottom: 1rem;">PRO MODEL</h5>
+                            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7);">Professional Court Image</p>
+                        </div>
+                    </div>
+                    <h4>PRO MODEL</h4>
+                    <div style="margin-bottom: 1rem;">
+                        <span style="display: inline-block; background: #3b82f6; color: white; padding: 0.2rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 500;">PROFESSIONAL</span>
+                    </div>
+                    <p><strong>Technical Specifications:</strong> High-resistance welded mesh structure with reinforced pillars for maximum stability. Professional-grade construction for intensive use with enhanced durability features.</p>
+                    <div style="margin-top: 1rem; padding: 1rem; background: rgba(255,255,255,0.03); border-radius: 8px;">
+                        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin: 0;"><strong>Best For:</strong> Professional clubs, high-traffic facilities, competitive play</p>
+                    </div>
+                </div>
+
+                <div class="court-card">
+                    <div class="court-placeholder">
+                        <div style="text-align: center; padding: 2rem;">
+                            <h5 style="color: #fbbf24; margin-bottom: 1rem;">MIAMI MODEL</h5>
+                            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7);">Panoramic Court Image</p>
+                        </div>
+                    </div>
+                    <h4>MIAMI MODEL</h4>
+                    <div style="margin-bottom: 1rem;">
+                        <span style="display: inline-block; background: #10b981; color: white; padding: 0.2rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 500;">PANORAMIC</span>
+                    </div>
+                    <p><strong>Technical Specifications:</strong> Premium Panoramic court featuring unobstructed views for players and spectators. Enhanced visibility and aesthetic appeal with glass panel construction.</p>
+                    <div style="margin-top: 1rem; padding: 1rem; background: rgba(255,255,255,0.03); border-radius: 8px;">
+                        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin: 0;"><strong>Best For:</strong> Premium facilities, spectator events, luxury installations</p>
+                    </div>
+                </div>
+
+                <div class="court-card">
+                    <div class="court-placeholder">
+                        <div style="text-align: center; padding: 2rem;">
+                            <h5 style="color: #fbbf24; margin-bottom: 1rem;">PAQUITO NAVARRO</h5>
+                            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7);">Signature Court Image</p>
+                        </div>
+                    </div>
+                    <h4>PAQUITO NAVARRO MODEL</h4>
+                    <div style="margin-bottom: 1rem;">
+                        <span style="display: inline-block; background: #8b5cf6; color: white; padding: 0.2rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 500;">SIGNATURE</span>
+                    </div>
+                    <p><strong>Technical Specifications:</strong> Designed with input from professional player Paquito Navarro. Perfect balance of aesthetics, performance, and professional standards with signature design elements.</p>
+                    <div style="margin-top: 1rem; padding: 1rem; background: rgba(255,255,255,0.03); border-radius: 8px;">
+                        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin: 0;"><strong>Best For:</strong> Elite facilities, professional training, signature installations</p>
+                    </div>
+                </div>
+
+                <div class="court-card">
+                    <div class="court-placeholder">
+                        <div style="text-align: center; padding: 2rem;">
+                            <h5 style="color: #fbbf24; margin-bottom: 1rem;">FULL PANORAMIC</h5>
+                            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7);">Tournament Court Image</p>
+                        </div>
+                    </div>
+                    <h4>FULL PANORAMIC MODEL</h4>
+                    <div style="margin-bottom: 1rem;">
+                        <span style="display: inline-block; background: #ef4444; color: white; padding: 0.2rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 500;">TOURNAMENT</span>
+                    </div>
+                    <p><strong>Technical Specifications:</strong> Top-tier competition-grade court designed for international tournaments. Maximum visibility and premium construction with full glass surround.</p>
+                    <div style="margin-top: 1rem; padding: 1rem; background: rgba(255,255,255,0.03); border-radius: 8px;">
+                        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin: 0;"><strong>Best For:</strong> International tournaments, championship venues, premium clubs</p>
+                    </div>
+                </div>
+
+                <div class="court-card">
+                    <div class="court-placeholder">
+                        <div style="text-align: center; padding: 2rem;">
+                            <h5 style="color: #fbbf24; margin-bottom: 1rem;">SINGLES COURT</h5>
+                            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7);">Compact Court Image</p>
+                        </div>
+                    </div>
+                    <h4>SINGLES COURT MODEL</h4>
+                    <div style="margin-bottom: 1rem;">
+                        <span style="display: inline-block; background: #f97316; color: white; padding: 0.2rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 500;">COMPACT</span>
+                    </div>
+                    <p><strong>Technical Specifications:</strong> Compact singles padel court designed for training and recreational play. Space-efficient without compromising quality or playability.</p>
+                    <div style="margin-top: 1rem; padding: 1rem; background: rgba(255,255,255,0.03); border-radius: 8px;">
+                        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin: 0;"><strong>Best For:</strong> Training facilities, private residences, limited space installations</p>
+                    </div>
+                </div>
+
+                <div class="court-card">
+                    <div class="court-placeholder">
+                        <div style="text-align: center; padding: 2rem;">
+                            <h5 style="color: #fbbf24; margin-bottom: 1rem;">PORTABLE COURTS</h5>
+                            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7);">Portable System Image</p>
+                        </div>
+                    </div>
+                    <h4>PORTABLE COURT OPTIONS</h4>
+                    <div style="margin-bottom: 1rem;">
+                        <span style="display: inline-block; background: #06b6d4; color: white; padding: 0.2rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 500;">FLEXIBLE</span>
+                    </div>
+                    <p><strong>Technical Specifications:</strong> Flexible portable court solutions for temporary installations, events, and locations requiring movable facilities. Quick assembly system.</p>
+                    <div style="margin-top: 1rem; padding: 1rem; background: rgba(255,255,255,0.03); border-radius: 8px;">
+                        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin: 0;"><strong>Best For:</strong> Events, temporary installations, demonstration purposes</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customisation Section -->
+            <div style="margin-top: 4rem; padding: 3rem; background: rgba(255,255,255,0.05); border-radius: 16px; border: 1px solid rgba(255,255,255,0.1);">
+                <h3 style="color: #fbbf24; margin-bottom: 2rem; font-size: 1.6rem; text-align: center;">Customisation & Technical Options</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 12px;">
+                        <h4 style="color: white; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                            🎨 <span>Visual Customisation</span>
+                        </h4>
+                        <ul style="color: rgba(255,255,255,0.85); line-height: 1.8; margin: 0; padding-left: 1.2rem;">
+                            <li>Choice of turf colours to match your brand</li>
+                            <li>Branded nets with custom logos and designs</li>
+                            <li>Custom court line colors and configurations</li>
+                            <li>Facility branding integration</li>
+                        </ul>
+                    </div>
+                    <div style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 12px;">
+                        <h4 style="color: white; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                            🔧 <span>Technical Enhancements</span>
+                        </h4>
+                        <ul style="color: rgba(255,255,255,0.85); line-height: 1.8; margin: 0; padding-left: 1.2rem;">
+                            <li>Additional zinc coating for weather resistance</li>
+                            <li>Custom lighting configurations</li>
+                            <li>Enhanced drainage systems</li>
+                            <li>Climate-specific adaptations</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="#contact" class="btn" style="padding: 1rem 2rem;">Discuss Your Requirements</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Turnkey Services Section -->
+    <section id="services" class="section services">
+        <div class="container">
+            <h2 class="section-title">Turnkey Services</h2>
+            <p class="section-subtitle">
+                Complete project management from initial planning through to aftercare and ongoing support
+            </p>
+            
+            <!-- Services Layout: 2x2 Grid + Enquiry Block -->
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; align-items: start; margin-top: 3rem;">
+                
+                <!-- Left Side: 2x2 Services Grid -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div class="feature-card">
+                        <div class="feature-icon">📋</div>
+                        <h4>Planning & Design</h4>
+                        <p>Comprehensive site assessment, design consultation, planning permission support, and technical drawings. We handle all regulatory requirements and ensure optimal court placement.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏗️</div>
+                        <h4>Groundworks & Site Preparation</h4>
+                        <p>Professional site preparation with detailed overview of requirements, ground condition analysis, drainage systems, and foundation work to ensure perfect court installation.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🚚</div>
+                        <h4>Supply & Installation Process</h4>
+                        <p>Direct supply from Spain with professional installation by MANZA SPORT certified technicians. Quality guaranteed from factory to finished court.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛠️</div>
+                        <h4>Aftercare & Support</h4>
+                        <p>Ongoing maintenance support, technical assistance, warranty service, and performance optimization to ensure your courts operate at peak condition.</p>
+                    </div>
+                </div>
+
+                <!-- Right Side: Enquiry Block -->
+                <div style="padding: 2.5rem; background: linear-gradient(135deg, #1e293b 0%, #334155 100%); border-radius: 20px; color: white; position: sticky; top: 100px;">
+                    <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: #fbbf24; font-weight: 300; text-align: center;">Ready to Start Your Project?</h3>
+                    <p style="font-size: 1rem; margin-bottom: 2rem; color: rgba(255,255,255,0.9); line-height: 1.6; text-align: center;">
+                        Our turnkey service handles everything from initial planning to final installation. Get a free consultation and quote.
+                    </p>
+                    
+                    <!-- Quick Enquiry Form -->
+                    <form onsubmit="handleQuickSubmit(event)" style="display: flex; flex-direction: column; gap: 1rem;">
+                        <input type="text" placeholder="Your Name *" required style="padding: 0.8rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; background: rgba(255,255,255,0.05); color: white; font-size: 0.9rem;">
+                        <input type="email" placeholder="Email Address *" required style="padding: 0.8rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; background: rgba(255,255,255,0.05); color: white; font-size: 0.9rem;">
+                        <input type="tel" placeholder="Phone Number" style="padding: 0.8rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; background: rgba(255,255,255,0.05); color: white; font-size: 0.9rem;">
+                        <select required style="padding: 0.8rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; background: rgba(255,255,255,0.05); color: white; font-size: 0.9rem;">
+                            <option value="">Number of Courts *</option>
+                            <option value="1">1 Court</option>
+                            <option value="2-3">2-3 Courts</option>
+                            <option value="4-6">4-6 Courts</option>
+                            <option value="7+">7+ Courts</option>
+                        </select>
+                        <textarea placeholder="Brief project details..." rows="3" style="padding: 0.8rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; background: rgba(255,255,255,0.05); color: white; font-size: 0.9rem; resize: vertical;"></textarea>
+                        <button type="submit" class="btn" style="padding: 1rem 1.5rem; font-size: 1rem; margin-top: 0.5rem; width: 100%;">Submit Enquiry</button>
+                    </form>
+
+                    <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem;">
+                        <a href="#courts" class="btn btn-secondary" style="padding: 0.8rem 1.5rem; text-align: center; font-size: 0.9rem;">View Our Courts</a>
+                        <a href="#contact" class="btn btn-secondary" style="padding: 0.8rem 1.5rem; text-align: center; font-size: 0.9rem;">Full Contact Form</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <h2 class="section-title">Notable Projects & Case Studies</h2>
+            <p class="section-subtitle">
+                Showcase of high-profile MANZA SPORT installations demonstrating our global expertise and project delivery capabilities
+            </p>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-placeholder">[Sport City Valencia Installation Photo]</div>
+                    <div class="project-content">
+                        <h4>Sport City, Valencia Spain</h4>
+                        <p><strong>30 courts</strong> - the biggest padel club in Europe. Demonstrates large-scale project management and installation expertise.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-placeholder">[Padel Haus Brooklyn Photo]</div>
+                    <div class="project-content">
+                        <h4>Padel Haus, Brooklyn New York</h4>
+                        <p><strong>3 clubs</strong> - the first and biggest in New York. Pioneering padel development in the US market.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-placeholder">[Rafa Nadal Academy Photo]</div>
+                    <div class="project-content">
+                        <h4>Rafa Nadal Academy Kuwait</h4>
+                        <p>Premium courts for the world-renowned tennis academy. Showcasing elite-level quality and international standards.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-placeholder">[Emirates Golf Club Photo]</div>
+                    <div class="project-content">
+                        <h4>Emirates Golf Club, Dubai</h4>
+                        <p>MANZA panoramic courts in prestigious Dubai location. Luxury installation for high-end clientele.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-placeholder">[RRA Las Vegas Photo]</div>
+                    <div class="project-content">
+                        <h4>RRA Padel, Las Vegas</h4>
+                        <p>One of the largest padel facilities in the U.S. Demonstrating scale and American market expertise.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-placeholder">[7 Padel Village Photo]</div>
+                    <div class="project-content">
+                        <h4>7 Padel Village, Italy</h4>
+                        <p>22 Panoramic Gold courts in stunning Italian setting. Premium panoramic installations in beautiful locations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose" class="section why-choose">
+        <div class="container">
+            <h2 class="section-title">Why Choose Padel-Craft</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🇮🇪</div>
+                    <h4>Leading National Groundworks Expertise</h4>
+                    <p>Ireland's leading expertise in padel court groundworks and site preparation ensuring optimal installations</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍💼</div>
+                    <h4>Professional Project Management</h4>
+                    <p>Experienced team managing every aspect of your project from start to finish</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h4>Competitive Pricing</h4>
+                    <p>Best value through direct supply chain and efficient project management</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🇪🇸</div>
+                    <h4>Experience Across Ireland</h4>
+                    <p>Local expertise with understanding of Irish market and regulations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">Contact Padel-Craft</h2>
+            <p class="section-subtitle">
+                Ready to discuss your padel court project? Get in touch for a consultation and quote.
+            </p>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <h3>Project Enquiry Form</h3>
+                    <form onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="project">Project Type</label>
+                            <select id="project" name="project">
+                                <option value="">Select Project Type</option>
+                                <option value="club">Padel Club</option>
+                                <option value="facility">Sports Facility</option>
+                                <option value="private">Private Residence</option>
+                                <option value="portable">Portable Courts</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="courts">Number of Courts</label>
+                            <select id="courts" name="courts">
+                                <option value="">Select Number</option>
+                                <option value="1">1 Court</option>
+                                <option value="2-3">2-3 Courts</option>
+                                <option value="4-6">4-6 Courts</option>
+                                <option value="7+">7+ Courts</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Project Details</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your project requirements, timeline, and any specific needs..."></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;">Submit Enquiry</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Contact Details</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-text">
+                                <strong>Email</strong>
+                                <p>dan@padel-craft.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div class="contact-text">
+                                <strong>Phone</strong>
+                                <p>+353 87 602 1637</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">🏢</div>
+                            <div class="contact-text">
+                                <strong>Service Area</strong>
+                                <p>Ireland & UK</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">⏰</div>
+                            <div class="contact-text">
+                                <strong>Response Time</strong>
+                                <p>Within 24 hours</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">🌐</div>
+                            <div class="contact-text">
+                                <strong>Social Media</strong>
+                                <p>Follow us for updates and projects</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);">
+                        <h4 style="color: #fbbf24; margin-bottom: 1rem;">Clear Calls-to-Action:</h4>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <a href="#contact" class="btn" style="flex: 1; min-width: 120px; text-align: center;">Get Quote</a>
+                            <a href="#courts" class="btn btn-secondary" style="flex: 1; min-width: 120px; text-align: center;">View Courts</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Padel-Craft. Official MANZA SPORT Supplier in Ireland. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const target = document.querySelector(targetId);
+                
+                if (target) {
+                    // Add offset for fixed navigation
+                    const navHeight = document.querySelector('nav').offsetHeight;
+                    const targetPosition = target.offsetTop - navHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+                
+                // Close mobile menu if open
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+
+        // Form submission handlers
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            
+            // In a real implementation, you would send this data to your server
+            console.log('Form submitted with data:', data);
+            
+            // Show success message
+            alert('Thank you for your enquiry! We will get back to you within 24 hours to discuss your padel court project in detail.');
+            
+            // Reset form
+            event.target.reset();
+        }
+
+        function handleQuickSubmit(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            
+            console.log('Quick form submitted with data:', data);
+            
+            alert('Thank you for your enquiry! We will contact you within 24 hours.');
+            
+            event.target.reset();
+        }
+
+        // Navigation background on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(30, 41, 59, 0.98)';
+            } else {
+                nav.style.background = 'rgba(30, 41, 59, 0.95)';
+            }
+        });
+
+        // Add smooth entrance animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set initial animation states
+            document.querySelectorAll('.feature-card, .court-card, .project-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.6s ease';
+                observer.observe(el);
+            });
+
+            // Enhanced hover effects
+            const cards = document.querySelectorAll('.feature-card, .court-card, .project-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-6px) scale(1.02)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+
+        // SEO and performance optimizations
+        window.addEventListener('load', function() {
+            // Lazy load placeholder content
+            document.querySelectorAll('.court-placeholder, .project-placeholder').forEach(placeholder => {
+                placeholder.style.transition = 'all 0.3s ease';
+            });
+
+            // Add structured data for SEO
+            const structuredData = {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "Padel-Craft",
+                "description": "Official MANZA SPORT supplier in Ireland providing world-class padel court infrastructure",
+                "url": window.location.origin,
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+353 87 602 1637",
+                    "email": "dan@padel-craft.com",
+                    "contactType": "customer service"
+                }
+            };
+
+            const script = document.createElement('script');
+            script.type = 'application/ld+json';
+            script.text = JSON.stringify(structuredData);
+            document.head.appendChild(script);
+        });
+    </script>
+</body>
+</html>
