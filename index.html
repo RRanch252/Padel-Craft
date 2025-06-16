@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#0f172a">
     <meta name="description" content="Padel-Craft - Official MANZA SPORT Supplier in Ireland. Premium padel court infrastructure, turnkey solutions, and professional installation services. Currently installing courts for Padel Society in Northern Ireland.">
     <meta name="keywords" content="padel courts, MANZA SPORT, Ireland, Northern Ireland, padel installation, sports facilities, Padel Society, Muckamore Cricket Club">
     <meta name="author" content="Padel-Craft">
@@ -58,6 +61,11 @@
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        html {
+            scroll-behavior: smooth;
         }
 
         /* Premium Navigation */
@@ -70,18 +78,12 @@
             -webkit-backdrop-filter: blur(20px);
             z-index: 1000;
             padding: 1.2rem 0;
+            padding-top: max(1.2rem, env(safe-area-inset-top));
             border-bottom: 1px solid rgba(255,255,255,0.08);
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
 
         /* No top padding needed for side banner */
-        
-        /* MOBILE IMPROVEMENT #4: Add padding for contact bar */
-        @media (max-width: 768px) {
-            body {
-                padding-bottom: 70px;
-            }
-        }
 
         /* Side Announcement Banner */
         .announcement-banner {
@@ -210,11 +212,11 @@
             background: rgba(255,255,255,0.1);
         }
         
-        /* Hide on mobile - show as bottom bar instead */
+        /* Premium iOS-style side banner on mobile */
         @media (max-width: 768px) {
             .announcement-banner {
                 position: fixed;
-                bottom: 70px;
+                bottom: calc(80px + env(safe-area-inset-bottom));
                 right: auto;
                 left: 10px;
                 top: auto;
@@ -223,6 +225,11 @@
                 animation: slideUp 0.5s ease-out;
                 max-width: 400px;
                 margin: 0 auto;
+                background: rgba(15, 23, 42, 0.98);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                border: 1px solid rgba(255,255,255,0.1);
+                box-shadow: 0 8px 32px rgba(0,0,0,0.2);
             }
             
             @keyframes slideUp {
@@ -231,7 +238,7 @@
                     opacity: 0;
                 }
                 to {
-                    bottom: 70px;
+                    bottom: calc(80px + env(safe-area-inset-bottom));
                     opacity: 1;
                 }
             }
@@ -273,7 +280,7 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2.5rem;
+            gap: 3.5rem;
         }
 
         .nav-links li {
@@ -310,7 +317,7 @@
             width: 100%;
         }
 
-        /* Dropdown Menu Styles - Simplified */
+        /* Dropdown Menu Styles - Premium */
         .dropdown-toggle::after {
             content: '▾';
             font-size: 0.75rem;
@@ -325,13 +332,13 @@
             background: white;
             min-width: 240px;
             padding: 0.5rem 0;
-            border-radius: 4px;
+            border-radius: 8px;
             opacity: 0;
             visibility: hidden;
             transform: translateY(-10px);
             transition: all 0.2s ease;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            border: 1px solid rgba(0,0,0,0.1);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            border: 1px solid rgba(0,0,0,0.08);
         }
 
         .dropdown:hover .dropdown-menu {
@@ -363,67 +370,6 @@
             margin: 0.5rem 0;
         }
 
-        .dropdown-header {
-            padding: 0.5rem 1.5rem;
-            font-size: 0.75rem;
-            color: var(--gray);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: 500;
-        }
-        
-        .dropdown-info {
-            margin: 0.5rem 1rem;
-            padding: 0.75rem;
-            background: #f8f9fa;
-            border-radius: 4px;
-            border: 1px solid rgba(0,0,0,0.1);
-        }
-        
-        .dropdown-info p {
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            line-height: 1.5;
-            margin: 0;
-        }
-
-        /* Ensure dropdowns don't overflow on smaller screens */
-        @media (max-width: 1200px) {
-            .dropdown-menu {
-                left: auto;
-                right: 0;
-            }
-            
-            .dropdown:first-child .dropdown-menu,
-            .dropdown:nth-child(2) .dropdown-menu {
-                left: 0;
-                right: auto;
-            }
-        }
-        .dropdown-menu a[href*="manza"] {
-            color: #60a5fa;
-        }
-
-        .dropdown-menu a[href*="manza"]:hover {
-            color: #93bbfc;
-            background: rgba(59, 130, 246, 0.1);
-        }
-
-        /* CTA styling in dropdown */
-        .dropdown-cta {
-            background: rgba(212, 175, 55, 0.1) !important;
-            color: #fbbf24 !important;
-            font-weight: 500;
-            text-align: center;
-            margin: 0.5rem 1rem;
-            border-radius: 6px;
-        }
-
-        .dropdown-cta:hover {
-            background: rgba(212, 175, 55, 0.2) !important;
-            color: #fcd34d !important;
-        }
-
         .mobile-menu {
             display: none;
             flex-direction: column;
@@ -438,22 +384,51 @@
             transition: all 0.3s ease;
         }
         
-        /* MOBILE IMPROVEMENT #1: Make hamburger menu more visible */
+        /* MOBILE IMPROVEMENT #1: Premium iOS-style hamburger menu */
         @media (max-width: 768px) {
             .mobile-menu {
-                background: rgba(255,255,255,0.1);
-                padding: 8px;
-                border-radius: 8px;
-                width: 44px;
-                height: 44px;
                 display: flex !important;
                 align-items: center;
                 justify-content: center;
+                width: 44px;
+                height: 44px;
+                position: relative;
+                -webkit-tap-highlight-color: transparent;
             }
             
             .mobile-menu span {
-                width: 28px;
-                height: 3px;
+                width: 24px;
+                height: 2px;
+                background: white;
+                border-radius: 2px;
+                transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                position: absolute;
+            }
+            
+            .mobile-menu span:first-child {
+                top: 14px;
+            }
+            
+            .mobile-menu span:nth-child(2) {
+                top: 21px;
+            }
+            
+            .mobile-menu span:last-child {
+                top: 28px;
+            }
+            
+            .mobile-menu.active span:first-child {
+                transform: rotate(45deg);
+                top: 21px;
+            }
+            
+            .mobile-menu.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .mobile-menu.active span:last-child {
+                transform: rotate(-45deg);
+                top: 21px;
             }
         }
 
@@ -484,18 +459,74 @@
             color: white;
         }
         
-        /* MOBILE IMPROVEMENT #2: Fix hero text sizing */
+        /* MOBILE IMPROVEMENT: Premium Hero & Typography */
         @media (max-width: 768px) {
+            .hero {
+                padding: 100px 20px 40px;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+            }
+            
             .hero h1 {
-                font-size: 2.5rem !important;
-                letter-spacing: 0.1em !important;
-                line-height: 1.2;
+                font-size: 2.75rem !important;
+                letter-spacing: 0.08em !important;
+                line-height: 1.1;
                 margin-bottom: 1.5rem;
+                font-weight: 100;
             }
             
             .hero-description {
-                font-size: 0.95rem !important;
-                line-height: 1.6;
+                font-size: 1.0625rem !important;
+                line-height: 1.7;
+                font-weight: 300;
+                margin-bottom: 2.5rem;
+            }
+            
+            /* Premium mobile buttons */
+            .btn {
+                padding: 16px 32px !important;
+                font-size: 1rem !important;
+                border-radius: 12px !important;
+                font-weight: 600;
+                -webkit-tap-highlight-color: transparent;
+                box-shadow: 0 4px 12px rgba(201, 169, 97, 0.2);
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+            
+            .btn:active {
+                transform: scale(0.98);
+                box-shadow: 0 2px 8px rgba(201, 169, 97, 0.2);
+            }
+            
+            .btn-secondary {
+                box-shadow: none;
+                border-width: 2px;
+            }
+            
+            .cta-buttons {
+                gap: 1rem;
+            }
+            
+            /* Section spacing on mobile */
+            .section {
+                padding: 4rem 0;
+            }
+            
+            .section-title {
+                font-size: 2rem !important;
+                font-weight: 200;
+                margin-bottom: 1rem;
+            }
+            
+            /* Premium card shadows on mobile */
+            .court-card,
+            .project-card {
+                box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+                border: 1px solid rgba(255,255,255,0.08);
             }
         }
 
@@ -1014,23 +1045,54 @@
             transition: all 0.3s ease;
         }
         
-        /* MOBILE IMPROVEMENT #6: Fix iOS form zoom */
+        /* MOBILE IMPROVEMENT: Premium iOS Form Styles */
         @media (max-width: 768px) {
             .form-group input,
             .form-group select,
             .form-group textarea {
                 font-size: 16px !important; /* Prevents zoom on iOS */
-                padding: 14px !important;
+                padding: 16px !important;
+                border-radius: 12px !important;
+                background: rgba(255,255,255,0.08) !important;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
             }
             
-            /* Make submit button more prominent */
+            .form-group input:focus,
+            .form-group select:focus,
+            .form-group textarea:focus {
+                outline: none;
+                border-color: var(--accent);
+                background: rgba(255,255,255,0.12) !important;
+                box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.2);
+            }
+            
+            /* Premium submit button */
             .contact-form button[type="submit"] {
-                padding: 16px !important;
-                font-size: 1.1rem !important;
+                padding: 18px !important;
+                font-size: 1rem !important;
                 font-weight: 600;
-                position: sticky;
-                bottom: 10px;
-                box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+                border-radius: 12px;
+                background: var(--accent);
+                color: var(--primary);
+                border: none;
+                box-shadow: 0 4px 12px rgba(201, 169, 97, 0.3);
+                -webkit-tap-highlight-color: transparent;
+                transition: all 0.2s ease;
+            }
+            
+            .contact-form button[type="submit"]:active {
+                transform: scale(0.98);
+                box-shadow: 0 2px 8px rgba(201, 169, 97, 0.3);
+            }
+            
+            /* iOS-style select arrow */
+            .form-group select {
+                background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+                background-repeat: no-repeat;
+                background-position: right 16px center;
+                padding-right: 40px !important;
             }
         }
 
@@ -1113,10 +1175,14 @@
             border-top: 1px solid rgba(255,255,255,0.1);
         }
         
-        /* MOBILE IMPROVEMENT: Adjust footer padding for contact bar */
+        /* Premium mobile footer adjustment */
         @media (max-width: 768px) {
             footer {
-                padding-bottom: 80px !important;
+                padding-bottom: calc(90px + env(safe-area-inset-bottom)) !important;
+            }
+            
+            body {
+                padding-bottom: calc(76px + env(safe-area-inset-bottom));
             }
         }
         
@@ -1171,7 +1237,7 @@
             max-width: 600px;
         }
         
-        /* MOBILE IMPROVEMENT #3: Quick Contact Bar */
+        /* MOBILE IMPROVEMENT #3: Premium iOS-style Quick Contact Bar */
         .quick-contact-bar {
             display: none;
         }
@@ -1184,31 +1250,49 @@
                 left: 0;
                 right: 0;
                 background: rgba(255,255,255,0.98);
-                padding: 10px;
-                gap: 10px;
-                box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                padding: 8px;
+                padding-bottom: max(8px, env(safe-area-inset-bottom));
+                gap: 8px;
+                box-shadow: 0 -2px 20px rgba(0,0,0,0.08);
                 z-index: 100;
+                border-top: 1px solid rgba(0,0,0,0.1);
             }
             
             .quick-contact-bar a {
                 flex: 1;
-                padding: 12px;
+                padding: 14px;
                 text-align: center;
                 text-decoration: none;
-                border-radius: 8px;
-                font-size: 0.875rem;
-                font-weight: 500;
+                border-radius: 12px;
+                font-size: 0.9375rem;
+                font-weight: 600;
                 transition: all 0.2s ease;
+                -webkit-tap-highlight-color: transparent;
+                position: relative;
+                overflow: hidden;
             }
             
-            .quick-contact-bar a:active {
-                transform: scale(0.98);
+            .quick-contact-bar a::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: currentColor;
+                opacity: 0;
+                transition: opacity 0.2s ease;
+            }
+            
+            .quick-contact-bar a:active::before {
+                opacity: 0.1;
             }
             
             .quick-contact-bar .btn-call {
-                background: white;
-                color: var(--primary);
-                border: 2px solid var(--primary);
+                background: var(--primary);
+                color: white;
             }
             
             .quick-contact-bar .btn-whatsapp {
@@ -1221,25 +1305,50 @@
         @media (max-width: 768px) {
             .nav-links {
                 position: fixed;
-                top: 70px; /* Only nav height */
+                top: 0;
+                padding-top: env(safe-area-inset-top);
                 left: -100%;
                 width: 100%;
-                height: calc(100vh - 70px);
-                background: rgba(30, 41, 59, 0.98);
+                height: 100vh;
+                background: rgba(15, 23, 42, 0.98);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
                 flex-direction: column;
-                justify-content: flex-start;
+                justify-content: center;
                 align-items: center;
-                padding-top: 3rem;
-                gap: 2rem;
-                transition: left 0.3s ease;
+                gap: 2.5rem;
+                transition: left 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             }
 
             .nav-links.active {
                 left: 0;
             }
+            
+            .nav-links li {
+                opacity: 0;
+                transform: translateX(-20px);
+                transition: all 0.3s ease;
+            }
+            
+            .nav-links.active li {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            
+            .nav-links.active li:nth-child(1) { transition-delay: 0.1s; }
+            .nav-links.active li:nth-child(2) { transition-delay: 0.2s; }
+            .nav-links.active li:nth-child(3) { transition-delay: 0.3s; }
+            .nav-links.active li:nth-child(4) { transition-delay: 0.4s; }
+            
+            .nav-links a {
+                font-size: 1.5rem;
+                font-weight: 300;
+                letter-spacing: 0.05em;
+            }
 
             .mobile-menu {
                 display: flex;
+                z-index: 1001;
             }
 
             /* Mobile dropdown styles */
@@ -1250,20 +1359,32 @@
                 visibility: visible;
                 margin: 0;
                 display: none;
-                background: rgba(20, 30, 45, 0.5);
+                background: rgba(255,255,255,0.05);
                 box-shadow: none;
-                border-radius: 0;
+                border-radius: 8px;
                 padding: 0.5rem 0;
+                margin-top: 1rem;
             }
 
             .dropdown-menu a {
-                padding-left: 3rem;
+                padding: 0.5rem 2rem;
+                font-size: 1rem;
+                color: rgba(255,255,255,0.8);
+            }
+            
+            .dropdown-menu a:hover {
+                background: rgba(255,255,255,0.1);
+                color: white;
+            }
+
+            .dropdown.active .dropdown-menu {
+                display: block;
             }
 
             .dropdown-toggle::after {
                 content: '+';
                 font-size: 1.2rem;
-                margin-left: auto;
+                margin-left: 0.5rem;
             }
 
             .dropdown.active .dropdown-toggle::after {
@@ -1353,17 +1474,6 @@
                 gap: 2rem !important;
                 text-align: center;
             }
-
-            .brand-divider {
-                flex-direction: column !important;
-                gap: 0.5rem !important;
-            }
-
-            .brand-divider div {
-                width: 60px !important;
-                height: 1px !important;
-                margin: 0 auto;
-            }
             
             /* Mobile MANZA Key Stats */
             #about .container > div:last-child > div:last-child > div > div {
@@ -1389,21 +1499,21 @@
 
         @media (max-width: 480px) {
             .hero h1 {
-                font-size: 2.5rem;
-                letter-spacing: 0.1em;
+                font-size: 2.25rem;
+                letter-spacing: 0.08em;
             }
 
             .container {
-                padding: 0 1rem;
+                padding: 0 1.25rem;
             }
 
             .court-placeholder,
             .project-placeholder {
-                height: 140px;
+                height: 180px;
             }
 
             .court-image-container {
-                height: 180px;
+                height: 200px;
             }
         }
     </style>
@@ -1427,47 +1537,21 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li class="dropdown">
-                    <a href="#about" class="dropdown-toggle">About</a>
+                    <a href="#courts" class="dropdown-toggle">Courts</a>
                     <div class="dropdown-menu">
-                        <div class="dropdown-header">Padel-Craft</div>
-                        <a href="#about">About Us</a>
-                        <a href="#services">Installation Timeline</a>
-                        <div class="dropdown-divider"></div>
-                        <div class="dropdown-header">MANZA SPORT</div>
-                        <a href="#courts">Court Models</a>
-                        <a href="https://manzasport.com" target="_blank">Visit MANZA</a>
-                        <div class="dropdown-info">
-                            <p>Each project begins with a comprehensive site evaluation and investment consultation at your location.</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a href="#courts" class="dropdown-toggle">Padel Courts</a>
-                    <div class="dropdown-menu">
-                        <a href="#courts">All Models</a>
+                        <a href="#courts">View All Models</a>
                         <div class="dropdown-divider"></div>
                         <a href="#courts">MANZA Model</a>
                         <a href="#courts">PRO Model</a>
                         <a href="#courts">Miami Model</a>
                         <a href="#courts">Paquito Navarro</a>
                         <a href="#courts">Center Court</a>
-                        <a href="#courts">Singles Court</a>
                     </div>
                 </li>
                 <li><a href="#projects">Projects</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">Resources</a>
-                    <div class="dropdown-menu">
-                        <a href="#contact">Request Proposal</a>
-                        <a href="#contact">Financing Options</a>
-                        <a href="#contact">Technical Specifications</a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#contact">Downloads</a>
-                    </div>
-                </li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="mobile-menu">
+            <div class="mobile-menu" role="button" aria-label="Menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -1508,13 +1592,14 @@
         <div class="container">
             <h2 class="section-title">About Padel-Craft</h2>
             <div class="about-content">
-                <div class="about-text">
-                    <h3>Official MANZA SPORT Supplier</h3>
-                    <p>
+                <div class="about-text" style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+                    <p style="font-size: 1.5rem; line-height: 1.8; font-weight: 200; margin-bottom: 2rem;">
                         Padel-Craft delivers world-class padel infrastructure across Ireland. 
                         As MANZA SPORT's official supplier, we provide complete turnkey solutions from design to installation.
                     </p>
-                    <a href="#contact" class="btn" style="margin-top: 1rem;">Download Full Capabilities →</a>
+                    <div>
+                        <a href="#contact" class="btn" style="padding: 1rem 2rem;">Schedule Consultation →</a>
+                    </div>
                 </div>
                 <div>
                     <img src="https://raw.githubusercontent.com/RRanch252/Padel-Craft/main/images/courts/center-court/center-court-02-aerial.jpg" 
@@ -1549,7 +1634,7 @@
         <div class="container">
             <h2 class="section-title">MANZA SPORT Court Range</h2>
             <p class="section-subtitle">
-                Premium padel courts engineered for excellence. Each model features technical specifications and customisation options to meet your exact requirements.
+                Premium courts engineered for excellence
             </p>
             
             <!-- Court Models Grid -->
@@ -1658,12 +1743,9 @@
     <section id="services" class="section services">
         <div class="container">
             <h2 class="section-title">Installation Timeline</h2>
-            <p class="section-subtitle">
-                Timeline varies based on project scope and site conditions
-            </p>
             
             <!-- Updated Timeline -->
-            <div style="background: var(--gray-light); padding: 3rem; border-radius: 4px; margin-bottom: 3rem;">
+            <div style="background: var(--gray-light); padding: 3rem; border-radius: 4px; margin-top: 3rem;">
                 <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; position: relative;">
                     <!-- Timeline Line -->
                     <div style="position: absolute; top: 30px; left: 10%; right: 10%; height: 2px; background: var(--accent); z-index: 0;"></div>
@@ -1712,7 +1794,7 @@
         <div class="container">
             <h2 class="section-title">Notable Projects & Case Studies</h2>
             <p class="section-subtitle">
-                From local Irish installations to global MANZA SPORT projects, showcasing our expertise in delivering premium padel facilities
+                Current installations and global references
             </p>
             
             <!-- Featured Irish Project -->
@@ -1799,7 +1881,7 @@
         <div class="container">
             <h2 class="section-title">Contact Padel-Craft</h2>
             <p class="section-subtitle">
-                Schedule your consultation to discuss your padel court investment.
+                Schedule your consultation
             </p>
             <div class="contact-content">
                 <div class="contact-form">
@@ -2055,9 +2137,11 @@
             }
         }, 30000);
 
-        // Mobile menu toggle
+        // Mobile menu toggle with animation
         document.querySelector('.mobile-menu').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+            this.classList.toggle('active');
         });
 
         // Handle dropdown menus on mobile
@@ -2066,37 +2150,37 @@
                 if (window.innerWidth <= 768) {
                     e.preventDefault();
                     const dropdown = this.closest('.dropdown');
-                    const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+                    
+                    // Toggle active class
+                    dropdown.classList.toggle('active');
                     
                     // Close other dropdowns
-                    document.querySelectorAll('.dropdown-menu').forEach(menu => {
-                        if (menu !== dropdownMenu) {
-                            menu.style.display = 'none';
+                    document.querySelectorAll('.dropdown').forEach(otherDropdown => {
+                        if (otherDropdown !== dropdown) {
+                            otherDropdown.classList.remove('active');
                         }
                     });
-                    
-                    // Toggle current dropdown
-                    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
                 }
             });
         });
 
-        // Close dropdowns when clicking outside
-        document.addEventListener('click', function(e) {
-            if (window.innerWidth <= 768 && !e.target.closest('.dropdown')) {
-                document.querySelectorAll('.dropdown-menu').forEach(menu => {
-                    menu.style.display = 'none';
+        // Escape key closes mobile menu
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelector('.nav-links').classList.remove('active');
+                document.querySelector('.mobile-menu').classList.remove('active');
+                document.querySelectorAll('.dropdown').forEach(dropdown => {
+                    dropdown.classList.remove('active');
                 });
             }
         });
 
-        // Escape key closes dropdowns
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                document.querySelectorAll('.dropdown-menu').forEach(menu => {
-                    menu.style.display = 'none';
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768 && !e.target.closest('.dropdown') && !e.target.closest('.dropdown-toggle')) {
+                document.querySelectorAll('.dropdown').forEach(dropdown => {
+                    dropdown.classList.remove('active');
                 });
-                document.querySelector('.nav-links').classList.remove('active');
             }
         });
 
