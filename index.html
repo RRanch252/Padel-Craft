@@ -938,6 +938,12 @@
                 height: 1px !important;
                 margin: 0 auto;
             }
+            
+            /* Mobile MANZA Key Stats */
+            #about .container > div:last-child > div:last-child > div > div {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1001,7 +1007,6 @@
                         <a href="#courts">Paquito Navarro</a>
                         <a href="#courts">Full Panoramic</a>
                         <a href="#courts">Singles Court</a>
-                        <a href="#courts">Portable Courts</a>
                     </div>
                 </li>
                 <li><a href="#projects">Projects</a></li>
@@ -1036,6 +1041,7 @@
                 nationwide. We specialise in turnkey solutions, managing the entire process from planning, 
                 design, supply, and installation through to aftercare and ongoing support.
             </p>
+            
             <div style="margin: 2rem 0;">
                 <p style="margin: 0; font-size: 1rem; opacity: 0.9;">
                     We deliver MANZA SPORT's proven quality with projects across Europe, the US, and the Middle East.
@@ -1044,6 +1050,31 @@
             <div class="cta-buttons">
                 <a href="#contact" class="btn">Get Quote</a>
                 <a href="#projects" class="btn btn-secondary">View Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Updated Technical Specifications Bar -->
+    <section style="background: white; padding: 2rem 0; border-bottom: 1px solid rgba(0,0,0,0.1);">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem;">
+                <div style="display: flex; gap: 3rem; align-items: center;">
+                    <div>
+                        <strong style="color: var(--gray); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Certifications</strong>
+                        <div style="font-size: 0.875rem; color: var(--text-primary);">International Standards • Quality Assured</div>
+                    </div>
+                    <div>
+                        <strong style="color: var(--gray); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Insurance</strong>
+                        <div style="font-size: 0.875rem; color: var(--text-primary);">Comprehensive Coverage • Professional Protection</div>
+                    </div>
+                    <div>
+                        <strong style="color: var(--gray); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Warranty</strong>
+                        <div style="font-size: 0.875rem; color: var(--text-primary);">Long-term Protection • Installation Guarantee</div>
+                    </div>
+                </div>
+                <a href="#contact" style="color: var(--accent); font-weight: 500; text-decoration: none; font-size: 0.875rem;">
+                    Download Technical Specs →
+                </a>
             </div>
         </div>
     </section>
@@ -1096,10 +1127,26 @@
                     <h4>Global Track Record</h4>
                     <p>MANZA SPORT's proven international experience across Europe, US, and Middle East</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">E</div>
-                    <h4>Groundworks Expertise</h4>
-                    <p>Ireland's leading expertise in padel court groundworks and site preparation for optimal installations</p>
+            </div>
+            
+            <!-- MANZA Key Stats -->
+            <div style="margin-top: 4rem; text-align: center;">
+                <h3 style="font-size: 2rem; font-weight: 300; margin-bottom: 2rem; color: var(--text-primary);">MANZA Key Stats</h3>
+                <div style="background: var(--gray-light); padding: 3rem; border-radius: 4px;">
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem;">
+                        <div>
+                            <div style="font-size: 3rem; font-weight: 300; color: var(--accent);">15+</div>
+                            <div style="font-size: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Years Experience</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 3rem; font-weight: 300; color: var(--accent);">€2M+</div>
+                            <div style="font-size: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Projects Delivered</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 3rem; font-weight: 300; color: var(--accent);">1000+</div>
+                            <div style="font-size: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Courts Installed Globally</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1225,23 +1272,7 @@
                     </div>
                 </div>
 
-                <div class="court-card">
-                    <div class="court-image-container">
-                        <!-- Replace with actual MANZA SPORT image URL -->
-                        <img src="https://via.placeholder.com/400x300/1e293b/06b6d4?text=PORTABLE+COURTS" 
-                             alt="PORTABLE COURTS Flexible Padel System" 
-                             class="court-image"
-                             loading="lazy">
-                    </div>
-                    <h4>PORTABLE COURT OPTIONS</h4>
-                    <div style="margin-bottom: 1rem;">
-                        <span style="display: inline-block; background: #06b6d4; color: white; padding: 0.2rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 500;">FLEXIBLE</span>
-                    </div>
-                    <p><strong>Technical Specifications:</strong> Flexible portable court solutions for temporary installations, events, and locations requiring movable facilities. Quick assembly system.</p>
-                    <div style="margin-top: 1rem; padding: 1rem; background: rgba(255,255,255,0.03); border-radius: 8px;">
-                        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin: 0;"><strong>Best For:</strong> Events, temporary installations, demonstration purposes</p>
-                    </div>
-                </div>
+
             </div>
 
             <!-- Customisation Section -->
@@ -1276,22 +1307,7 @@
                 </div>
             </div>
 
-            <!-- Image Attribution Notice -->
-            <div style="margin-top: 3rem; padding: 2rem; background: rgba(59, 130, 246, 0.1); border-radius: 12px; border: 1px solid rgba(59, 130, 246, 0.3);">
-                <h4 style="color: #60a5fa; margin-bottom: 1rem; font-size: 1.2rem;">
-                    ℹ️ Product Images - Official Supplier Notice
-                </h4>
-                <p style="color: rgba(255,255,255,0.9); font-size: 0.95rem; line-height: 1.6;">
-                    As the official MANZA SPORT supplier in Ireland, we showcase authentic product images from MANZA SPORT's catalogue. 
-                    All court designs, specifications, and images are property of MANZA SPORT. For the most current product information 
-                    and additional images, please contact us directly or visit the official MANZA SPORT website.
-                </p>
-                <div style="margin-top: 1rem;">
-                    <small style="color: rgba(255,255,255,0.6); font-size: 0.85rem;">
-                        Note: To replace placeholder images, obtain official product images from MANZA SPORT's supplier portal or marketing team.
-                    </small>
-                </div>
-            </div>
+
         </div>
     </section>
 
@@ -1303,60 +1319,73 @@
                 Complete project management from initial planning through to aftercare and ongoing support
             </p>
             
-            <!-- Services Layout: 2x2 Grid + Enquiry Block -->
-            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; align-items: start; margin-top: 3rem;">
-                
-                <!-- Left Side: 2x2 Services Grid -->
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-                    <div class="feature-card">
-                        <div class="feature-icon">📋</div>
-                        <h4>Planning & Design</h4>
-                        <p>Comprehensive site assessment, design consultation, planning permission support, and technical drawings. We handle all regulatory requirements and ensure optimal court placement.</p>
+            <!-- Updated Professional Timeline -->
+            <div style="background: var(--gray-light); padding: 3rem; border-radius: 4px; margin-bottom: 3rem;">
+                <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; position: relative;">
+                    <!-- Timeline Line -->
+                    <div style="position: absolute; top: 30px; left: 10%; right: 10%; height: 2px; background: var(--accent); z-index: 0;"></div>
+                    
+                    <!-- Phase 1 -->
+                    <div style="text-align: center; position: relative; z-index: 1;">
+                        <div style="width: 60px; height: 60px; background: white; border: 3px solid var(--accent); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-weight: 500;">1</div>
+                        <h5 style="font-size: 0.875rem; margin-bottom: 0.5rem;">Site Assessment</h5>
+                        <p style="font-size: 0.75rem; color: var(--gray);">Initial Consultation</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🏗️</div>
-                        <h4>Groundworks & Site Preparation</h4>
-                        <p>Professional site preparation with detailed overview of requirements, ground condition analysis, drainage systems, and foundation work to ensure perfect court installation.</p>
+                    
+                    <!-- Phase 2 -->
+                    <div style="text-align: center; position: relative; z-index: 1;">
+                        <div style="width: 60px; height: 60px; background: white; border: 3px solid var(--accent); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-weight: 500;">2</div>
+                        <h5 style="font-size: 0.875rem; margin-bottom: 0.5rem;">Planning / Sign off</h5>
+                        <p style="font-size: 0.75rem; color: var(--gray);">Design & Approvals</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🚚</div>
-                        <h4>Supply & Installation Process</h4>
-                        <p>Direct supply from Spain with professional installation by MANZA SPORT certified technicians. Quality guaranteed from factory to finished court.</p>
+                    
+                    <!-- Phase 3 -->
+                    <div style="text-align: center; position: relative; z-index: 1;">
+                        <div style="width: 60px; height: 60px; background: white; border: 3px solid var(--accent); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-weight: 500;">3</div>
+                        <h5 style="font-size: 0.875rem; margin-bottom: 0.5rem;">Groundworks</h5>
+                        <p style="font-size: 0.75rem; color: var(--gray);">Foundation Preparation</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🛠️</div>
-                        <h4>Aftercare & Support</h4>
-                        <p>Ongoing maintenance support, technical assistance, warranty service, and performance optimization to ensure your courts operate at peak condition.</p>
+                    
+                    <!-- Phase 4 -->
+                    <div style="text-align: center; position: relative; z-index: 1;">
+                        <div style="width: 60px; height: 60px; background: white; border: 3px solid var(--accent); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-weight: 500;">4</div>
+                        <h5 style="font-size: 0.875rem; margin-bottom: 0.5rem;">Court Installation</h5>
+                        <p style="font-size: 0.75rem; color: var(--gray);">Professional Assembly</p>
+                    </div>
+                    
+                    <!-- Phase 5 -->
+                    <div style="text-align: center; position: relative; z-index: 1;">
+                        <div style="width: 60px; height: 60px; background: white; border: 3px solid var(--accent); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-weight: 500;">5</div>
+                        <h5 style="font-size: 0.875rem; margin-bottom: 0.5rem;">Testing & Handover</h5>
+                        <p style="font-size: 0.75rem; color: var(--gray);">Quality Assurance</p>
                     </div>
                 </div>
-
-                <!-- Right Side: Enquiry Block -->
-                <div style="padding: 2.5rem; background: linear-gradient(135deg, #1e293b 0%, #334155 100%); border-radius: 20px; color: white; position: sticky; top: 100px;">
-                    <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: #fbbf24; font-weight: 300; text-align: center;">Ready to Start Your Project?</h3>
-                    <p style="font-size: 1rem; margin-bottom: 2rem; color: rgba(255,255,255,0.9); line-height: 1.6; text-align: center;">
-                        Our turnkey service handles everything from initial planning to final installation. Get a free consultation and quote.
-                    </p>
-                    
-                    <!-- Quick Enquiry Form -->
-                    <form onsubmit="handleQuickSubmit(event)" style="display: flex; flex-direction: column; gap: 1rem;">
-                        <input type="text" placeholder="Your Name *" required style="padding: 0.8rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; background: rgba(255,255,255,0.05); color: white; font-size: 0.9rem;">
-                        <input type="email" placeholder="Email Address *" required style="padding: 0.8rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; background: rgba(255,255,255,0.05); color: white; font-size: 0.9rem;">
-                        <input type="tel" placeholder="Phone Number" style="padding: 0.8rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; background: rgba(255,255,255,0.05); color: white; font-size: 0.9rem;">
-                        <select required style="padding: 0.8rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; background: rgba(255,255,255,0.05); color: white; font-size: 0.9rem;">
-                            <option value="">Number of Courts *</option>
-                            <option value="1">1 Court</option>
-                            <option value="2-3">2-3 Courts</option>
-                            <option value="4-6">4-6 Courts</option>
-                            <option value="7+">7+ Courts</option>
-                        </select>
-                        <textarea placeholder="Brief project details..." rows="3" style="padding: 0.8rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; background: rgba(255,255,255,0.05); color: white; font-size: 0.9rem; resize: vertical;"></textarea>
-                        <button type="submit" class="btn" style="padding: 1rem 1.5rem; font-size: 1rem; margin-top: 0.5rem; width: 100%;">Submit Enquiry</button>
-                    </form>
-
-                    <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem;">
-                        <a href="#courts" class="btn btn-secondary" style="padding: 0.8rem 1.5rem; text-align: center; font-size: 0.9rem;">View Our Courts</a>
-                        <a href="#contact" class="btn btn-secondary" style="padding: 0.8rem 1.5rem; text-align: center; font-size: 0.9rem;">Full Contact Form</a>
-                    </div>
+                <p style="text-align: center; margin-top: 2rem; color: var(--gray); font-size: 0.9rem;">
+                    Typical timeline varies based on project scope and site conditions
+                </p>
+            </div>
+            
+            <!-- Services Grid -->
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;">
+                <div class="feature-card">
+                    <div class="feature-icon">1</div>
+                    <h4>Planning & Design</h4>
+                    <p>Site assessment, technical drawings, planning permission support, 3D visualization</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">2</div>
+                    <h4>Groundworks</h4>
+                    <p>Foundation preparation, drainage systems, concrete base, perimeter installations</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">3</div>
+                    <h4>Installation</h4>
+                    <p>MANZA certified technicians, quality control, lighting setup, court finishing</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">4</div>
+                    <h4>Aftercare</h4>
+                    <p>Maintenance training, warranty support, annual inspections, parts availability</p>
                 </div>
             </div>
         </div>
@@ -1415,10 +1444,13 @@
                         </div>
                         
                         <div style="margin-top: 1.5rem; padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 12px;">
-                            <h5 style="color: #fbbf24; margin-bottom: 0.8rem;">Why This Matters:</h5>
-                            <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.7; margin: 0;">
-                                This project demonstrates Padel-Craft's capability to deliver premium installations for ambitious ventures. As Northern Ireland's padel market expands from just 12 courts to potentially 50+ in 2025, we're proud to be at the forefront of this growth.
-                            </p>
+                            <h5 style="color: #fbbf24; margin-bottom: 0.8rem;">Project Metrics:</h5>
+                            <ul style="color: rgba(255,255,255,0.8); font-size: 0.9rem; line-height: 1.7; margin: 0; padding-left: 1.2rem;">
+                                <li>Investment: €400,000+</li>
+                                <li>Timeline: July 2025 opening</li>
+                                <li>Expected ROI: 24-36 months</li>
+                                <li>Projected annual revenue: €300,000+</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -1436,49 +1468,111 @@
             </div>
             
             <!-- Global MANZA SPORT Projects -->
-            <h3 style="color: #fbbf24; margin-bottom: 2rem; font-size: 1.6rem; text-align: center;">Global MANZA SPORT Installations</h3>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-placeholder">[Sport City Valencia Installation Photo]</div>
-                    <div class="project-content">
-                        <h4>Sport City, Valencia Spain</h4>
-                        <p><strong>30 courts</strong> - the biggest padel club in Europe. Demonstrates large-scale project management and installation expertise.</p>
+            <h3 style="color: white; margin-bottom: 2rem; font-size: 1.6rem; text-align: center;">Global MANZA SPORT Installations</h3>
+            
+            <!-- MANZA Projects Showcase -->
+            <div style="background: rgba(255,255,255,0.05); padding: 3rem; border-radius: 4px; margin-bottom: 3rem;">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <p style="color: rgba(255,255,255,0.8); font-size: 1rem; margin-bottom: 1.5rem;">
+                        MANZA SPORT has successfully installed courts in over 70 countries worldwide
+                    </p>
+                    <a href="https://manzasport.com/works?lang=en" target="_blank" rel="noopener" 
+                       class="btn" style="background: white; color: var(--primary);">
+                        View All MANZA Projects →
+                    </a>
+                </div>
+                
+                <!-- Featured MANZA Projects Grid -->
+                <div style="margin-top: 3rem;">
+                    <h4 style="color: var(--accent); margin-bottom: 2rem; text-align: center;">Featured International Projects</h4>
+                    <div class="projects-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                        <!-- Project Tile Template -->
+                        <a href="https://manzasport.com/works?lang=en" target="_blank" rel="noopener" 
+                           class="project-tile" style="text-decoration: none; display: block;">
+                            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); 
+                                        padding: 2rem; border-radius: 4px; height: 100%; 
+                                        transition: all 0.2s ease; cursor: pointer;">
+                                <h5 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem;">Sport City Valencia</h5>
+                                <p style="color: var(--accent); font-size: 0.875rem; margin-bottom: 0.5rem;">Spain • 30 Courts</p>
+                                <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem; line-height: 1.4;">
+                                    Europe's largest padel club installation
+                                </p>
+                            </div>
+                        </a>
+                        
+                        <a href="https://manzasport.com/works?lang=en" target="_blank" rel="noopener" 
+                           class="project-tile" style="text-decoration: none; display: block;">
+                            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); 
+                                        padding: 2rem; border-radius: 4px; height: 100%; 
+                                        transition: all 0.2s ease; cursor: pointer;">
+                                <h5 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem;">Padel Haus Brooklyn</h5>
+                                <p style="color: var(--accent); font-size: 0.875rem; margin-bottom: 0.5rem;">USA • 3 Clubs</p>
+                                <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem; line-height: 1.4;">
+                                    First major padel facility in New York
+                                </p>
+                            </div>
+                        </a>
+                        
+                        <a href="https://manzasport.com/works?lang=en" target="_blank" rel="noopener" 
+                           class="project-tile" style="text-decoration: none; display: block;">
+                            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); 
+                                        padding: 2rem; border-radius: 4px; height: 100%; 
+                                        transition: all 0.2s ease; cursor: pointer;">
+                                <h5 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem;">Rafa Nadal Academy</h5>
+                                <p style="color: var(--accent); font-size: 0.875rem; margin-bottom: 0.5rem;">Kuwait • Premium Courts</p>
+                                <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem; line-height: 1.4;">
+                                    Elite training facility installation
+                                </p>
+                            </div>
+                        </a>
+                        
+                        <a href="https://manzasport.com/works?lang=en" target="_blank" rel="noopener" 
+                           class="project-tile" style="text-decoration: none; display: block;">
+                            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); 
+                                        padding: 2rem; border-radius: 4px; height: 100%; 
+                                        transition: all 0.2s ease; cursor: pointer;">
+                                <h5 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem;">Emirates Golf Club</h5>
+                                <p style="color: var(--accent); font-size: 0.875rem; margin-bottom: 0.5rem;">Dubai • Panoramic Courts</p>
+                                <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem; line-height: 1.4;">
+                                    Luxury installation in prestigious location
+                                </p>
+                            </div>
+                        </a>
+                        
+                        <a href="https://manzasport.com/works?lang=en" target="_blank" rel="noopener" 
+                           class="project-tile" style="text-decoration: none; display: block;">
+                            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); 
+                                        padding: 2rem; border-radius: 4px; height: 100%; 
+                                        transition: all 0.2s ease; cursor: pointer;">
+                                <h5 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem;">Esprit Padel Lyon</h5>
+                                <p style="color: var(--accent); font-size: 0.875rem; margin-bottom: 0.5rem;">France • 7 Courts</p>
+                                <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem; line-height: 1.4;">
+                                    Mix of Pro and Panoramic models
+                                </p>
+                            </div>
+                        </a>
+                        
+                        <a href="https://manzasport.com/works?lang=en" target="_blank" rel="noopener" 
+                           class="project-tile" style="text-decoration: none; display: block;">
+                            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); 
+                                        padding: 2rem; border-radius: 4px; height: 100%; 
+                                        transition: all 0.2s ease; cursor: pointer;">
+                                <h5 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem;">More Projects</h5>
+                                <p style="color: var(--accent); font-size: 0.875rem; margin-bottom: 0.5rem;">70+ Countries</p>
+                                <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem; line-height: 1.4;">
+                                    View complete portfolio →
+                                </p>
+                            </div>
+                        </a>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-placeholder">[Padel Haus Brooklyn Photo]</div>
-                    <div class="project-content">
-                        <h4>Padel Haus, Brooklyn New York</h4>
-                        <p><strong>3 clubs</strong> - the first and biggest in New York. Pioneering padel development in the US market.</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-placeholder">[Rafa Nadal Academy Photo]</div>
-                    <div class="project-content">
-                        <h4>Rafa Nadal Academy Kuwait</h4>
-                        <p>Premium courts for the world-renowned tennis academy. Showcasing elite-level quality and international standards.</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-placeholder">[Emirates Golf Club Photo]</div>
-                    <div class="project-content">
-                        <h4>Emirates Golf Club, Dubai</h4>
-                        <p>MANZA panoramic courts in prestigious Dubai location. Luxury installation for high-end clientele.</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-placeholder">[RRA Las Vegas Photo]</div>
-                    <div class="project-content">
-                        <h4>RRA Padel, Las Vegas</h4>
-                        <p>One of the largest padel facilities in the U.S. Demonstrating scale and American market expertise.</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-placeholder">[7 Padel Village Photo]</div>
-                    <div class="project-content">
-                        <h4>7 Padel Village, Italy</h4>
-                        <p>22 Panoramic Gold courts in stunning Italian setting. Premium panoramic installations in beautiful locations.</p>
-                    </div>
+                
+                <!-- Bottom CTA -->
+                <div style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 1rem;">
+                        Want to see your project featured here? Partner with Padel-Craft for your Irish installation.
+                    </p>
+                    <a href="#contact" class="btn">Start Your Project</a>
                 </div>
             </div>
         </div>
@@ -1553,7 +1647,6 @@
                                 <option value="club">Padel Club</option>
                                 <option value="facility">Sports Facility</option>
                                 <option value="private">Private Residence</option>
-                                <option value="portable">Portable Courts</option>
                                 <option value="other">Other</option>
                             </select>
                         </div>
@@ -1595,14 +1688,7 @@
                             <div class="contact-icon">🏢</div>
                             <div class="contact-text">
                                 <strong>Service Area</strong>
-                                <p>Ireland & UK</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">⏰</div>
-                            <div class="contact-text">
-                                <strong>Response Time</strong>
-                                <p>Within 24 hours</p>
+                                <p>Ireland</p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -1734,7 +1820,7 @@
             console.log('Form submitted with data:', data);
             
             // Show success message
-            alert('Thank you for your enquiry! We will get back to you within 24 hours to discuss your padel court project in detail.');
+            alert('Thank you for your enquiry! We will get back to you soon to discuss your padel court project in detail.');
             
             // Reset form
             event.target.reset();
@@ -1748,7 +1834,7 @@
             
             console.log('Quick form submitted with data:', data);
             
-            alert('Thank you for your enquiry! We will contact you within 24 hours.');
+            alert('Thank you for your enquiry! We will contact you soon.');
             
             event.target.reset();
         }
@@ -1821,7 +1907,7 @@
                     "contactType": "customer service"
                 },
                 "knowsAbout": ["padel courts", "MANZA SPORT", "sports facilities", "court installation"],
-                "areaServed": ["Ireland", "Northern Ireland", "United Kingdom"],
+                "areaServed": ["Ireland", "Northern Ireland"],
                 "project": {
                     "@type": "Project",
                     "name": "Padel Society - Muckamore Cricket Club",
