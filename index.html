@@ -74,40 +74,167 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
 
-        /* Adjust for announcement banner */
-        body {
-            padding-top: 40px;
+        /* No top padding needed for side banner */
+        
+        /* MOBILE IMPROVEMENT #4: Add padding for contact bar */
+        @media (max-width: 768px) {
+            body {
+                padding-bottom: 70px;
+            }
         }
 
-        /* Announcement Banner */
+        /* Side Announcement Banner */
         .announcement-banner {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(90deg, #fbbf24 0%, #f59e0b 100%);
-            color: #0f172a;
-            padding: 0.8rem 1rem;
-            text-align: center;
-            font-size: 0.9rem;
-            font-weight: 500;
-            z-index: 1001;
-            height: 40px;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 1.5rem 1rem;
+            z-index: 999;
+            width: 280px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 1px solid rgba(201, 169, 97, 0.3);
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: column;
+            gap: 1rem;
+            transition: all 0.3s ease;
+            animation: slideIn 0.5s ease-out, subtlePulse 4s ease-in-out 3s infinite;
+        }
+        
+        @keyframes slideIn {
+            from {
+                right: -300px;
+                opacity: 0;
+            }
+            to {
+                right: 20px;
+                opacity: 1;
+            }
+        }
+        
+        @keyframes subtlePulse {
+            0%, 100% {
+                transform: translateY(-50%) scale(1);
+            }
+            50% {
+                transform: translateY(-50%) scale(1.02);
+            }
+        }
+        
+        .announcement-banner:hover {
+            transform: translateY(-50%) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            animation-play-state: paused;
+        }
+        
+        .announcement-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .announcement-label {
+            background: var(--accent);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            align-self: flex-start;
+        }
+        
+        .announcement-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            line-height: 1.3;
+            color: white;
+        }
+        
+        .announcement-subtitle {
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.4;
         }
 
         .announcement-banner a {
-            color: #0f172a;
-            text-decoration: underline;
-            font-weight: 600;
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.875rem;
             transition: all 0.2s ease;
+            position: relative;
+        }
+        
+        .announcement-banner a::after {
+            content: ' →';
+            position: absolute;
+            right: -20px;
+            transition: right 0.2s ease;
         }
 
         .announcement-banner a:hover {
-            text-decoration: none;
-            opacity: 0.8;
+            color: #fbbf24;
+        }
+        
+        .announcement-banner a:hover::after {
+            right: -25px;
+        }
+        
+        .announcement-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: rgba(255,255,255,0.5);
+            font-size: 1.2rem;
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+        }
+        
+        .announcement-close:hover {
+            color: white;
+            background: rgba(255,255,255,0.1);
+        }
+        
+        /* Hide on mobile - show as bottom bar instead */
+        @media (max-width: 768px) {
+            .announcement-banner {
+                position: fixed;
+                bottom: 70px;
+                right: auto;
+                left: 10px;
+                top: auto;
+                transform: none;
+                width: calc(100% - 20px);
+                animation: slideUp 0.5s ease-out;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            
+            @keyframes slideUp {
+                from {
+                    bottom: -100px;
+                    opacity: 0;
+                }
+                to {
+                    bottom: 70px;
+                    opacity: 1;
+                }
+            }
         }
 
         .nav-container {
@@ -310,6 +437,25 @@
             background: white;
             transition: all 0.3s ease;
         }
+        
+        /* MOBILE IMPROVEMENT #1: Make hamburger menu more visible */
+        @media (max-width: 768px) {
+            .mobile-menu {
+                background: rgba(255,255,255,0.1);
+                padding: 8px;
+                border-radius: 8px;
+                width: 44px;
+                height: 44px;
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .mobile-menu span {
+                width: 28px;
+                height: 3px;
+            }
+        }
 
         /* Premium Hero Section - Simplified */
         .hero {
@@ -321,7 +467,7 @@
             text-align: center;
             color: white;
             position: relative;
-            padding-top: 120px; /* Account for fixed nav + banner */
+            padding-top: 80px; /* Only account for fixed nav */
         }
 
         .hero-content {
@@ -336,6 +482,21 @@
             letter-spacing: 0.15em;
             margin-bottom: 3rem;
             color: white;
+        }
+        
+        /* MOBILE IMPROVEMENT #2: Fix hero text sizing */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem !important;
+                letter-spacing: 0.1em !important;
+                line-height: 1.2;
+                margin-bottom: 1.5rem;
+            }
+            
+            .hero-description {
+                font-size: 0.95rem !important;
+                line-height: 1.6;
+            }
         }
 
         .hero-subtitle {
@@ -726,13 +887,22 @@
 
         .project-placeholder {
             height: 200px;
-            background: rgba(255,255,255,0.1);
+            overflow: hidden;
+            position: relative;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
             display: flex;
             align-items: center;
             justify-content: center;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            color: rgba(255,255,255,0.6);
-            font-size: 0.9rem;
+            color: rgba(255,255,255,0.8);
+            font-size: 1.1rem;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+        }
+        
+        .project-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .project-content {
@@ -843,6 +1013,26 @@
             font-family: inherit;
             transition: all 0.3s ease;
         }
+        
+        /* MOBILE IMPROVEMENT #6: Fix iOS form zoom */
+        @media (max-width: 768px) {
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                font-size: 16px !important; /* Prevents zoom on iOS */
+                padding: 14px !important;
+            }
+            
+            /* Make submit button more prominent */
+            .contact-form button[type="submit"] {
+                padding: 16px !important;
+                font-size: 1.1rem !important;
+                font-weight: 600;
+                position: sticky;
+                bottom: 10px;
+                box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            }
+        }
 
         .form-group input:focus,
         .form-group select:focus,
@@ -923,6 +1113,13 @@
             border-top: 1px solid rgba(255,255,255,0.1);
         }
         
+        /* MOBILE IMPROVEMENT: Adjust footer padding for contact bar */
+        @media (max-width: 768px) {
+            footer {
+                padding-bottom: 80px !important;
+            }
+        }
+        
         .footer-content {
             display: flex;
             flex-direction: column;
@@ -973,15 +1170,61 @@
             width: 100%;
             max-width: 600px;
         }
+        
+        /* MOBILE IMPROVEMENT #3: Quick Contact Bar */
+        .quick-contact-bar {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .quick-contact-bar {
+                display: flex;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: rgba(255,255,255,0.98);
+                padding: 10px;
+                gap: 10px;
+                box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+                z-index: 100;
+            }
+            
+            .quick-contact-bar a {
+                flex: 1;
+                padding: 12px;
+                text-align: center;
+                text-decoration: none;
+                border-radius: 8px;
+                font-size: 0.875rem;
+                font-weight: 500;
+                transition: all 0.2s ease;
+            }
+            
+            .quick-contact-bar a:active {
+                transform: scale(0.98);
+            }
+            
+            .quick-contact-bar .btn-call {
+                background: white;
+                color: var(--primary);
+                border: 2px solid var(--primary);
+            }
+            
+            .quick-contact-bar .btn-whatsapp {
+                background: #25D366;
+                color: white;
+            }
+        }
 
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
                 position: fixed;
-                top: 110px; /* Adjusted for announcement banner */
+                top: 70px; /* Only nav height */
                 left: -100%;
                 width: 100%;
-                height: calc(100vh - 110px);
+                height: calc(100vh - 70px);
                 background: rgba(30, 41, 59, 0.98);
                 flex-direction: column;
                 justify-content: flex-start;
@@ -1166,13 +1409,15 @@
     </style>
 </head>
 <body>
-    <!-- Announcement Banner - Simplified -->
+    <!-- Side Announcement Banner -->
     <div class="announcement-banner" id="announcementBanner">
-        <span>
-            <strong>Current Project:</strong> Installing 4 Premium Courts for Padel Society, Antrim
+        <button class="announcement-close" onclick="dismissBanner()" title="Close">×</button>
+        <div class="announcement-content">
+            <span class="announcement-label">Current Project</span>
+            <div class="announcement-title">Installing 4 Premium Courts</div>
+            <div class="announcement-subtitle">Padel Society, Muckamore Cricket Club, Antrim</div>
             <a href="#projects">Learn More</a>
-        </span>
-        <button onclick="dismissBanner()" style="background: none; border: none; color: white; font-size: 1.2rem; cursor: pointer; opacity: 0.5; position: absolute; right: 1rem;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='0.5'">×</button>
+        </div>
     </div>
     
     <!-- Navigation -->
@@ -1187,7 +1432,6 @@
                         <div class="dropdown-header">Padel-Craft</div>
                         <a href="#about">About Us</a>
                         <a href="#services">Installation Timeline</a>
-                        <a href="#why-choose">Why Choose Us</a>
                         <div class="dropdown-divider"></div>
                         <div class="dropdown-header">MANZA SPORT</div>
                         <a href="#courts">Court Models</a>
@@ -1257,30 +1501,7 @@
         </div>
     </section>
 
-    <!-- Updated Technical Specifications Bar -->
-    <section style="background: white; padding: 2rem 0; border-bottom: 1px solid rgba(0,0,0,0.1);">
-        <div class="container">
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem;">
-                <div style="display: flex; gap: 3rem; align-items: center;">
-                    <div>
-                        <strong style="color: var(--gray); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Certifications</strong>
-                        <div style="font-size: 0.875rem; color: var(--text-primary);">International Standards • Quality Assured</div>
-                    </div>
-                    <div>
-                        <strong style="color: var(--gray); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Insurance</strong>
-                        <div style="font-size: 0.875rem; color: var(--text-primary);">Fully Insured • Professional Coverage</div>
-                    </div>
-                    <div>
-                        <strong style="color: var(--gray); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Warranty</strong>
-                        <div style="font-size: 0.875rem; color: var(--text-primary);">Market Leading Warranty</div>
-                    </div>
-                </div>
-                <a href="#contact" style="color: var(--accent); font-weight: 500; text-decoration: none; font-size: 0.875rem;">
-                    Download Technical Specs →
-                </a>
-            </div>
-        </div>
-    </section>
+
 
     <!-- About Section -->
     <section id="about" class="section about">
@@ -1290,68 +1511,36 @@
                 <div class="about-text">
                     <h3>Official MANZA SPORT Supplier</h3>
                     <p>
-                        Padel-Craft is the official supplier of MANZA SPORT courts in Ireland, 
-                        bringing world-class padel infrastructure to the Irish market. We are dedicated to supporting 
-                        the growth of padel across Ireland through premium-quality court installations.
+                        Padel-Craft delivers world-class padel infrastructure across Ireland. 
+                        As MANZA SPORT's official supplier, we provide complete turnkey solutions from design to installation.
                     </p>
-                    <p>
-                        As the official supplier of MANZA SPORT courts, we provide comprehensive 
-                        turnkey solutions from initial planning and design through to installation, aftercare, and ongoing support. 
-                        Our expertise ensures every project meets international standards while being tailored to local requirements.
-                    </p>
-                    <p>
-                        We manage the entire process from planning to aftercare, 
-                        providing a seamless experience for our clients. Whether you're establishing a new padel club, 
-                        upgrading sports facilities, or installing private courts, we deliver complete project management solutions.
-                    </p>
+                    <a href="#contact" class="btn" style="margin-top: 1rem;">Download Full Capabilities →</a>
                 </div>
-                <div class="about-placeholder">
-                    [Professional Court Installation Photo]
+                <div>
+                    <img src="https://raw.githubusercontent.com/RRanch252/Padel-Craft/main/images/courts/center-court/center-court-02-aerial.jpg" 
+                         alt="Professional padel court installation" 
+                         style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
                 </div>
             </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">O</div>
-                    <h4>Official Supplier</h4>
-                    <p>Official supplier of MANZA SPORT courts in Ireland - authentic products, guaranteed quality</p>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 3rem;">
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; font-weight: 100; color: var(--accent);">15+</div>
+                    <div style="font-size: 0.875rem; color: var(--text-secondary);">Years Experience</div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">T</div>
-                    <h4>Turnkey Service</h4>
-                    <p>Complete project management from planning and design through to aftercare and ongoing support</p>
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; font-weight: 100; color: var(--accent);">70+</div>
+                    <div style="font-size: 0.875rem; color: var(--text-secondary);">Countries</div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">C</div>
-                    <h4>Customisation Options</h4>
-                    <p>Turf colours, branded nets, additional zinc coating, and technical specifications to meet your needs</p>
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; font-weight: 100; color: var(--accent);">1000+</div>
+                    <div style="font-size: 0.875rem; color: var(--text-secondary);">Courts Installed</div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">G</div>
-                    <h4>Global Track Record</h4>
-                    <p>MANZA SPORT's proven international experience across Europe, US, and Middle East</p>
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; font-weight: 100; color: var(--accent);">100%</div>
+                    <div style="font-size: 0.875rem; color: var(--text-secondary);">Project Success</div>
                 </div>
             </div>
-            
-            <!-- MANZA Key Stats -->
-            <div style="margin-top: 4rem; text-align: center;">
-                <h3 style="font-size: 2rem; font-weight: 300; margin-bottom: 2rem; color: var(--text-primary);">MANZA Key Stats</h3>
-                <div style="background: var(--gray-light); padding: 3rem; border-radius: 4px;">
-                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem;">
-                        <div>
-                            <div style="font-size: 3rem; font-weight: 300; color: var(--accent);">15+</div>
-                            <div style="font-size: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Years Experience</div>
-                        </div>
-                        <div>
-                            <div style="font-size: 3rem; font-weight: 300; color: var(--accent);">€2M+</div>
-                            <div style="font-size: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Investment Facilitated</div>
-                        </div>
-                        <div>
-                            <div style="font-size: 3rem; font-weight: 300; color: var(--accent);">1000+</div>
-                            <div style="font-size: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Courts Installed Globally</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </section>
 
@@ -1376,10 +1565,7 @@
                         </div>
                     </div>
                     <h4>MANZA MODEL</h4>
-                    <p><strong>Technical Specifications:</strong> Versatile and durable design for easy installation and long-term performance. Ideal for clubs and facilities seeking reliability and value. Features standard mesh panels and robust structural engineering.</p>
-                    <div style="margin-top: 1rem; padding: 1rem; background: rgba(255,255,255,0.03); border-radius: 4px;">
-                        <p style="font-size: 0.875rem; color: rgba(255,255,255,0.7); margin: 0;"><strong>Best For:</strong> New clubs, community facilities, recreational use</p>
-                    </div>
+                    <p>Versatile courts for clubs and recreational facilities</p>
                 </div>
 
                 <div class="court-card">
@@ -1396,10 +1582,7 @@
                     <div style="margin-bottom: 1rem;">
                         <span style="display: inline-block; background: #3b82f6; color: white; padding: 0.2rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 500;">PROFESSIONAL</span>
                     </div>
-                    <p><strong>Technical Specifications:</strong> High-resistance welded mesh structure with reinforced pillars for maximum stability. Professional-grade construction for intensive use with enhanced durability features.</p>
-                    <div style="margin-top: 1rem; padding: 1rem; background: rgba(255,255,255,0.03); border-radius: 8px;">
-                        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin: 0;"><strong>Best For:</strong> Professional clubs, high-traffic facilities, competitive play</p>
-                    </div>
+                    <p>Premium courts for professional clubs</p>
                 </div>
 
                 <div class="court-card">
@@ -1416,10 +1599,7 @@
                     <div style="margin-bottom: 1rem;">
                         <span style="display: inline-block; background: #10b981; color: white; padding: 0.2rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 500;">PANORAMIC</span>
                     </div>
-                    <p><strong>Technical Specifications:</strong> Premium Panoramic court featuring unobstructed views for players and spectators. Enhanced visibility and aesthetic appeal with glass panel construction.</p>
-                    <div style="margin-top: 1rem; padding: 1rem; background: rgba(255,255,255,0.03); border-radius: 8px;">
-                        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin: 0;"><strong>Best For:</strong> Premium facilities, spectator events, luxury installations</p>
-                    </div>
+                    <p>Panoramic courts with unobstructed views</p>
                 </div>
 
                 <div class="court-card">
@@ -1436,10 +1616,7 @@
                     <div style="margin-bottom: 1rem;">
                         <span style="display: inline-block; background: #8b5cf6; color: white; padding: 0.2rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 500;">SIGNATURE</span>
                     </div>
-                    <p><strong>Technical Specifications:</strong> Designed with input from professional player Paquito Navarro. Perfect balance of aesthetics, performance, and professional standards with signature design elements.</p>
-                    <div style="margin-top: 1rem; padding: 1rem; background: rgba(255,255,255,0.03); border-radius: 8px;">
-                        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin: 0;"><strong>Best For:</strong> Elite facilities, professional training, signature installations</p>
-                    </div>
+                    <p>Signature series designed by world champion</p>
                 </div>
 
                 <div class="court-card">
@@ -1456,64 +1633,24 @@
                     <div style="margin-bottom: 1rem;">
                         <span style="display: inline-block; background: #ef4444; color: white; padding: 0.2rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 500;">TOURNAMENT</span>
                     </div>
-                    <p><strong>Technical Specifications:</strong> Top-tier competition-grade court designed for international tournaments. Maximum visibility and premium construction with full glass surround.</p>
-                    <div style="margin-top: 1rem; padding: 1rem; background: rgba(255,255,255,0.03); border-radius: 8px;">
-                        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin: 0;"><strong>Best For:</strong> International tournaments, championship venues, premium clubs</p>
-                    </div>
+                    <p>Competition-grade courts for international tournaments</p>
                 </div>
 
                 <div class="court-card">
                     <div class="court-image-container">
-                        <img src="https://via.placeholder.com/400x300/1e293b/f97316?text=SINGLES+COURT" 
-                             alt="SINGLES COURT Compact Padel Court" 
-                             class="court-image"
-                             loading="lazy">
-                        <div class="gallery-overlay">
-                            <div class="gallery-indicator">IMAGES COMING SOON</div>
+                        <div style="width: 100%; height: 100%; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                            <span style="color: rgba(255,255,255,0.5); font-size: 3rem; margin-bottom: 0.5rem;">○</span>
+                            <span style="color: rgba(255,255,255,0.5); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em;">Coming Soon</span>
                         </div>
                     </div>
                     <h4>SINGLES COURT MODEL</h4>
                     <div style="margin-bottom: 1rem;">
                         <span style="display: inline-block; background: #f97316; color: white; padding: 0.2rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 500;">COMPACT</span>
                     </div>
-                    <p><strong>Technical Specifications:</strong> Compact singles padel court designed for training and recreational play. Space-efficient without compromising quality or playability.</p>
-                    <div style="margin-top: 1rem; padding: 1rem; background: rgba(255,255,255,0.03); border-radius: 8px;">
-                        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin: 0;"><strong>Best For:</strong> Training facilities, private residences, limited space installations</p>
-                    </div>
+                    <p>Space-efficient courts for training and private use</p>
                 </div>
             </div>
 
-            <!-- Customisation Section -->
-            <div style="margin-top: 4rem; padding: 3rem; background: rgba(255,255,255,0.05); border-radius: 16px; border: 1px solid rgba(255,255,255,0.1);">
-                <h3 style="color: #fbbf24; margin-bottom: 2rem; font-size: 1.6rem; text-align: center;">Customisation & Technical Options</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                    <div style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 12px;">
-                        <h4 style="color: white; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-                            🎨 <span>Visual Customisation</span>
-                        </h4>
-                        <ul style="color: rgba(255,255,255,0.85); line-height: 1.8; margin: 0; padding-left: 1.2rem;">
-                            <li>Choice of turf colours to match your brand</li>
-                            <li>Branded nets with custom logos and designs</li>
-                            <li>Custom court line colors and configurations</li>
-                            <li>Facility branding integration</li>
-                        </ul>
-                    </div>
-                    <div style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 12px;">
-                        <h4 style="color: white; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-                            🔧 <span>Technical Enhancements</span>
-                        </h4>
-                        <ul style="color: rgba(255,255,255,0.85); line-height: 1.8; margin: 0; padding-left: 1.2rem;">
-                            <li>Additional zinc coating for weather resistance</li>
-                            <li>Custom lighting configurations</li>
-                            <li>Enhanced drainage systems</li>
-                            <li>Climate-specific adaptations</li>
-                        </ul>
-                    </div>
-                </div>
-                <div style="text-align: center; margin-top: 2rem;">
-                    <a href="#contact" class="btn" style="padding: 1rem 2rem;">Schedule Consultation</a>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -1585,216 +1722,77 @@
                 </div>
                 
                 <h3 style="color: white; font-size: 2rem; margin-bottom: 1.5rem; font-weight: 300;">
-                    Padel Society - Muckamore Cricket Club, Antrim
+                    Padel Society - Antrim
                 </h3>
                 
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;" class="featured-project-grid">
-                    <div>
-                        <h4 style="color: white; margin-bottom: 1rem; font-size: 1.3rem;">Project Overview</h4>
-                        <p style="color: rgba(255,255,255,0.9); line-height: 1.8; margin-bottom: 1.5rem;">
-                            Padel-Craft is proud to be the exclusive installer for Padel Society's groundbreaking venture - Northern Ireland's premier padel facility. Selected through competitive tender, this multi-million pound investment represents a significant milestone in bringing world-class padel infrastructure to Northern Ireland.
-                        </p>
-                        
-                        <div style="margin-bottom: 1.5rem;">
-                            <h5 style="color: #60a5fa; margin-bottom: 0.8rem; font-size: 1.1rem;">Project Details:</h5>
-                            <ul style="color: rgba(255,255,255,0.85); line-height: 1.8; padding-left: 1.5rem;">
-                                <li><strong>4 Panoramic Premium-Grade Outdoor Courts</strong> from MANZA SPORT</li>
-                                <li><strong>Opening:</strong> July 2025</li>
-                                <li><strong>Location:</strong> Muckamore Cricket Club, Antrim</li>
-                                <li><strong>Investment:</strong> Multi-million pound project</li>
-                                <li><strong>Future Plans:</strong> Two additional sites in South Belfast</li>
-                            </ul>
-                        </div>
-                        
-                        <div style="padding: 1.2rem; background: rgba(59, 130, 246, 0.1); border-radius: 12px; border: 1px solid rgba(59, 130, 246, 0.3);">
-                            <p style="color: rgba(255,255,255,0.9); font-style: italic; margin: 0; font-size: 0.95rem;">
-                                "Unlike many quick-install competitors relying on second-hand equipment, Padel Society has invested in brand-new, top-tier panoramic courts from MANZA SPORT, <strong>built and installed by Padel-Craft</strong>, in line with the highest European standards."
-                            </p>
-                            <p style="color: rgba(255,255,255,0.6); margin: 0.5rem 0 0 0; font-size: 0.85rem;">
-                                — The Newsletter, December 2024
-                            </p>
-                        </div>
+                <div style="text-align: center;">
+                    <p style="color: rgba(255,255,255,0.9); font-size: 1.2rem; margin-bottom: 2rem;">
+                        4 Premium Panoramic Courts • Opening July 2025
+                    </p>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="#contact" class="btn" style="padding: 0.8rem 1.8rem;">Schedule Consultation</a>
+                        <a href="https://www.newsletter.co.uk/business/our-goal-is-to-lead-padels-growth-in-northern-ireland-major-investment-brings-world-class-padel-facilities-and-community-focus-to-antrim-with-belfast-locations-to-follow-5162435" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="btn btn-secondary" 
+                           style="padding: 0.8rem 1.8rem;">
+                            View Press →
+                        </a>
                     </div>
-                    
-                    <div>
-                        <div class="project-placeholder" style="height: 280px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
-                            <span style="font-size: 1.1rem; color: rgba(255,255,255,0.7); margin-bottom: 0.5rem;">[Padel Society Antrim Courts]</span>
-                            <span style="font-size: 0.85rem; color: rgba(255,255,255,0.5);">Installation in Progress</span>
-                        </div>
-                        
-                        <div style="margin-top: 1.5rem; padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 12px;">
-                            <h5 style="color: #fbbf24; margin-bottom: 0.8rem;">Project Metrics:</h5>
-                            <ul style="color: rgba(255,255,255,0.8); font-size: 0.9rem; line-height: 1.7; margin: 0; padding-left: 1.2rem;">
-                                <li>Investment: €400,000+</li>
-                                <li>Timeline: July 2025 opening</li>
-                                <li>Expected ROI: 24-36 months</li>
-                                <li>Projected annual revenue: €300,000+</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <a href="#contact" class="btn" style="padding: 0.8rem 1.8rem;">Schedule Consultation</a>
-                    <a href="https://www.newsletter.co.uk/business/our-goal-is-to-lead-padels-growth-in-northern-ireland-major-investment-brings-world-class-padel-facilities-and-community-focus-to-antrim-with-belfast-locations-to-follow-5162435" 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       class="btn btn-secondary" 
-                       style="padding: 0.8rem 1.8rem;">
-                        Read Full Article →
-                    </a>
                 </div>
             </div>
             
             <!-- Global MANZA SPORT Projects -->
-            <h3 style="color: white; margin-bottom: 2rem; font-size: 1.6rem; text-align: center;">Global MANZA SPORT Installations</h3>
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h3 style="color: white; margin-bottom: 1rem; font-size: 1.6rem;">Select Global Installations</h3>
+                <p style="color: rgba(255,255,255,0.8); font-size: 1rem;">
+                    MANZA SPORT • 70+ Countries • 1000+ Courts
+                </p>
+            </div>
             
-            <!-- MANZA Projects Showcase -->
-            <div style="background: rgba(255,255,255,0.05); padding: 3rem; border-radius: 4px; margin-bottom: 3rem;">
-                <div style="text-align: center; margin-bottom: 2rem;">
-                    <p style="color: rgba(255,255,255,0.8); font-size: 1rem; margin-bottom: 1.5rem;">
-                        MANZA SPORT has successfully installed courts in over 70 countries worldwide
-                    </p>
-                    <a href="https://manzasport.com/works?lang=en" target="_blank" rel="noopener" 
-                       class="btn" style="background: white; color: var(--primary);">
-                        View All MANZA Projects →
-                    </a>
-                </div>
-                
-                <!-- Featured MANZA Projects Grid -->
-                <div style="margin-top: 3rem;">
-                    <h4 style="color: var(--accent); margin-bottom: 2rem; text-align: center;">Featured International Projects</h4>
-                    <div class="projects-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-                        <!-- Project Tile Template -->
-                        <a href="https://manzasport.com/works?lang=en" target="_blank" rel="noopener" 
-                           class="project-tile" style="text-decoration: none; display: block;">
-                            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); 
-                                        padding: 2rem; border-radius: 4px; height: 100%; 
-                                        transition: all 0.2s ease; cursor: pointer;">
-                                <h5 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem;">Sport City Valencia</h5>
-                                <p style="color: var(--accent); font-size: 0.875rem; margin-bottom: 0.5rem;">Spain • 30 Courts</p>
-                                <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem; line-height: 1.4;">
-                                    Europe's largest padel club installation
-                                </p>
-                            </div>
-                        </a>
-                        
-                        <a href="https://manzasport.com/works?lang=en" target="_blank" rel="noopener" 
-                           class="project-tile" style="text-decoration: none; display: block;">
-                            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); 
-                                        padding: 2rem; border-radius: 4px; height: 100%; 
-                                        transition: all 0.2s ease; cursor: pointer;">
-                                <h5 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem;">Padel Haus Brooklyn</h5>
-                                <p style="color: var(--accent); font-size: 0.875rem; margin-bottom: 0.5rem;">USA • 3 Clubs</p>
-                                <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem; line-height: 1.4;">
-                                    First major padel facility in New York
-                                </p>
-                            </div>
-                        </a>
-                        
-                        <a href="https://manzasport.com/works?lang=en" target="_blank" rel="noopener" 
-                           class="project-tile" style="text-decoration: none; display: block;">
-                            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); 
-                                        padding: 2rem; border-radius: 4px; height: 100%; 
-                                        transition: all 0.2s ease; cursor: pointer;">
-                                <h5 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem;">Rafa Nadal Academy</h5>
-                                <p style="color: var(--accent); font-size: 0.875rem; margin-bottom: 0.5rem;">Kuwait • Premium Courts</p>
-                                <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem; line-height: 1.4;">
-                                    Elite training facility installation
-                                </p>
-                            </div>
-                        </a>
-                        
-                        <a href="https://manzasport.com/works?lang=en" target="_blank" rel="noopener" 
-                           class="project-tile" style="text-decoration: none; display: block;">
-                            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); 
-                                        padding: 2rem; border-radius: 4px; height: 100%; 
-                                        transition: all 0.2s ease; cursor: pointer;">
-                                <h5 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem;">Emirates Golf Club</h5>
-                                <p style="color: var(--accent); font-size: 0.875rem; margin-bottom: 0.5rem;">Dubai • Panoramic Courts</p>
-                                <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem; line-height: 1.4;">
-                                    Luxury installation in prestigious location
-                                </p>
-                            </div>
-                        </a>
-                        
-                        <a href="https://manzasport.com/works?lang=en" target="_blank" rel="noopener" 
-                           class="project-tile" style="text-decoration: none; display: block;">
-                            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); 
-                                        padding: 2rem; border-radius: 4px; height: 100%; 
-                                        transition: all 0.2s ease; cursor: pointer;">
-                                <h5 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem;">Esprit Padel Lyon</h5>
-                                <p style="color: var(--accent); font-size: 0.875rem; margin-bottom: 0.5rem;">France • 7 Courts</p>
-                                <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem; line-height: 1.4;">
-                                    Mix of Pro and Panoramic models
-                                </p>
-                            </div>
-                        </a>
-                        
-                        <a href="https://manzasport.com/works?lang=en" target="_blank" rel="noopener" 
-                           class="project-tile" style="text-decoration: none; display: block;">
-                            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); 
-                                        padding: 2rem; border-radius: 4px; height: 100%; 
-                                        transition: all 0.2s ease; cursor: pointer;">
-                                <h5 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem;">More Projects</h5>
-                                <p style="color: var(--accent); font-size: 0.875rem; margin-bottom: 0.5rem;">70+ Countries</p>
-                                <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem; line-height: 1.4;">
-                                    View complete portfolio →
-                                </p>
-                            </div>
-                        </a>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-placeholder">
+                        <img src="https://raw.githubusercontent.com/RRanch252/Padel-Craft/main/images/courts/miami-model/miami-model-02-aerial.jpg" 
+                             alt="Sport City Valencia">
+                    </div>
+                    <div class="project-content">
+                        <h4>Valencia, Spain</h4>
+                        <p>30 Courts • Europe's Largest Club</p>
                     </div>
                 </div>
-                
-                <!-- Bottom CTA -->
-                <div style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
-                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 1rem;">
-                        Partner with Padel-Craft for your premium Irish installation. By invitation and referral.
-                    </p>
-                    <a href="#contact" class="btn">Request Proposal</a>
+                <div class="project-card">
+                    <div class="project-placeholder">
+                        <img src="https://raw.githubusercontent.com/RRanch252/Padel-Craft/main/images/courts/pro-model/pro-model-01-hero.jpg" 
+                             alt="Padel Haus Brooklyn">
+                    </div>
+                    <div class="project-content">
+                        <h4>New York, USA</h4>
+                        <p>3 Clubs • First in NYC</p>
+                    </div>
                 </div>
+                <div class="project-card">
+                    <div class="project-placeholder">
+                        <img src="https://raw.githubusercontent.com/RRanch252/Padel-Craft/main/images/courts/paquito-navarro/paquito-navarro-02-detail.jpg" 
+                             alt="Rafa Nadal Academy">
+                    </div>
+                    <div class="project-content">
+                        <h4>Kuwait</h4>
+                        <p>Elite Training Facility</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="https://manzasport.com/works?lang=en" target="_blank" rel="noopener" 
+                   class="btn" style="background: white; color: var(--primary);">
+                    View All Projects →
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us Section -->
-    <section id="why-choose" class="section why-choose">
-        <div class="container">
-            <h2 class="section-title">Why Choose Padel-Craft</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🇮🇪</div>
-                    <h4>Leading National Groundworks Expertise</h4>
-                    <p>Ireland's leading expertise in padel court groundworks and site preparation ensuring optimal installations</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🏆</div>
-                    <h4>Trusted by Major Irish Projects</h4>
-                    <p>Selected installer for Padel Society's multi-million pound Northern Ireland expansion - delivering premium courts to the highest standards</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">👨‍💼</div>
-                    <h4>Professional Project Management</h4>
-                    <p>Experienced team managing every aspect of your project from start to finish</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💰</div>
-                    <h4>Competitive Pricing</h4>
-                    <p>Best value through direct supply chain and efficient project management</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🇪🇸</div>
-                    <h4>Direct MANZA SPORT Partnership</h4>
-                    <p>Official supplier ensuring authentic products, warranty support, and access to the latest innovations</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📍</div>
-                    <h4>All-Ireland Coverage</h4>
-                    <p>From Antrim to Cork, Belfast to Dublin - delivering projects across Ireland with local knowledge and expertise</p>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Contact Section -->
     <section id="contact" class="section contact">
@@ -1874,19 +1872,14 @@
                             </div>
                         </div>
                     </div>
-                    <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);">
-                        <h4 style="color: #fbbf24; margin-bottom: 1rem;">Next Steps:</h4>
-                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                            <a href="#contact" class="btn" style="flex: 1; min-width: 120px; text-align: center;">Request Proposal</a>
-                            <a href="#courts" class="btn btn-secondary" style="flex: 1; min-width: 120px; text-align: center;">View Courts</a>
-                        </div>
+                    <div style="margin-top: 2rem; text-align: center;">
+                        <a href="tel:+353876021637" class="btn">Call Now: +353 87 602 1637</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -1912,6 +1905,16 @@
             </div>
         </div>
     </footer>
+    
+    <!-- MOBILE IMPROVEMENT #3: Quick Contact Bar -->
+    <div class="quick-contact-bar">
+        <a href="tel:+353876021637" class="btn-call">
+            📞 Call Now
+        </a>
+        <a href="https://wa.me/353876021637?text=Hi%2C%20I%27d%20like%20to%20discuss%20installing%20padel%20courts" class="btn-whatsapp">
+            💬 WhatsApp
+        </a>
+    </div>
     
     <!-- Court Gallery Modal -->
     <div class="court-modal" id="courtModal">
@@ -2009,22 +2012,48 @@
         // Dismiss announcement banner
         function dismissBanner() {
             const banner = document.getElementById('announcementBanner');
-            const nav = document.querySelector('nav');
-            const body = document.body;
-            const hero = document.querySelector('.hero');
-            
-            banner.style.display = 'none';
-            nav.style.top = '0';
-            body.style.paddingTop = '0';
-            hero.style.marginTop = '0';
-            hero.style.height = '100vh';
-            
-            // Update mobile nav position
-            if (window.innerWidth <= 768) {
-                document.querySelector('.nav-links').style.top = '70px';
-                document.querySelector('.nav-links').style.height = 'calc(100vh - 70px)';
-            }
+            banner.style.animation = 'fadeOut 0.3s ease-out';
+            setTimeout(() => {
+                banner.style.display = 'none';
+            }, 300);
         }
+
+        // Add fadeOut animation dynamically
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeOut {
+                from {
+                    opacity: 1;
+                    transform: translateY(-50%) scale(1);
+                }
+                to {
+                    opacity: 0;
+                    transform: translateY(-50%) scale(0.95);
+                }
+            }
+            
+            @media (max-width: 768px) {
+                @keyframes fadeOut {
+                    from {
+                        opacity: 1;
+                        transform: none;
+                    }
+                    to {
+                        opacity: 0;
+                        transform: translateY(20px);
+                    }
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Auto-dismiss banner after 30 seconds
+        setTimeout(() => {
+            const banner = document.getElementById('announcementBanner');
+            if (banner && banner.style.display !== 'none') {
+                dismissBanner();
+            }
+        }, 30000);
 
         // Mobile menu toggle
         document.querySelector('.mobile-menu').addEventListener('click', function() {
@@ -2079,11 +2108,9 @@
                 const target = document.querySelector(targetId);
                 
                 if (target) {
-                    // Add offset for fixed navigation and announcement banner (if present)
+                    // Add offset for fixed navigation
                     const navHeight = document.querySelector('nav').offsetHeight;
-                    const announcementBanner = document.querySelector('.announcement-banner');
-                    const announcementHeight = announcementBanner && announcementBanner.style.display !== 'none' ? announcementBanner.offsetHeight : 0;
-                    const targetPosition = target.offsetTop - navHeight - announcementHeight - 20;
+                    const targetPosition = target.offsetTop - navHeight - 20;
                     
                     window.scrollTo({
                         top: targetPosition,
