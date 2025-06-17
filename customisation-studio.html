@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Customisation Portfolio | Padel-Craft</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            line-height: 1.6;
+            color: white;
+            background: #0f172a;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Navigation */
+        .back-nav {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .back-nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .back-link {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .back-link:hover {
+            color: #C9A961;
+        }
+        
+        .page-brand {
+            font-size: 1.75rem;
+            font-weight: 300;
+            color: white;
+            letter-spacing: 0.15em;
+        }
+        
+        .studio-page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        /* Header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 5rem;
+            position: relative;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(201, 169, 97, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .page-header h1 {
+            font-size: 3.5rem;
+            font-weight: 200;
+            letter-spacing: 0.03em;
+            color: white;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .page-header p {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        
+        /* Section Styling */
+        .tech-section {
+            margin-bottom: 5rem;
+            position: relative;
+        }
+        
+        .section-header {
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 2rem;
+        }
+        
+        .section-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 1px;
+            background: linear-gradient(90deg, #C9A961, transparent);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            color: white;
+            font-weight: 200;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.75rem;
+        }
+        
+        .section-subtitle {
+            color: rgba(255,255,255,0.6);
+            font-size: 1.125rem;
+            font-weight: 300;
+        }
+        
+        /* Technical Grid */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .tech-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        
+        .tech-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #C9A961, transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        
+        .tech-card:hover {
+            background: rgba(255,255,255,0.04);
+            border-color: rgba(201, 169, 97, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .tech-card:hover::before {
+            transform: translateX(100%);
+        }
+        
+        .tech-card h3 {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            letter-spacing: 0.02em;
+        }
+        
+        .tech-specs {
+            list-style: none;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+            line-height: 2;
+        }
+        
+        .tech-specs li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .spec-label {
+            font-weight: 300;
+        }
+        
+        .spec-value {
+            color: #C9A961;
+            font-weight: 400;
+        }
+        
+        /* Feature Showcase */
+        .feature-showcase {
+            background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, transparent 100%);
+            border: 1px solid rgba(201, 169, 97, 0.2);
+            border-radius: 24px;
+            padding: 4rem;
+            margin: 5rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-showcase::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -25%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(201, 169, 97, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+            position: relative;
+        }
+        
+        .showcase-item {
+            text-align: center;
+        }
+        
+        .showcase-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: rgba(201, 169, 97, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #C9A961;
+            position: relative;
+        }
+        
+        .showcase-icon::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 1px solid rgba(201, 169, 97, 0.3);
+            border-radius: 50%;
+            animation: pulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0; }
+            50% { transform: scale(1.2); opacity: 1; }
+        }
+        
+        .showcase-title {
+            color: white;
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+        
+        .showcase-desc {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.875rem;
+            font-weight: 300;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 4rem;
+            text-align: center;
+            margin-top: 5rem;
+            position: relative;
+        }
+        
+        .cta-section h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 200;
+            letter-spacing: 0.02em;
+        }
+        
+        .cta-section p {
+            color: rgba(255,255,255,0.7);
+            font-size: 1.125rem;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1.125rem 3rem;
+            background: #C9A961;
+            color: #0f172a;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 1rem;
+            letter-spacing: 0.02em;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn:hover {
+            background: #b09651;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(201, 169, 97, 0.3);
+        }
+        
+        .pricing-note {
+            margin-top: 1.5rem;
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.5);
+            font-style: italic;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .showcase-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+            
+            .feature-showcase {
+                padding: 2.5rem 1.5rem;
+            }
+            
+            .back-nav-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="back-nav">
+        <div class="back-nav-content">
+            <a href="index.html#courts" class="back-link">
+                ← Back to Courts
+            </a>
+            <div class="page-brand">PADEL / CRAFT</div>
+        </div>
+    </nav>
+
+    <div class="studio-page">
+        <!-- Header -->
+        <div class="page-header">
+            <h1>Technical Customisation Portfolio</h1>
+            <p>Precision engineering meets unlimited possibilities. Every MANZA SPORT court can be configured to your exact specifications.</p>
+        </div>
+        
+        <!-- Surface Technology Section -->
+        <section class="tech-section">
+            <div class="section-header">
+                <h2 class="section-title">Surface Technology</h2>
+                <p class="section-subtitle">Championship-grade playing surfaces engineered for optimal performance</p>
+            </div>
+            
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <h3>Mondo STX Super Court</h3>
+                    <ul class="tech-specs">
+                        <li>
+                            <span class="spec-label">Fiber Type</span>
+                            <span class="spec-value">Monofilament PE</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Density</span>
+                            <span class="spec-value">12mm Premium</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Dtex Rating</span>
+                            <span class="spec-value">8,800</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">UV Stability</span>
+                            <span class="spec-value">8000 Hours</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Colors Available</span>
+                            <span class="spec-value">Blue, Green</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Certification</span>
+                            <span class="spec-value">WPT Official</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="tech-card">
+                    <h3>Professional Fibrillated</h3>
+                    <ul class="tech-specs">
+                        <li>
+                            <span class="spec-label">Fiber Type</span>
+                            <span class="spec-value">Fibrillated PP</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Density</span>
+                            <span class="spec-value">10-12mm Options</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Dtex Rating</span>
+                            <span class="spec-value">6,600</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Drainage</span>
+                            <span class="spec-value">60L/min/m²</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Colors Available</span>
+                            <span class="spec-value">7 Options</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Warranty</span>
+                            <span class="spec-value">5 Years</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="tech-card">
+                    <h3>Textured Elite</h3>
+                    <ul class="tech-specs">
+                        <li>
+                            <span class="spec-label">Fiber Type</span>
+                            <span class="spec-value">Crimped Texture</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Profile</span>
+                            <span class="spec-value">Diamond Shape</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Memory</span>
+                            <span class="spec-value">95% Recovery</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Ball Response</span>
+                            <span class="spec-value">Championship</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Temperature</span>
+                            <span class="spec-value">-40° to +80°C</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Warranty</span>
+                            <span class="spec-value">7 Years</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Structural Engineering Section -->
+        <section class="tech-section">
+            <div class="section-header">
+                <h2 class="section-title">Structural Engineering</h2>
+                <p class="section-subtitle">Precision-manufactured components built to last</p>
+            </div>
+            
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <h3>Frame Construction</h3>
+                    <ul class="tech-specs">
+                        <li>
+                            <span class="spec-label">Steel Grade</span>
+                            <span class="spec-value">S275JR/S355</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Tube Dimensions</span>
+                            <span class="spec-value">100x50x3mm</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Galvanization</span>
+                            <span class="spec-value">Hot-Dip 85μm</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Additional Coating</span>
+                            <span class="spec-value">Optional 3-Layer</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Wind Resistance</span>
+                            <span class="spec-value">180 km/h</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Snow Load</span>
+                            <span class="spec-value">150 kg/m²</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="tech-card">
+                    <h3>Glass Specifications</h3>
+                    <ul class="tech-specs">
+                        <li>
+                            <span class="spec-label">Thickness Options</span>
+                            <span class="spec-value">10mm / 12mm</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Type</span>
+                            <span class="spec-value">Tempered Safety</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Standards</span>
+                            <span class="spec-value">EN 12150-2</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Transparency</span>
+                            <span class="spec-value">Ultra-Clear</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Edge Treatment</span>
+                            <span class="spec-value">Polished</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Impact Rating</span>
+                            <span class="spec-value">Class 1(B)1</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="tech-card">
+                    <h3>Color Customisation</h3>
+                    <ul class="tech-specs">
+                        <li>
+                            <span class="spec-label">RAL Colors</span>
+                            <span class="spec-value">200+ Options</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Application</span>
+                            <span class="spec-value">Powder Coating</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Thickness</span>
+                            <span class="spec-value">60-80 μm</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Adhesion</span>
+                            <span class="spec-value">ISO 2409 Gt0</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Salt Spray Test</span>
+                            <span class="spec-value">1000+ Hours</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Color Warranty</span>
+                            <span class="spec-value">10 Years</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Performance Systems -->
+        <section class="tech-section">
+            <div class="section-header">
+                <h2 class="section-title">Performance Systems</h2>
+                <p class="section-subtitle">Advanced technology for optimal playing conditions</p>
+            </div>
+            
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <h3>LED Lighting Systems</h3>
+                    <ul class="tech-specs">
+                        <li>
+                            <span class="spec-label">Luminance</span>
+                            <span class="spec-value">500-700 LUX</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Fixtures</span>
+                            <span class="spec-value">8 x 200W</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Color Temperature</span>
+                            <span class="spec-value">5000K Daylight</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">CRI Rating</span>
+                            <span class="spec-value">&gt;90</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Control System</span>
+                            <span class="spec-value">Smart/DALI</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Lifespan</span>
+                            <span class="spec-value">50,000 Hours</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="tech-card">
+                    <h3>Climate Protection</h3>
+                    <ul class="tech-specs">
+                        <li>
+                            <span class="spec-label">Base Protection</span>
+                            <span class="spec-value">Hot-Dip Galv</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Marine Option</span>
+                            <span class="spec-value">Triple Zinc</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Fixings</span>
+                            <span class="spec-value">SS316 Grade</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Corrosion Class</span>
+                            <span class="spec-value">C5-M Marine</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Testing</span>
+                            <span class="spec-value">ISO 12944</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Warranty</span>
+                            <span class="spec-value">15 Years</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="tech-card">
+                    <h3>Drainage Solutions</h3>
+                    <ul class="tech-specs">
+                        <li>
+                            <span class="spec-label">System Type</span>
+                            <span class="spec-value">Integrated</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Capacity</span>
+                            <span class="spec-value">100L/min</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Channel Width</span>
+                            <span class="spec-value">150mm</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Grating</span>
+                            <span class="spec-value">Galv Steel</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Fall Gradient</span>
+                            <span class="spec-value">0.5-1%</span>
+                        </li>
+                        <li>
+                            <span class="spec-label">Dry Time</span>
+                            <span class="spec-value">30 Minutes</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Feature Showcase -->
+        <div class="feature-showcase">
+            <h2 style="color: white; font-size: 2.5rem; font-weight: 200; margin-bottom: 1rem;">Premium Features Available</h2>
+            <p style="color: rgba(255,255,255,0.7); font-size: 1.125rem; max-width: 700px; margin: 0 auto;">
+                Enhance your court with these professional-grade additions
+            </p>
+            
+            <div class="showcase-grid">
+                <div class="showcase-item">
+                    <div class="showcase-icon">B</div>
+                    <h4 class="showcase-title">Custom Branding</h4>
+                    <p class="showcase-desc">Net logos, court graphics, LED displays</p>
+                </div>
+                <div class="showcase-item">
+                    <div class="showcase-icon">S</div>
+                    <h4 class="showcase-title">Smart Technology</h4>
+                    <p class="showcase-desc">IoT sensors, booking systems, analytics</p>
+                </div>
+                <div class="showcase-item">
+                    <div class="showcase-icon">A</div>
+                    <h4 class="showcase-title">Acoustic Control</h4>
+                    <p class="showcase-desc">Sound dampening panels and barriers</p>
+                </div>
+                <div class="showcase-item">
+                    <div class="showcase-icon">C</div>
+                    <h4 class="showcase-title">Camera Systems</h4>
+                    <p class="showcase-desc">Match recording and streaming ready</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2>Configure Your Premium Court</h2>
+            <p>Our technical team will guide you through every customisation option to create the perfect court for your facility.</p>
+            <a href="index.html#contact" class="btn">Request Technical Consultation →</a>
+            <p class="pricing-note">All customisations priced on application based on project specifications</p>
+        </div>
+    </div>
+</body>
+</html>
