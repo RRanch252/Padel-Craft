@@ -1411,9 +1411,8 @@
             }
             
             /* Mobile MANZA Key Stats */
-            #about .container > div:last-child > div:last-child > div > div {
-                grid-template-columns: 1fr !important;
-                gap: 2rem !important;
+            .manza-stats-grid {
+    grid-template-columns: 1fr !important;
             }
             
             /* Mobile modal adjustments */
@@ -1600,7 +1599,7 @@
                     MANZA Key Stats
                 </h3>
                 <div style="background: rgba(15, 23, 42, 0.05); padding: 3rem; border-radius: 4px;">
-                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem;">
+                    <div class="manza-stats-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem;">
                         <div>
                             <div style="font-size: 3rem; font-weight: 300; color: var(--accent);">15+</div>
                             <div style="font-size: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Years Experience</div>
