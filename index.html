@@ -1914,8 +1914,6 @@
                 </div>
             </div>
 
-<!-- Replace your current customization section with this sophisticated version -->
-
 <!-- Customisation Section - Premium Technical Showcase -->
 <div style="margin-top: 4rem; position: relative; overflow: hidden;">
     <!-- Background gradient effect -->
@@ -1935,79 +1933,131 @@
         </div>
         
         <!-- Technical Features Grid -->
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-bottom: 4rem;">
+        <div class="customisation-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-bottom: 4rem;">
             <!-- Surface Technology -->
-            <div style="text-align: center; position: relative; group" 
-                 onmouseover="this.querySelector('.feature-details').style.opacity='1'; this.querySelector('.feature-details').style.transform='translateY(0)'"
-                 onmouseout="this.querySelector('.feature-details').style.opacity='0'; this.querySelector('.feature-details').style.transform='translateY(10px)'">
+            <div class="feature-item" style="text-align: center; position: relative;">
                 <div style="width: 80px; height: 80px; margin: 0 auto 1.5rem; position: relative;">
                     <div style="width: 100%; height: 100%; background: linear-gradient(135deg, rgba(201, 169, 97, 0.1) 0%, rgba(201, 169, 97, 0.05) 100%); border-radius: 50%; position: absolute;"></div>
                     <div style="width: 60%; height: 60%; background: linear-gradient(135deg, rgba(201, 169, 97, 0.2) 0%, rgba(201, 169, 97, 0.1) 100%); border-radius: 50%; position: absolute; top: 20%; left: 20%;"></div>
                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #C9A961; font-size: 1.5rem; font-weight: 300;">S</div>
                 </div>
                 <h4 style="color: white; font-size: var(--h4-size); font-weight: 400; margin-bottom: 0.5rem;">Surface Technology</h4>
-                <p style="color: rgba(255,255,255,0.5); font-size: var(--text-small); font-weight: 300;">World Padel Tour Standards</p>
-                <div class="feature-details" style="position: absolute; top: 100%; left: 0; right: 0; margin-top: 1rem; opacity: 0; transform: translateY(10px); transition: all 0.3s ease; z-index: 10;">
-                    <div style="background: rgba(15, 23, 42, 0.98); border: 1px solid rgba(201, 169, 97, 0.3); border-radius: 12px; padding: 1.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                        <ul style="text-align: left; color: rgba(255,255,255,0.8); font-size: var(--text-small); line-height: 1.8; list-style: none; margin: 0;">
-                            <li style="padding: 0.25rem 0;">• Mondo STX monofilament systems</li>
-                            <li style="padding: 0.25rem 0;">• 7 professional surface options</li>
-                            <li style="padding: 0.25rem 0;">• Temperature-stable polymers</li>
-                            <li style="padding: 0.25rem 0;">• UV-resistant colorfast technology</li>
-                        </ul>
-                    </div>
+                <p style="color: rgba(255,255,255,0.5); font-size: var(--text-small); font-weight: 300; margin-bottom: 1rem;">World Padel Tour Standards</p>
+                <div class="feature-details-mobile" style="display: none; background: rgba(15, 23, 42, 0.98); border: 1px solid rgba(201, 169, 97, 0.3); border-radius: 12px; padding: 1.5rem; margin-top: 1rem;">
+                    <ul style="text-align: left; color: rgba(255,255,255,0.8); font-size: var(--text-small); line-height: 1.8; list-style: none; margin: 0;">
+                        <li style="padding: 0.25rem 0;">• Mondo STX monofilament systems</li>
+                        <li style="padding: 0.25rem 0;">• 7 professional surface options</li>
+                        <li style="padding: 0.25rem 0;">• Temperature-stable polymers</li>
+                        <li style="padding: 0.25rem 0;">• UV-resistant colorfast technology</li>
+                    </ul>
                 </div>
+                <button onclick="toggleFeatureDetails(this)" class="mobile-expand-btn" style="display: none; background: transparent; border: 1px solid var(--accent); color: var(--accent); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.875rem; cursor: pointer; transition: all 0.2s ease;">
+                    Learn More +
+                </button>
             </div>
             
             <!-- Structural Engineering -->
-            <div style="text-align: center; position: relative;"
-                 onmouseover="this.querySelector('.feature-details').style.opacity='1'; this.querySelector('.feature-details').style.transform='translateY(0)'"
-                 onmouseout="this.querySelector('.feature-details').style.opacity='0'; this.querySelector('.feature-details').style.transform='translateY(10px)'">
+            <div class="feature-item" style="text-align: center; position: relative;">
                 <div style="width: 80px; height: 80px; margin: 0 auto 1.5rem; position: relative;">
                     <div style="width: 100%; height: 100%; background: linear-gradient(135deg, rgba(201, 169, 97, 0.1) 0%, rgba(201, 169, 97, 0.05) 100%); border-radius: 20%; position: absolute; transform: rotate(45deg);"></div>
                     <div style="width: 60%; height: 60%; background: linear-gradient(135deg, rgba(201, 169, 97, 0.2) 0%, rgba(201, 169, 97, 0.1) 100%); border-radius: 15%; position: absolute; top: 20%; left: 20%; transform: rotate(45deg);"></div>
                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #C9A961; font-size: 1.5rem; font-weight: 300;">E</div>
                 </div>
                 <h4 style="color: white; font-size: var(--h4-size); font-weight: 400; margin-bottom: 0.5rem;">Structural Excellence</h4>
-                <p style="color: rgba(255,255,255,0.5); font-size: var(--text-small); font-weight: 300;">Precision Engineering</p>
-                <div class="feature-details" style="position: absolute; top: 100%; left: -50%; right: -50%; margin-top: 1rem; opacity: 0; transform: translateY(10px); transition: all 0.3s ease; z-index: 10;">
-                    <div style="background: rgba(15, 23, 42, 0.98); border: 1px solid rgba(201, 169, 97, 0.3); border-radius: 12px; padding: 1.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                        <ul style="text-align: left; color: rgba(255,255,255,0.8); font-size: var(--text-small); line-height: 1.8; list-style: none; margin: 0;">
-                            <li style="padding: 0.25rem 0;">• 200+ RAL color specifications</li>
-                            <li style="padding: 0.25rem 0;">• Triple-layer galvanization options</li>
-                            <li style="padding: 0.25rem 0;">• Marine-grade SS316 components</li>
-                            <li style="padding: 0.25rem 0;">• Wind resistance to 180km/h</li>
-                        </ul>
-                    </div>
+                <p style="color: rgba(255,255,255,0.5); font-size: var(--text-small); font-weight: 300; margin-bottom: 1rem;">Precision Engineering</p>
+                <div class="feature-details-mobile" style="display: none; background: rgba(15, 23, 42, 0.98); border: 1px solid rgba(201, 169, 97, 0.3); border-radius: 12px; padding: 1.5rem; margin-top: 1rem;">
+                    <ul style="text-align: left; color: rgba(255,255,255,0.8); font-size: var(--text-small); line-height: 1.8; list-style: none; margin: 0;">
+                        <li style="padding: 0.25rem 0;">• 200+ RAL color specifications</li>
+                        <li style="padding: 0.25rem 0;">• Triple-layer galvanization options</li>
+                        <li style="padding: 0.25rem 0;">• Marine-grade SS316 components</li>
+                        <li style="padding: 0.25rem 0;">• Wind resistance to 180km/h</li>
+                    </ul>
                 </div>
+                <button onclick="toggleFeatureDetails(this)" class="mobile-expand-btn" style="display: none; background: transparent; border: 1px solid var(--accent); color: var(--accent); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.875rem; cursor: pointer; transition: all 0.2s ease;">
+                    Learn More +
+                </button>
             </div>
             
             <!-- Performance Systems -->
-            <div style="text-align: center; position: relative;"
-                 onmouseover="this.querySelector('.feature-details').style.opacity='1'; this.querySelector('.feature-details').style.transform='translateY(0)'"
-                 onmouseout="this.querySelector('.feature-details').style.opacity='0'; this.querySelector('.feature-details').style.transform='translateY(10px)'">
+            <div class="feature-item" style="text-align: center; position: relative;">
                 <div style="width: 80px; height: 80px; margin: 0 auto 1.5rem; position: relative;">
                     <div style="width: 100%; height: 100%; background: linear-gradient(135deg, rgba(201, 169, 97, 0.1) 0%, rgba(201, 169, 97, 0.05) 100%); border-radius: 16px; position: absolute;"></div>
                     <div style="width: 100%; height: 100%; border: 2px solid rgba(201, 169, 97, 0.2); border-radius: 16px; position: absolute; transform: scale(0.8);"></div>
                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #C9A961; font-size: 1.5rem; font-weight: 300;">P</div>
                 </div>
                 <h4 style="color: white; font-size: var(--h4-size); font-weight: 400; margin-bottom: 0.5rem;">Performance Systems</h4>
-                <p style="color: rgba(255,255,255,0.5); font-size: var(--text-small); font-weight: 300;">Championship Standards</p>
-                <div class="feature-details" style="position: absolute; top: 100%; left: 0; right: 0; margin-top: 1rem; opacity: 0; transform: translateY(10px); transition: all 0.3s ease; z-index: 10;">
-                    <div style="background: rgba(15, 23, 42, 0.98); border: 1px solid rgba(201, 169, 97, 0.3); border-radius: 12px; padding: 1.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                        <ul style="text-align: left; color: rgba(255,255,255,0.8); font-size: var(--text-small); line-height: 1.8; list-style: none; margin: 0;">
-                            <li style="padding: 0.25rem 0;">• LED systems 500-700 LUX</li>
-                            <li style="padding: 0.25rem 0;">• Integrated drainage networks</li>
-                            <li style="padding: 0.25rem 0;">• 12mm tempered safety glass</li>
-                            <li style="padding: 0.25rem 0;">• Smart court technology ready</li>
-                        </ul>
-                    </div>
+                <p style="color: rgba(255,255,255,0.5); font-size: var(--text-small); font-weight: 300; margin-bottom: 1rem;">Championship Standards</p>
+                <div class="feature-details-mobile" style="display: none; background: rgba(15, 23, 42, 0.98); border: 1px solid rgba(201, 169, 97, 0.3); border-radius: 12px; padding: 1.5rem; margin-top: 1rem;">
+                    <ul style="text-align: left; color: rgba(255,255,255,0.8); font-size: var(--text-small); line-height: 1.8; list-style: none; margin: 0;">
+                        <li style="padding: 0.25rem 0;">• LED systems 500-700 LUX</li>
+                        <li style="padding: 0.25rem 0;">• Integrated drainage networks</li>
+                        <li style="padding: 0.25rem 0;">• 12mm tempered safety glass</li>
+                        <li style="padding: 0.25rem 0;">• Smart court technology ready</li>
+                    </ul>
                 </div>
+                <button onclick="toggleFeatureDetails(this)" class="mobile-expand-btn" style="display: none; background: transparent; border: 1px solid var(--accent); color: var(--accent); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.875rem; cursor: pointer; transition: all 0.2s ease;">
+                    Learn More +
+                </button>
             </div>
         </div>
         
+        <!-- Desktop hover functionality -->
+        <style>
+            @media (min-width: 769px) {
+                .feature-item {
+                    position: relative;
+                }
+                
+                .feature-item:hover .feature-details-desktop {
+                    opacity: 1 !important;
+                    visibility: visible !important;
+                    transform: translateY(0) !important;
+                }
+                
+                .feature-details-desktop {
+                    position: absolute;
+                    top: 100%;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(10px);
+                    width: 280px;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: all 0.3s ease;
+                    z-index: 10;
+                    margin-top: 1rem;
+                }
+                
+                .feature-details-desktop > div {
+                    background: rgba(15, 23, 42, 0.98);
+                    border: 1px solid rgba(201, 169, 97, 0.3);
+                    border-radius: 12px;
+                    padding: 1.5rem;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+                }
+            }
+        </style>
+        
+        <!-- Add desktop hover divs with JavaScript -->
+        <script>
+            // Add desktop hover functionality
+            document.addEventListener('DOMContentLoaded', function() {
+                if (window.innerWidth > 768) {
+                    const features = document.querySelectorAll('.feature-item');
+                    features.forEach(feature => {
+                        const mobileDetails = feature.querySelector('.feature-details-mobile');
+                        if (mobileDetails) {
+                            const desktopDetails = document.createElement('div');
+                            desktopDetails.className = 'feature-details-desktop';
+                            desktopDetails.innerHTML = '<div>' + mobileDetails.innerHTML + '</div>';
+                            feature.appendChild(desktopDetails);
+                        }
+                    });
+                }
+            });
+        </script>
+        
         <!-- Technical Specifications Preview -->
-        <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 3rem; margin-bottom: 3rem;">
+        <div class="tech-specs-grid" style="background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 3rem; margin-bottom: 3rem;">
             <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center;">
                 <div>
                     <div style="font-size: 2.5rem; font-weight: 200; color: #C9A961; margin-bottom: 0.5rem;">12mm</div>
@@ -2033,15 +2083,94 @@
             <p style="color: rgba(255,255,255,0.6); font-size: var(--text-base); margin-bottom: 2rem; font-weight: 300;">
                 Explore the complete technical specifications and customisation possibilities
             </p>
-            <a href="customisation-studio.html" 
-               style="display: inline-block; padding: 1rem 2.5rem; background: transparent; border: 1px solid #C9A961; color: #C9A961; text-decoration: none; border-radius: 4px; font-weight: 400; font-size: var(--text-base); letter-spacing: 0.05em; transition: all 0.3s ease; position: relative; overflow: hidden;"
-               onmouseover="this.style.background='#C9A961'; this.style.color='#0f172a'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 30px rgba(201, 169, 97, 0.3)'"
-               onmouseout="this.style.background='transparent'; this.style.color='#C9A961'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                View Technical Portfolio →
+            <a href="#contact" 
+               class="btn btn-secondary"
+               style="display: inline-block; padding: 1rem 2.5rem;">
+                Request Custom Specifications →
             </a>
-            </div>
         </div>
     </div>
+    
+    <!-- Mobile Styles -->
+    <style>
+        @media (max-width: 768px) {
+            /* Hide desktop background gradient on mobile */
+            .courts > .container > div:nth-child(3) > div:first-child {
+                display: none !important;
+            }
+            
+            /* Adjust padding for mobile */
+            .courts > .container > div:nth-child(3) > div:nth-child(2) {
+                padding: 2rem 1.5rem !important;
+                border-radius: 16px !important;
+            }
+            
+            /* Section header mobile */
+            .courts > .container > div:nth-child(3) h3 {
+                font-size: 1.75rem !important;
+            }
+            
+            /* Grid adjustments */
+            .customisation-grid {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+            
+            .tech-specs-grid > div {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 1.5rem !important;
+            }
+            
+            .tech-specs-grid {
+                padding: 2rem !important;
+            }
+            
+            /* Show mobile expand buttons */
+            .mobile-expand-btn {
+                display: inline-block !important;
+                margin-top: 0.5rem;
+            }
+            
+            /* Typography adjustments */
+            .tech-specs-grid div > div:first-child {
+                font-size: 2rem !important;
+            }
+            
+            /* CTA button mobile */
+            .courts > .container > div:nth-child(3) a.btn {
+                padding: 0.875rem 2rem !important;
+                font-size: 0.9375rem !important;
+            }
+        }
+    </style>
+    
+    <!-- Mobile interaction script -->
+    <script>
+        function toggleFeatureDetails(button) {
+            const details = button.previousElementSibling;
+            const isVisible = details.style.display === 'block';
+            
+            if (isVisible) {
+                details.style.display = 'none';
+                button.textContent = 'Learn More +';
+            } else {
+                details.style.display = 'block';
+                button.textContent = 'Show Less −';
+            }
+            
+            // Close other open details
+            const allDetails = document.querySelectorAll('.feature-details-mobile');
+            const allButtons = document.querySelectorAll('.mobile-expand-btn');
+            
+            allDetails.forEach((detail, index) => {
+                if (detail !== details && detail.style.display === 'block') {
+                    detail.style.display = 'none';
+                    allButtons[index].textContent = 'Learn More +';
+                }
+            });
+        }
+    </script>
+</div>
     </section>
             
         <!-- Updated Technical Specifications Bar -->
