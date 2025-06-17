@@ -49,6 +49,19 @@
             --gray: #6c757d;
             --text-primary: #0f172a;
             --text-secondary: #6c757d;
+            
+            /* Refined Typography System */
+            --h1-size: 3.75rem;      /* Main hero only */
+            --h2-size: 2rem;         /* Section titles - more elegant */
+            --h3-size: 1.5rem;       /* Subsection titles */
+            --h4-size: 1.25rem;      /* Card titles */
+            --h5-size: 1.125rem;     /* Small headings */
+            
+            /* Body Text */
+            --text-large: 1.125rem;  /* Subtitles, important text */
+            --text-base: 1rem;       /* Standard body text */
+            --text-small: 0.9375rem; /* Supporting text */
+            --text-tiny: 0.8125rem;  /* Labels, meta text */
         }
 
         body {
@@ -58,6 +71,12 @@
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Better strong emphasis */
+        strong {
+            font-weight: 600;
+            color: inherit;
         }
 
         /* Premium Navigation */
@@ -141,7 +160,7 @@
             color: var(--primary);
             padding: 0.25rem 0.75rem;
             border-radius: 20px;
-            font-size: 0.75rem;
+            font-size: var(--text-tiny);
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.05em;
@@ -149,14 +168,15 @@
         }
         
         .announcement-title {
-            font-size: 1.1rem;
+            font-size: 1.0625rem;
             font-weight: 500;
             line-height: 1.3;
             color: white;
+            letter-spacing: -0.01em;
         }
         
         .announcement-subtitle {
-            font-size: 0.875rem;
+            font-size: var(--text-small);
             color: rgba(255,255,255,0.7);
             line-height: 1.4;
         }
@@ -167,7 +187,7 @@
             color: var(--accent);
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.875rem;
+            font-size: var(--text-small);
             transition: all 0.2s ease;
             position: relative;
         }
@@ -247,11 +267,11 @@
         }
 
         .logo {
-            font-size: 1.75rem;
-            font-weight: 300;
+            font-size: 1.5rem;
+            font-weight: 400;
             color: white;
             text-decoration: none;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.08em;
             position: relative;
         }
 
@@ -313,7 +333,7 @@
         /* Dropdown Menu Styles - Simplified */
         .dropdown-toggle::after {
             content: '▾';
-            font-size: 0.75rem;
+            font-size: var(--text-tiny);
             margin-left: 0.25rem;
             opacity: 0.6;
         }
@@ -344,7 +364,7 @@
             display: block;
             padding: 0.75rem 1.5rem;
             color: var(--text-primary);
-            font-size: 0.875rem;
+            font-size: var(--text-small);
             transition: background 0.2s ease;
         }
 
@@ -365,7 +385,7 @@
 
         .dropdown-header {
             padding: 0.5rem 1.5rem;
-            font-size: 0.75rem;
+            font-size: var(--text-tiny);
             color: var(--gray);
             text-transform: uppercase;
             letter-spacing: 0.05em;
@@ -382,7 +402,7 @@
         
         .dropdown-info p {
             color: var(--text-secondary);
-            font-size: 0.85rem;
+            font-size: var(--text-small);
             line-height: 1.5;
             margin: 0;
         }
@@ -467,7 +487,7 @@
             text-align: center;
             color: white;
             position: relative;
-            padding-top: 80px; /* Only account for fixed nav */
+            padding-top: 60px; /* Only account for fixed nav */
         }
 
         .hero-content {
@@ -477,66 +497,77 @@
         }
 
         .hero h1 {
-            font-size: 4rem;
-            font-weight: 100;
-            letter-spacing: 0.15em;
-            margin-bottom: 3rem;
+            font-size: var(--h1-size);
+            font-weight: 200;
+            letter-spacing: 0.08em;
+            margin-bottom: 2rem;
             color: white;
+            line-height: 1.1;
         }
         
         /* MOBILE IMPROVEMENT #2: Fix hero text sizing */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem !important;
-                letter-spacing: 0.1em !important;
-                line-height: 1.2;
+                letter-spacing: 0.04em !important;
+                line-height: 1.1;
                 margin-bottom: 1.5rem;
+                font-weight: 300;
             }
             
             .hero-description {
-                font-size: 0.95rem !important;
+                font-size: 1.0625rem !important;
                 line-height: 1.6;
+            }
+            
+            .section-title {
+                font-size: 1.75rem;
             }
         }
 
         .hero-subtitle {
-            font-size: 1.25rem;
-            font-weight: 200;
-            letter-spacing: 0.08em;
-            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 0.02em;
+            margin-bottom: 1.5rem;
             color: var(--accent);
+            opacity: 0.9;
         }
 
         .hero-description {
-            font-size: 1.125rem;
-            line-height: 1.8;
-            margin-bottom: 3rem;
-            opacity: 0.9;
-            font-weight: 300;
-            max-width: 700px;
+            font-size: 1.1875rem;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+            opacity: 0.85;
+            font-weight: 400;
+            max-width: 720px;
             margin-left: auto;
             margin-right: auto;
+            color: rgba(255,255,255,0.9);
         }
 
         /* Premium Button System - Simplified */
         .btn {
-            padding: 0.875rem 2rem;
+            padding: 0.75rem 1.75rem;
             background: var(--accent);
             color: var(--primary);
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 3px;
             font-weight: 500;
             font-size: 0.9375rem;
-            letter-spacing: 0.01em;
+            letter-spacing: 0;
             transition: all 0.2s ease;
             border: none;
             cursor: pointer;
             display: inline-block;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .btn:hover {
             background: var(--primary);
             color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
 
         .btn-secondary {
@@ -559,7 +590,16 @@
 
         /* Premium Sections */
         .section {
-            padding: 8rem 0;
+            padding: 6rem 0;
+        }
+        
+        /* Add subtle shadows to white text on dark backgrounds */
+        .courts .section-title,
+        .projects .section-title,
+        .why-choose .section-title,
+        .contact .section-title,
+        .services .section-title {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .container {
@@ -569,24 +609,26 @@
         }
 
         .section-title {
-            font-size: 3rem;
-            font-weight: 100;
-            letter-spacing: 0.02em;
-            margin-bottom: 1.5rem;
+            font-size: var(--h2-size);
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            margin-bottom: 1rem;
             text-align: center;
             color: var(--text-primary);
+            line-height: 1.3;
         }
 
         .section-subtitle {
             text-align: center;
-            font-size: 1.125rem;
-            margin-bottom: 3rem;
+            font-size: var(--text-large);
+            margin-bottom: 3.5rem;
             color: var(--text-secondary);
-            font-weight: 300;
-            max-width: 700px;
+            font-weight: 400;
+            max-width: 650px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.6;
+            line-height: 1.7;
+            opacity: 0.85;
         }
 
         /* Premium About Section */
@@ -603,7 +645,7 @@
         }
 
         .about-text h3 {
-            font-size: 2rem;
+            font-size: var(--h3-size);
             font-weight: 300;
             margin-bottom: 2rem;
             color: var(--text-primary);
@@ -611,10 +653,11 @@
 
         .about-text p {
             font-size: 1.0625rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
+            line-height: 1.75;
+            margin-bottom: 1.25rem;
             color: var(--text-secondary);
-            font-weight: 300;
+            font-weight: 400;
+            opacity: 0.9;
         }
 
         .about-placeholder {
@@ -625,7 +668,7 @@
             align-items: center;
             justify-content: center;
             color: var(--gray);
-            font-size: 1rem;
+            font-size: var(--text-base);
         }
 
         /* Premium Feature Cards - Simplified */
@@ -648,11 +691,11 @@
         }
 
         .feature-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.08);
             padding: 2.5rem;
             border-radius: 4px;
             text-align: center;
-            border: 1px solid rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.1);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
@@ -676,16 +719,38 @@
         }
 
         .feature-card h4 {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-            font-weight: 500;
+            font-size: var(--h4-size);
+            margin-bottom: 0.75rem;
+            color: white;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
         }
 
         .feature-card p {
-            font-size: 0.9375rem;
+            font-size: var(--text-small);
+            color: rgba(255,255,255,0.8);
+            line-height: 1.65;
+            font-weight: 300;
+        }
+        
+        /* Special styling for About section feature cards */
+        .about .feature-card {
+            background: rgba(15, 23, 42, 0.02);
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        
+        .about .feature-card h4 {
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 1.1875rem;
+        }
+        
+        .about .feature-card p {
             color: var(--text-secondary);
-            line-height: 1.6;
+            font-size: 0.9375rem;
+            line-height: 1.65;
         }
 
         /* Courts Section */
@@ -708,16 +773,38 @@
             gap: 2rem;
         }
 
+        /* Enhanced court card hover effects */
         .court-card {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.08);
             border-radius: 4px;
             padding: 2rem;
-            transition: transform 0.2s ease;
+            transition: all 0.3s ease;
             border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .court-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent, rgba(255,255,255,0.02));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
         }
 
         .court-card:hover {
             transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+            border-color: rgba(255,255,255,0.15);
+        }
+        
+        .court-card:hover::before {
+            opacity: 1;
         }
 
         .court-image-container {
@@ -738,16 +825,18 @@
         }
 
         .court-card h4 {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
+            font-size: var(--h4-size);
+            margin-bottom: 0.75rem;
             color: var(--accent);
-            font-weight: 400;
+            font-weight: 500;
+            letter-spacing: -0.01em;
         }
 
         .court-card p {
             font-size: 0.9375rem;
             color: rgba(255,255,255,0.85);
-            line-height: 1.6;
+            line-height: 1.65;
+            font-weight: 300;
         }
         
         /* Gallery Hover Overlay */
@@ -772,7 +861,7 @@
 
         .gallery-indicator {
             color: white;
-            font-size: 0.95rem;
+            font-size: var(--text-base);
             letter-spacing: 0.05em;
             padding: 0.75rem 1.5rem;
             border: 1px solid rgba(255,255,255,0.8);
@@ -862,12 +951,26 @@
 
         /* Installation Timeline Section */
         .services {
-            background: white;
+            background: var(--primary);
+            color: white;
+        }
+        
+        .services .section-title {
+            color: white;
+        }
+        
+        .services .section-subtitle {
+            color: rgba(255,255,255,0.8);
+        }
+        
+        /* Update timeline background */
+        .services .timeline-container {
+            background: rgba(255, 255, 255, 0.08);
         }
 
         /* Projects Section */
         .projects {
-            background: #0f172a;
+            background: var(--primary);
             color: white;
         }
 
@@ -886,7 +989,7 @@
         }
 
         .project-card {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.08);
             border-radius: 16px;
             overflow: hidden;
             transition: all 0.3s ease;
@@ -894,7 +997,7 @@
         }
 
         .project-card:hover {
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.1);
             transform: translateY(-8px);
         }
 
@@ -906,7 +1009,7 @@
             justify-content: center;
             border-bottom: 1px solid rgba(255,255,255,0.1);
             color: rgba(255,255,255,0.6);
-            font-size: 0.9rem;
+            font-size: var(--text-small);
         }
 
         .project-content {
@@ -914,16 +1017,16 @@
         }
 
         .project-content h4 {
-            font-size: 1.3rem;
-            margin-bottom: 0.8rem;
+            font-size: 1.1875rem;
+            margin-bottom: 0.75rem;
             color: #fbbf24;
-            font-weight: 400;
-            letter-spacing: 0.02em;
+            font-weight: 500;
+            letter-spacing: -0.01em;
         }
 
         .project-content p {
             color: rgba(255,255,255,0.85);
-            font-size: 1rem;
+            font-size: var(--text-base);
             line-height: 1.6;
             font-weight: 300;
         }
@@ -939,13 +1042,15 @@
         }
 
         .why-choose .feature-card {
-            background: rgba(255,255,255,0.05);
+            background: rgba(255,255,255,0.08);
             border: 1px solid rgba(255,255,255,0.1);
             color: white;
         }
 
         .why-choose .feature-card h4 {
             color: var(--accent);
+            font-weight: 600;
+            font-size: 1.1875rem;
         }
 
         .why-choose .feature-card p {
@@ -960,7 +1065,7 @@
 
         /* Contact Section */
         .contact {
-            background: #0f172a;
+            background: var(--primary);
             color: white;
         }
 
@@ -980,18 +1085,18 @@
         }
 
         .contact-form {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.08);
             padding: 3rem;
             border-radius: 16px;
             border: 1px solid rgba(255,255,255,0.1);
         }
 
         .contact-form h3 {
-            font-size: 1.8rem;
+            font-size: var(--h3-size);
             margin-bottom: 2rem;
-            color: #fbbf24;
-            font-weight: 300;
-            letter-spacing: 0.03em;
+            color: white;
+            font-weight: 400;
+            letter-spacing: -0.01em;
         }
 
         .form-group {
@@ -1003,7 +1108,7 @@
             margin-bottom: 0.5rem;
             color: rgba(255,255,255,0.9);
             font-weight: 300;
-            font-size: 0.95rem;
+            font-size: var(--text-base);
         }
 
         .form-group input,
@@ -1015,7 +1120,7 @@
             border-radius: 8px;
             background: rgba(255,255,255,0.05);
             color: white;
-            font-size: 1rem;
+            font-size: var(--text-base);
             font-family: inherit;
             transition: all 0.3s ease;
         }
@@ -1054,18 +1159,18 @@
         }
 
         .contact-info {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.08);
             padding: 3rem;
             border-radius: 16px;
             border: 1px solid rgba(255,255,255,0.1);
         }
 
         .contact-info h3 {
-            font-size: 1.8rem;
+            font-size: var(--h3-size);
             margin-bottom: 2rem;
-            color: #fbbf24;
-            font-weight: 300;
-            letter-spacing: 0.03em;
+            color: white;
+            font-weight: 400;
+            letter-spacing: -0.01em;
         }
 
         .contact-details {
@@ -1138,7 +1243,7 @@
         .footer-section h4 {
             color: white;
             margin-bottom: 1rem;
-            font-size: 1.1rem;
+            font-size: var(--h5-size);
             font-weight: 400;
             letter-spacing: 0.02em;
         }
@@ -1147,7 +1252,7 @@
         .footer-section a {
             color: rgba(255,255,255,0.6);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: var(--text-small);
             line-height: 1.8;
             transition: color 0.2s ease;
         }
@@ -1206,7 +1311,7 @@
         .social-links a[title="Email"]:hover { color: #fbbf24; }
         
         .footer-copyright {
-            font-size: 0.875rem;
+            font-size: var(--text-small);
             margin: 0;
         }
         
@@ -1235,7 +1340,7 @@
                 text-align: center;
                 text-decoration: none;
                 border-radius: 8px;
-                font-size: 0.875rem;
+                font-size: var(--text-small);
                 font-weight: 500;
                 transition: all 0.2s ease;
             }
@@ -1316,8 +1421,9 @@
             }
 
             .hero h1 {
-                font-size: 3rem;
-                letter-spacing: 0.2em;
+                font-size: 2.25rem;
+                letter-spacing: 0.05em;
+                font-weight: 300;
             }
 
             .hero-subtitle {
@@ -1325,7 +1431,7 @@
             }
 
             .hero-description {
-                font-size: 1rem;
+                font-size: var(--text-base);
             }
 
             .cta-buttons {
@@ -1340,7 +1446,8 @@
             }
 
             .section-title {
-                font-size: 2.2rem;
+                font-size: 1.75rem;
+                margin-bottom: 0.75rem;
             }
 
             .courts-grid,
@@ -1357,8 +1464,9 @@
                 padding: 2rem;
             }
 
+            @media (max-width: 768px) {
             .section {
-                padding: 5rem 0;
+                padding: 4rem 0;
             }
             
             /* Mobile footer */
@@ -1433,8 +1541,10 @@
 
         @media (max-width: 480px) {
             .hero h1 {
-                font-size: 2.5rem;
-                letter-spacing: 0.1em;
+                font-size: 2rem;
+                letter-spacing: 0.05em;
+                font-weight: 300;
+                line-height: 1.1;
             }
 
             .container {
@@ -1532,7 +1642,7 @@
             </p>
             
             <div style="margin: 2rem 0;">
-                <p style="margin: 0; font-size: 1rem; opacity: 0.9;">
+                <p style="margin: 0; font-size: var(--text-base); opacity: 0.9;">
                     We deliver MANZA SPORT's proven quality with projects across Europe, the US, and the Middle East.
                 </p>
             </div>
@@ -1590,22 +1700,22 @@
             
             <!-- MANZA Key Stats -->
             <div style="margin-top: 4rem; text-align: center;">
-                <h3 style="font-size: 2rem; font-weight: 300; margin-bottom: 2rem; color: var(--text-primary);">
+                <h3 style="font-size: 1.625rem; font-weight: 400; margin-bottom: 2rem; color: var(--text-primary); letter-spacing: -0.01em;">
                     MANZA Key Stats
                 </h3>
                 <div style="background: rgba(15, 23, 42, 0.05); padding: 3rem; border-radius: 4px;">
                     <div class="manza-stats-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem;">
                         <div>
                             <div style="font-size: 3rem; font-weight: 300; color: var(--accent);">15+</div>
-                            <div style="font-size: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Years Experience</div>
+                            <div style="font-size: var(--text-base); color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Years Experience</div>
                         </div>
                         <div>
                             <div style="font-size: 3rem; font-weight: 300; color: var(--accent);">€2M+</div>
-                            <div style="font-size: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Investment Facilitated</div>
+                            <div style="font-size: var(--text-base); color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Investment Facilitated</div>
                         </div>
                         <div>
                             <div style="font-size: 3rem; font-weight: 300; color: var(--accent);">1000+</div>
-                            <div style="font-size: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Courts Installed Globally</div>
+                            <div style="font-size: var(--text-base); color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Courts Installed Globally</div>
                         </div>
                     </div>
                 </div>
@@ -1636,7 +1746,7 @@
                     <h4>MANZA MODEL</h4>
                     <p><strong>Technical Specifications:</strong> Versatile and durable design for easy installation and long-term performance. Ideal for clubs and facilities seeking reliability and value. Features standard mesh panels and robust structural engineering.</p>
                     <div style="margin-top: 1rem; padding: 1rem; background: rgba(255,255,255,0.03); border-radius: 4px;">
-                        <p style="font-size: 0.875rem; color: rgba(255,255,255,0.7); margin: 0;"><strong>Best For:</strong> New clubs, community facilities, recreational use</p>
+                        <p style="font-size: var(--text-small); color: rgba(255,255,255,0.7); margin: 0;"><strong>Best For:</strong> New clubs, community facilities, recreational use</p>
                     </div>
                 </div>
 
@@ -1652,11 +1762,11 @@
                     </div>
                     <h4>PRO MODEL</h4>
                     <div style="margin-bottom: 1rem;">
-                        <span style="display: inline-block; background: #3b82f6; color: white; padding: 0.2rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 500;">PROFESSIONAL</span>
+                        <span style="display: inline-block; background: #3b82f6; color: white; padding: 0.2rem 0.8rem; border-radius: 12px; font-size: var(--text-small); font-weight: 500;">PROFESSIONAL</span>
                     </div>
                     <p><strong>Technical Specifications:</strong> High-resistance welded mesh structure with reinforced pillars for maximum stability. Professional-grade construction for intensive use with enhanced durability features.</p>
                     <div style="margin-top: 1rem; padding: 1rem; background: rgba(255,255,255,0.03); border-radius: 8px;">
-                        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin: 0;"><strong>Best For:</strong> Professional clubs, high-traffic facilities, competitive play</p>
+                        <p style="font-size: var(--text-small); color: rgba(255,255,255,0.7); margin: 0;"><strong>Best For:</strong> Professional clubs, high-traffic facilities, competitive play</p>
                     </div>
                 </div>
 
@@ -1672,11 +1782,11 @@
                     </div>
                     <h4>MIAMI MODEL</h4>
                     <div style="margin-bottom: 1rem;">
-                        <span style="display: inline-block; background: #10b981; color: white; padding: 0.2rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 500;">PANORAMIC</span>
+                        <span style="display: inline-block; background: #10b981; color: white; padding: 0.2rem 0.8rem; border-radius: 12px; font-size: var(--text-small); font-weight: 500;">PANORAMIC</span>
                     </div>
                     <p><strong>Technical Specifications:</strong> Premium Panoramic court featuring unobstructed views for players and spectators. Enhanced visibility and aesthetic appeal with glass panel construction.</p>
                     <div style="margin-top: 1rem; padding: 1rem; background: rgba(255,255,255,0.03); border-radius: 8px;">
-                        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin: 0;"><strong>Best For:</strong> Premium facilities, spectator events, luxury installations</p>
+                        <p style="font-size: var(--text-small); color: rgba(255,255,255,0.7); margin: 0;"><strong>Best For:</strong> Premium facilities, spectator events, luxury installations</p>
                     </div>
                 </div>
 
@@ -1692,11 +1802,11 @@
                     </div>
                     <h4>PAQUITO NAVARRO MODEL</h4>
                     <div style="margin-bottom: 1rem;">
-                        <span style="display: inline-block; background: #8b5cf6; color: white; padding: 0.2rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 500;">SIGNATURE</span>
+                        <span style="display: inline-block; background: #8b5cf6; color: white; padding: 0.2rem 0.8rem; border-radius: 12px; font-size: var(--text-small); font-weight: 500;">SIGNATURE</span>
                     </div>
                     <p><strong>Technical Specifications:</strong> Designed with input from professional player Paquito Navarro. Perfect balance of aesthetics, performance, and professional standards with signature design elements.</p>
                     <div style="margin-top: 1rem; padding: 1rem; background: rgba(255,255,255,0.03); border-radius: 8px;">
-                        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin: 0;"><strong>Best For:</strong> Elite facilities, professional training, signature installations</p>
+                        <p style="font-size: var(--text-small); color: rgba(255,255,255,0.7); margin: 0;"><strong>Best For:</strong> Elite facilities, professional training, signature installations</p>
                     </div>
                 </div>
 
@@ -1712,11 +1822,11 @@
                     </div>
                     <h4>CENTER COURT MODEL</h4>
                     <div style="margin-bottom: 1rem;">
-                        <span style="display: inline-block; background: #ef4444; color: white; padding: 0.2rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 500;">TOURNAMENT</span>
+                        <span style="display: inline-block; background: #ef4444; color: white; padding: 0.2rem 0.8rem; border-radius: 12px; font-size: var(--text-small); font-weight: 500;">TOURNAMENT</span>
                     </div>
                     <p><strong>Technical Specifications:</strong> Top-tier competition-grade court designed for international tournaments. Maximum visibility and premium construction with full glass surround.</p>
                     <div style="margin-top: 1rem; padding: 1rem; background: rgba(255,255,255,0.03); border-radius: 8px;">
-                        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin: 0;"><strong>Best For:</strong> International tournaments, championship venues, premium clubs</p>
+                        <p style="font-size: var(--text-small); color: rgba(255,255,255,0.7); margin: 0;"><strong>Best For:</strong> International tournaments, championship venues, premium clubs</p>
                     </div>
                 </div>
 
@@ -1732,11 +1842,11 @@
                     </div>
                     <h4>SINGLES COURT MODEL</h4>
                     <div style="margin-bottom: 1rem;">
-                        <span style="display: inline-block; background: #f97316; color: white; padding: 0.2rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 500;">COMPACT</span>
+                        <span style="display: inline-block; background: #f97316; color: white; padding: 0.2rem 0.8rem; border-radius: 12px; font-size: var(--text-small); font-weight: 500;">COMPACT</span>
                     </div>
                     <p><strong>Technical Specifications:</strong> Compact singles padel court designed for training and recreational play. Space-efficient without compromising quality or playability.</p>
                     <div style="margin-top: 1rem; padding: 1rem; background: rgba(255,255,255,0.03); border-radius: 8px;">
-                        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin: 0;"><strong>Best For:</strong> Training facilities, private residences, limited space installations</p>
+                        <p style="font-size: var(--text-small); color: rgba(255,255,255,0.7); margin: 0;"><strong>Best For:</strong> Training facilities, private residences, limited space installations</p>
                     </div>
                 </div>
             </div>
@@ -1753,10 +1863,10 @@
         <!-- Section Header -->
         <div style="text-align: center; margin-bottom: 4rem;">
             <span style="display: inline-block; background: linear-gradient(90deg, transparent, rgba(201, 169, 97, 0.3), transparent); width: 100px; height: 1px; margin-bottom: 2rem;"></span>
-            <h3 style="color: white; font-size: 2.5rem; font-weight: 200; letter-spacing: 0.03em; margin-bottom: 1rem;">
+            <h3 style="color: white; font-size: 2.25rem; font-weight: 300; letter-spacing: -0.02em; margin-bottom: 1rem; line-height: 1.2;">
                 Engineered Customisation
             </h3>
-            <p style="color: rgba(255,255,255,0.6); font-size: 1.125rem; max-width: 600px; margin: 0 auto; line-height: 1.6; font-weight: 300;">
+            <p style="color: rgba(255,255,255,0.6); font-size: var(--text-large); max-width: 600px; margin: 0 auto; line-height: 1.6; font-weight: 300;">
                 Every MANZA court can be precisely configured to meet your exact specifications
             </p>
         </div>
@@ -1772,11 +1882,11 @@
                     <div style="width: 60%; height: 60%; background: linear-gradient(135deg, rgba(201, 169, 97, 0.2) 0%, rgba(201, 169, 97, 0.1) 100%); border-radius: 50%; position: absolute; top: 20%; left: 20%;"></div>
                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #C9A961; font-size: 1.5rem; font-weight: 300;">S</div>
                 </div>
-                <h4 style="color: white; font-size: 1.2rem; font-weight: 400; margin-bottom: 0.5rem;">Surface Technology</h4>
-                <p style="color: rgba(255,255,255,0.5); font-size: 0.875rem; font-weight: 300;">World Padel Tour Standards</p>
+                <h4 style="color: white; font-size: var(--h4-size); font-weight: 400; margin-bottom: 0.5rem;">Surface Technology</h4>
+                <p style="color: rgba(255,255,255,0.5); font-size: var(--text-small); font-weight: 300;">World Padel Tour Standards</p>
                 <div class="feature-details" style="position: absolute; top: 100%; left: 0; right: 0; margin-top: 1rem; opacity: 0; transform: translateY(10px); transition: all 0.3s ease; z-index: 10;">
                     <div style="background: rgba(15, 23, 42, 0.98); border: 1px solid rgba(201, 169, 97, 0.3); border-radius: 12px; padding: 1.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                        <ul style="text-align: left; color: rgba(255,255,255,0.8); font-size: 0.875rem; line-height: 1.8; list-style: none; margin: 0;">
+                        <ul style="text-align: left; color: rgba(255,255,255,0.8); font-size: var(--text-small); line-height: 1.8; list-style: none; margin: 0;">
                             <li style="padding: 0.25rem 0;">• Mondo STX monofilament systems</li>
                             <li style="padding: 0.25rem 0;">• 7 professional surface options</li>
                             <li style="padding: 0.25rem 0;">• Temperature-stable polymers</li>
@@ -1795,11 +1905,11 @@
                     <div style="width: 60%; height: 60%; background: linear-gradient(135deg, rgba(201, 169, 97, 0.2) 0%, rgba(201, 169, 97, 0.1) 100%); border-radius: 15%; position: absolute; top: 20%; left: 20%; transform: rotate(45deg);"></div>
                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #C9A961; font-size: 1.5rem; font-weight: 300;">E</div>
                 </div>
-                <h4 style="color: white; font-size: 1.2rem; font-weight: 400; margin-bottom: 0.5rem;">Structural Excellence</h4>
-                <p style="color: rgba(255,255,255,0.5); font-size: 0.875rem; font-weight: 300;">Precision Engineering</p>
+                <h4 style="color: white; font-size: var(--h4-size); font-weight: 400; margin-bottom: 0.5rem;">Structural Excellence</h4>
+                <p style="color: rgba(255,255,255,0.5); font-size: var(--text-small); font-weight: 300;">Precision Engineering</p>
                 <div class="feature-details" style="position: absolute; top: 100%; left: -50%; right: -50%; margin-top: 1rem; opacity: 0; transform: translateY(10px); transition: all 0.3s ease; z-index: 10;">
                     <div style="background: rgba(15, 23, 42, 0.98); border: 1px solid rgba(201, 169, 97, 0.3); border-radius: 12px; padding: 1.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                        <ul style="text-align: left; color: rgba(255,255,255,0.8); font-size: 0.875rem; line-height: 1.8; list-style: none; margin: 0;">
+                        <ul style="text-align: left; color: rgba(255,255,255,0.8); font-size: var(--text-small); line-height: 1.8; list-style: none; margin: 0;">
                             <li style="padding: 0.25rem 0;">• 200+ RAL color specifications</li>
                             <li style="padding: 0.25rem 0;">• Triple-layer galvanization options</li>
                             <li style="padding: 0.25rem 0;">• Marine-grade SS316 components</li>
@@ -1818,11 +1928,11 @@
                     <div style="width: 100%; height: 100%; border: 2px solid rgba(201, 169, 97, 0.2); border-radius: 16px; position: absolute; transform: scale(0.8);"></div>
                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #C9A961; font-size: 1.5rem; font-weight: 300;">P</div>
                 </div>
-                <h4 style="color: white; font-size: 1.2rem; font-weight: 400; margin-bottom: 0.5rem;">Performance Systems</h4>
-                <p style="color: rgba(255,255,255,0.5); font-size: 0.875rem; font-weight: 300;">Championship Standards</p>
+                <h4 style="color: white; font-size: var(--h4-size); font-weight: 400; margin-bottom: 0.5rem;">Performance Systems</h4>
+                <p style="color: rgba(255,255,255,0.5); font-size: var(--text-small); font-weight: 300;">Championship Standards</p>
                 <div class="feature-details" style="position: absolute; top: 100%; left: 0; right: 0; margin-top: 1rem; opacity: 0; transform: translateY(10px); transition: all 0.3s ease; z-index: 10;">
                     <div style="background: rgba(15, 23, 42, 0.98); border: 1px solid rgba(201, 169, 97, 0.3); border-radius: 12px; padding: 1.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                        <ul style="text-align: left; color: rgba(255,255,255,0.8); font-size: 0.875rem; line-height: 1.8; list-style: none; margin: 0;">
+                        <ul style="text-align: left; color: rgba(255,255,255,0.8); font-size: var(--text-small); line-height: 1.8; list-style: none; margin: 0;">
                             <li style="padding: 0.25rem 0;">• LED systems 500-700 LUX</li>
                             <li style="padding: 0.25rem 0;">• Integrated drainage networks</li>
                             <li style="padding: 0.25rem 0;">• 12mm tempered safety glass</li>
@@ -1838,30 +1948,30 @@
             <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center;">
                 <div>
                     <div style="font-size: 2.5rem; font-weight: 200; color: #C9A961; margin-bottom: 0.5rem;">12mm</div>
-                    <div style="font-size: 0.875rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.05em;">Glass Thickness</div>
+                    <div style="font-size: var(--text-small); color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.05em;">Glass Thickness</div>
                 </div>
                 <div>
                     <div style="font-size: 2.5rem; font-weight: 200; color: #C9A961; margin-bottom: 0.5rem;">700</div>
-                    <div style="font-size: 0.875rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.05em;">LUX Output</div>
+                    <div style="font-size: var(--text-small); color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.05em;">LUX Output</div>
                 </div>
                 <div>
                     <div style="font-size: 2.5rem; font-weight: 200; color: #C9A961; margin-bottom: 0.5rem;">15yr</div>
-                    <div style="font-size: 0.875rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.05em;">Warranties</div>
+                    <div style="font-size: var(--text-small); color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.05em;">Warranties</div>
                 </div>
                 <div>
                     <div style="font-size: 2.5rem; font-weight: 200; color: #C9A961; margin-bottom: 0.5rem;">200+</div>
-                    <div style="font-size: 0.875rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.05em;">RAL Colors</div>
+                    <div style="font-size: var(--text-small); color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.05em;">RAL Colors</div>
                 </div>
             </div>
         </div>
         
         <!-- Call to Action -->
         <div style="text-align: center;">
-            <p style="color: rgba(255,255,255,0.6); font-size: 1rem; margin-bottom: 2rem; font-weight: 300;">
+            <p style="color: rgba(255,255,255,0.6); font-size: var(--text-base); margin-bottom: 2rem; font-weight: 300;">
                 Explore the complete technical specifications and customisation possibilities
             </p>
             <a href="customisation-studio.html" 
-               style="display: inline-block; padding: 1rem 2.5rem; background: transparent; border: 1px solid #C9A961; color: #C9A961; text-decoration: none; border-radius: 4px; font-weight: 400; font-size: 0.95rem; letter-spacing: 0.05em; transition: all 0.3s ease; position: relative; overflow: hidden;"
+               style="display: inline-block; padding: 1rem 2.5rem; background: transparent; border: 1px solid #C9A961; color: #C9A961; text-decoration: none; border-radius: 4px; font-weight: 400; font-size: var(--text-base); letter-spacing: 0.05em; transition: all 0.3s ease; position: relative; overflow: hidden;"
                onmouseover="this.style.background='#C9A961'; this.style.color='#0f172a'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 30px rgba(201, 169, 97, 0.3)'"
                onmouseout="this.style.background='transparent'; this.style.color='#C9A961'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
                 View Technical Portfolio →
@@ -1877,19 +1987,19 @@
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem;">
                 <div style="display: flex; gap: 3rem; align-items: center;">
                     <div>
-                        <strong style="color: var(--gray); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Certifications</strong>
-                        <div style="font-size: 0.875rem; color: var(--text-primary);">International Standards • Quality Assured</div>
+                        <strong style="color: var(--gray); font-size: var(--text-tiny); text-transform: uppercase; letter-spacing: 0.05em;">Certifications</strong>
+                        <div style="font-size: var(--text-small); color: var(--text-primary);">International Standards • Quality Assured</div>
                     </div>
                     <div>
-                        <strong style="color: var(--gray); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Insurance</strong>
-                        <div style="font-size: 0.875rem; color: var(--text-primary);">Fully Insured • Professional Coverage</div>
+                        <strong style="color: var(--gray); font-size: var(--text-tiny); text-transform: uppercase; letter-spacing: 0.05em;">Insurance</strong>
+                        <div style="font-size: var(--text-small); color: var(--text-primary);">Fully Insured • Professional Coverage</div>
                     </div>
                     <div>
-                        <strong style="color: var(--gray); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Warranty</strong>
-                        <div style="font-size: 0.875rem; color: var(--text-primary);">Market Leading Warranty</div>
+                        <strong style="color: var(--gray); font-size: var(--text-tiny); text-transform: uppercase; letter-spacing: 0.05em;">Warranty</strong>
+                        <div style="font-size: var(--text-small); color: var(--text-primary);">Market Leading Warranty</div>
                     </div>
                 </div>
-                <a href="#contact" style="color: var(--accent); font-weight: 500; text-decoration: none; font-size: 0.875rem;">
+                <a href="#contact" style="color: var(--accent); font-weight: 500; text-decoration: none; font-size: var(--text-small);">
                     Download Technical Specs →
                 </a>
             </div>
@@ -1905,44 +2015,44 @@
             </p>
             
             <!-- Updated Timeline -->
-            <div style="background: rgba(15, 23, 42, 0.05); padding: 3rem; border-radius: 4px; margin-bottom: 3rem;">
+            <div class="timeline-container" style="background: rgba(255, 255, 255, 0.08); padding: 3rem; border-radius: 4px; margin-bottom: 3rem;">
                 <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; position: relative;">
                     <!-- Timeline Line -->
                     <div style="position: absolute; top: 30px; left: 10%; right: 10%; height: 2px; background: var(--accent); z-index: 0;"></div>
                     
                     <!-- Phase 1 -->
                     <div style="text-align: center; position: relative; z-index: 1;">
-                        <div style="width: 60px; height: 60px; background: white; border: 3px solid var(--accent); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-weight: 500;">1</div>
-                        <h5 style="font-size: 0.875rem; margin-bottom: 0.5rem;">Site Assessment</h5>
-                        <p style="font-size: 0.75rem; color: var(--gray);">Evaluate ground conditions & access</p>
+                        <div style="width: 60px; height: 60px; background: var(--primary); border: 3px solid var(--accent); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-weight: 500; color: white;">1</div>
+                        <h5 style="font-size: var(--text-small); margin-bottom: 0.5rem; color: white;">Site Assessment</h5>
+                        <p style="font-size: var(--text-tiny); color: rgba(255,255,255,0.6);">Evaluate ground conditions & access</p>
                     </div>
                     
                     <!-- Phase 2 -->
                     <div style="text-align: center; position: relative; z-index: 1;">
-                        <div style="width: 60px; height: 60px; background: white; border: 3px solid var(--accent); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-weight: 500;">2</div>
-                        <h5 style="font-size: 0.875rem; margin-bottom: 0.5rem;">Planning / Sign off</h5>
-                        <p style="font-size: 0.75rem; color: var(--gray);">Finalize design & obtain permits</p>
+                        <div style="width: 60px; height: 60px; background: var(--primary); border: 3px solid var(--accent); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-weight: 500; color: white;">2</div>
+                        <h5 style="font-size: var(--text-small); margin-bottom: 0.5rem; color: white;">Planning / Sign off</h5>
+                        <p style="font-size: var(--text-tiny); color: rgba(255,255,255,0.6);">Finalize design & obtain permits</p>
                     </div>
                     
                     <!-- Phase 3 -->
                     <div style="text-align: center; position: relative; z-index: 1;">
-                        <div style="width: 60px; height: 60px; background: white; border: 3px solid var(--accent); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-weight: 500;">3</div>
-                        <h5 style="font-size: 0.875rem; margin-bottom: 0.5rem;">Groundworks</h5>
-                        <p style="font-size: 0.75rem; color: var(--gray);">Prepare foundation & drainage</p>
+                        <div style="width: 60px; height: 60px; background: var(--primary); border: 3px solid var(--accent); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-weight: 500; color: white;">3</div>
+                        <h5 style="font-size: var(--text-small); margin-bottom: 0.5rem; color: white;">Groundworks</h5>
+                        <p style="font-size: var(--text-tiny); color: rgba(255,255,255,0.6);">Prepare foundation & drainage</p>
                     </div>
                     
                     <!-- Phase 4 -->
                     <div style="text-align: center; position: relative; z-index: 1;">
-                        <div style="width: 60px; height: 60px; background: white; border: 3px solid var(--accent); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-weight: 500;">4</div>
-                        <h5 style="font-size: 0.875rem; margin-bottom: 0.5rem;">Court Installation</h5>
-                        <p style="font-size: 0.75rem; color: var(--gray);">Assemble structure & surfaces</p>
+                        <div style="width: 60px; height: 60px; background: var(--primary); border: 3px solid var(--accent); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-weight: 500; color: white;">4</div>
+                        <h5 style="font-size: var(--text-small); margin-bottom: 0.5rem; color: white;">Court Installation</h5>
+                        <p style="font-size: var(--text-tiny); color: rgba(255,255,255,0.6);">Assemble structure & surfaces</p>
                     </div>
                     
                     <!-- Phase 5 -->
                     <div style="text-align: center; position: relative; z-index: 1;">
-                        <div style="width: 60px; height: 60px; background: white; border: 3px solid var(--accent); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-weight: 500;">5</div>
-                        <h5 style="font-size: 0.875rem; margin-bottom: 0.5rem;">Testing & Handover</h5>
-                        <p style="font-size: 0.75rem; color: var(--gray);">Final inspection & training</p>
+                        <div style="width: 60px; height: 60px; background: var(--primary); border: 3px solid var(--accent); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-weight: 500; color: white;">5</div>
+                        <h5 style="font-size: var(--text-small); margin-bottom: 0.5rem; color: white;">Testing & Handover</h5>
+                        <p style="font-size: var(--text-tiny); color: rgba(255,255,255,0.6);">Final inspection & training</p>
                     </div>
                 </div>
             </div>
@@ -1961,22 +2071,22 @@
             <!-- Featured Irish Project -->
             <div style="margin-bottom: 4rem; padding: 3rem; background: rgba(212, 175, 55, 0.1); border-radius: 4px; border: 1px solid rgba(212, 175, 55, 0.2);">
                 <div style="margin-bottom: 2rem;">
-                    <span style="background: var(--accent); color: var(--primary); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">CURRENT PROJECT</span>
+                    <span style="background: var(--accent); color: var(--primary); padding: 0.3rem 1rem; border-radius: 20px; font-size: var(--text-small); font-weight: 600;">CURRENT PROJECT</span>
                 </div>
                 
-                <h3 style="color: white; font-size: 2rem; margin-bottom: 1.5rem; font-weight: 300;">
+                <h3 style="color: white; font-size: 1.875rem; margin-bottom: 1.5rem; font-weight: 400; letter-spacing: -0.01em;">
                     Padel Society - Muckamore Cricket Club, Antrim
                 </h3>
                 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;" class="featured-project-grid">
                     <div>
-                        <h4 style="color: white; margin-bottom: 1rem; font-size: 1.3rem;">Project Overview</h4>
+                        <h4 style="color: white; margin-bottom: 1rem; font-size: var(--h4-size);">Project Overview</h4>
                         <p style="color: rgba(255,255,255,0.9); line-height: 1.8; margin-bottom: 1.5rem;">
                             Padel-Craft is proud to be the exclusive installer for Padel Society's groundbreaking venture - Northern Ireland's premier padel facility. Selected through competitive tender, this multi-million pound investment represents a significant milestone in bringing world-class padel infrastructure to Northern Ireland.
                         </p>
                         
                         <div style="margin-bottom: 1.5rem;">
-                            <h5 style="color: #60a5fa; margin-bottom: 0.8rem; font-size: 1.1rem;">Project Details:</h5>
+                            <h5 style="color: #60a5fa; margin-bottom: 0.8rem; font-size: var(--h5-size);">Project Details:</h5>
                             <ul style="color: rgba(255,255,255,0.85); line-height: 1.8; padding-left: 1.5rem;">
                                 <li><strong>4 Panoramic Premium-Grade Outdoor Courts</strong> from MANZA SPORT</li>
                                 <li><strong>Opening:</strong> July 2025</li>
@@ -1988,10 +2098,10 @@
                         </div>
                         
                         <div style="padding: 1.2rem; background: rgba(59, 130, 246, 0.1); border-radius: 12px; border: 1px solid rgba(59, 130, 246, 0.3);">
-                            <p style="color: rgba(255,255,255,0.9); font-style: italic; margin: 0; font-size: 0.95rem;">
+                            <p style="color: rgba(255,255,255,0.9); font-style: italic; margin: 0; font-size: var(--text-base);">
                                 "Unlike many quick-install competitors relying on second-hand equipment, Padel Society has invested in brand-new, top-tier panoramic courts from MANZA SPORT, <strong>built and installed by Padel-Craft</strong>, in line with the highest European standards."
                             </p>
-                            <p style="color: rgba(255,255,255,0.6); margin: 0.5rem 0 0 0; font-size: 0.85rem;">
+                            <p style="color: rgba(255,255,255,0.6); margin: 0.5rem 0 0 0; font-size: var(--text-small);">
                                 — The Newsletter, December 2024
                             </p>
                         </div>
@@ -1999,8 +2109,8 @@
                     
                     <div>
                         <div class="project-placeholder" style="height: 280px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
-                            <span style="font-size: 1.1rem; color: rgba(255,255,255,0.7); margin-bottom: 0.5rem;">[Padel Society Antrim Courts]</span>
-                            <span style="font-size: 0.85rem; color: rgba(255,255,255,0.5);">Installation in Progress</span>
+                            <span style="font-size: var(--text-large); color: rgba(255,255,255,0.7); margin-bottom: 0.5rem;">[Padel Society Antrim Courts]</span>
+                            <span style="font-size: var(--text-small); color: rgba(255,255,255,0.5);">Installation in Progress</span>
                         </div>
                     </div>
                 </div>
@@ -2018,14 +2128,14 @@
             </div>
             
             <!-- Global MANZA SPORT Projects -->
-            <h3 style="color: white; margin-bottom: 2rem; font-size: 1.6rem; text-align: center;">
+            <h3 style="color: white; margin-bottom: 2rem; font-size: var(--h3-size); text-align: center;">
                 Global MANZA SPORT Installations
             </h3>
             
             <!-- MANZA Projects Showcase -->
-            <div style="background: rgba(255,255,255,0.05); padding: 3rem; border-radius: 4px; margin-bottom: 3rem;">
+            <div style="background: rgba(255,255,255,0.08); padding: 3rem; border-radius: 4px; margin-bottom: 3rem;">
                 <div style="text-align: center; margin-bottom: 2rem;">
-                    <p style="color: rgba(255,255,255,0.8); font-size: 1rem; margin-bottom: 1.5rem;">
+                    <p style="color: rgba(255,255,255,0.8); font-size: var(--text-base); margin-bottom: 1.5rem;">
                         MANZA SPORT has successfully installed courts in over 70 countries worldwide
                     </p>
                     <a href="https://manzasport.com/works?lang=en" target="_blank" rel="noopener" 
@@ -2044,9 +2154,9 @@
                             <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); 
                                         padding: 2rem; border-radius: 4px; height: 100%; 
                                         transition: all 0.2s ease; cursor: pointer;">
-                                <h5 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem;">Sport City Valencia</h5>
-                                <p style="color: var(--accent); font-size: 0.875rem; margin-bottom: 0.5rem;">Spain • 30 Courts</p>
-                                <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem; line-height: 1.4;">
+                                <h5 style="color: white; margin-bottom: 0.5rem; font-size: var(--h5-size);">Sport City Valencia</h5>
+                                <p style="color: var(--accent); font-size: var(--text-small); margin-bottom: 0.5rem;">Spain • 30 Courts</p>
+                                <p style="color: rgba(255,255,255,0.7); font-size: var(--text-small); line-height: 1.4;">
                                     Europe's largest padel club installation
                                 </p>
                             </div>
@@ -2057,9 +2167,9 @@
                             <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); 
                                         padding: 2rem; border-radius: 4px; height: 100%; 
                                         transition: all 0.2s ease; cursor: pointer;">
-                                <h5 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem;">Padel Haus Brooklyn</h5>
-                                <p style="color: var(--accent); font-size: 0.875rem; margin-bottom: 0.5rem;">USA • 3 Clubs</p>
-                                <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem; line-height: 1.4;">
+                                <h5 style="color: white; margin-bottom: 0.5rem; font-size: var(--h5-size);">Padel Haus Brooklyn</h5>
+                                <p style="color: var(--accent); font-size: var(--text-small); margin-bottom: 0.5rem;">USA • 3 Clubs</p>
+                                <p style="color: rgba(255,255,255,0.7); font-size: var(--text-small); line-height: 1.4;">
                                     First major padel facility in New York
                                 </p>
                             </div>
@@ -2070,9 +2180,9 @@
                             <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); 
                                         padding: 2rem; border-radius: 4px; height: 100%; 
                                         transition: all 0.2s ease; cursor: pointer;">
-                                <h5 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem;">Rafa Nadal Academy</h5>
-                                <p style="color: var(--accent); font-size: 0.875rem; margin-bottom: 0.5rem;">Kuwait • Premium Courts</p>
-                                <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem; line-height: 1.4;">
+                                <h5 style="color: white; margin-bottom: 0.5rem; font-size: var(--h5-size);">Rafa Nadal Academy</h5>
+                                <p style="color: var(--accent); font-size: var(--text-small); margin-bottom: 0.5rem;">Kuwait • Premium Courts</p>
+                                <p style="color: rgba(255,255,255,0.7); font-size: var(--text-small); line-height: 1.4;">
                                     Elite training facility installation
                                 </p>
                             </div>
@@ -2083,9 +2193,9 @@
                             <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); 
                                         padding: 2rem; border-radius: 4px; height: 100%; 
                                         transition: all 0.2s ease; cursor: pointer;">
-                                <h5 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem;">Emirates Golf Club</h5>
-                                <p style="color: var(--accent); font-size: 0.875rem; margin-bottom: 0.5rem;">Dubai • Panoramic Courts</p>
-                                <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem; line-height: 1.4;">
+                                <h5 style="color: white; margin-bottom: 0.5rem; font-size: var(--h5-size);">Emirates Golf Club</h5>
+                                <p style="color: var(--accent); font-size: var(--text-small); margin-bottom: 0.5rem;">Dubai • Panoramic Courts</p>
+                                <p style="color: rgba(255,255,255,0.7); font-size: var(--text-small); line-height: 1.4;">
                                     Luxury installation in prestigious location
                                 </p>
                             </div>
@@ -2096,9 +2206,9 @@
                             <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); 
                                         padding: 2rem; border-radius: 4px; height: 100%; 
                                         transition: all 0.2s ease; cursor: pointer;">
-                                <h5 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem;">Esprit Padel Lyon</h5>
-                                <p style="color: var(--accent); font-size: 0.875rem; margin-bottom: 0.5rem;">France • 7 Courts</p>
-                                <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem; line-height: 1.4;">
+                                <h5 style="color: white; margin-bottom: 0.5rem; font-size: var(--h5-size);">Esprit Padel Lyon</h5>
+                                <p style="color: var(--accent); font-size: var(--text-small); margin-bottom: 0.5rem;">France • 7 Courts</p>
+                                <p style="color: rgba(255,255,255,0.7); font-size: var(--text-small); line-height: 1.4;">
                                     Mix of Pro and Panoramic models
                                 </p>
                             </div>
@@ -2109,9 +2219,9 @@
                             <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); 
                                         padding: 2rem; border-radius: 4px; height: 100%; 
                                         transition: all 0.2s ease; cursor: pointer;">
-                                <h5 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem;">More Projects</h5>
-                                <p style="color: var(--accent); font-size: 0.875rem; margin-bottom: 0.5rem;">70+ Countries</p>
-                                <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem; line-height: 1.4;">
+                                <h5 style="color: white; margin-bottom: 0.5rem; font-size: var(--h5-size);">More Projects</h5>
+                                <p style="color: var(--accent); font-size: var(--text-small); margin-bottom: 0.5rem;">70+ Countries</p>
+                                <p style="color: rgba(255,255,255,0.7); font-size: var(--text-small); line-height: 1.4;">
                                     View complete portfolio →
                                 </p>
                             </div>
@@ -2217,7 +2327,7 @@
                             <label for="message">Project Details</label>
                             <textarea id="message" name="message" placeholder="Tell us about your project requirements, timeline, and any specific needs..."></textarea>
                         </div>
-                        <p style="font-size: 0.875rem; color: rgba(255,255,255,0.6); margin-bottom: 1rem; text-align: center;">
+                        <p style="font-size: var(--text-small); color: rgba(255,255,255,0.6); margin-bottom: 1rem; text-align: center;">
                             Limited installation slots available for 2025
                         </p>
                         <button type="submit" class="btn" style="width: 100%;">Schedule Consultation</button>
