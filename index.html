@@ -608,7 +608,6 @@
         
         /* Add subtle shadows to white text on dark backgrounds */
         .courts .section-title,
-        .projects .section-title,
         .why-choose .section-title,
         .contact .section-title,
         .services .section-title {
@@ -983,65 +982,33 @@
 
         /* Projects Section */
         .projects {
-            background: var(--primary);
-            color: white;
+            background: white;
+            color: var(--text-primary);
         }
 
         .projects .section-title {
-            color: white;
+            color: var(--text-primary);
         }
 
         .projects .section-subtitle {
-            color: rgba(255,255,255,0.8);
+            color: var(--text-secondary);
         }
 
-        .projects-grid {
+        .projects-main-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 3rem;
+            align-items: start;
         }
-
-        .project-card {
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255,255,255,0.1);
+        
+        /* Project card hover effects */
+        .projects-main-grid > div {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
-        .project-card:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-8px);
-        }
-
-        .project-placeholder {
-            height: 200px;
-            background: rgba(255,255,255,0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            color: rgba(255,255,255,0.6);
-            font-size: var(--text-small);
-        }
-
-        .project-content {
-            padding: 2rem;
-        }
-
-        .project-content h4 {
-            font-size: 1.1875rem;
-            margin-bottom: 0.75rem;
-            color: #fbbf24;
-            font-weight: 500;
-            letter-spacing: -0.01em;
-        }
-
-        .project-content p {
-            color: rgba(255,255,255,0.85);
-            font-size: var(--text-base);
-            line-height: 1.6;
-            font-weight: 300;
+        
+        .projects-main-grid > div:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
         }
 
         /* Why Choose Us */
@@ -1507,8 +1474,7 @@
                 margin-bottom: 0.75rem;
             }
 
-            .courts-grid,
-            .projects-grid {
+            .courts-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -1559,6 +1525,29 @@
             .featured-project-grid {
                 grid-template-columns: 1fr !important;
                 gap: 2rem !important;
+            }
+            
+            /* Mobile Projects Main Grid */
+            .projects-main-grid {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+            
+            /* Adjust featured project padding on mobile */
+            #projects .container > div:nth-child(2) > div:first-child {
+                padding: 2rem !important;
+            }
+            
+            /* Adjust global reach box on mobile */
+            #projects .container > div:nth-child(2) > div:last-child {
+                padding: 1.5rem !important;
+            }
+            
+            /* Make metrics responsive */
+            #projects .container > div:nth-child(2) > div:first-child > div:nth-child(4) {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 1rem !important;
+                font-size: 0.875rem !important;
             }
 
             /* Mobile Brand Relationship Section */
@@ -1661,11 +1650,6 @@
 
             .container {
                 padding: 0 1rem;
-            }
-
-            .court-placeholder,
-            .project-placeholder {
-                height: 140px;
             }
 
             .court-image-container {
@@ -2081,175 +2065,127 @@
         </div>
     </section>
               
-    <!-- Case Studies Section -->
-    <section id="projects" class="section projects">
+    <!-- Case Studies Section - Redesigned -->
+    <section id="projects" class="section projects" style="background: white;">
         <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <p class="section-subtitle">
-                From local Irish installations to global MANZA SPORT projects, 
-                showcasing our expertise in delivering premium padel facilities
-            </p>
+            <!-- Integrated Header -->
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 class="section-title" style="color: var(--text-primary); margin-bottom: 0.5rem;">Our Projects</h2>
+                <p style="font-size: var(--text-large); color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+                    Padel-Craft installations across Ireland, backed by MANZA SPORT's global expertise
+                </p>
+            </div>
             
-            <!-- Featured Irish Project -->
-            <div style="margin-bottom: 4rem; padding: 3rem; background: rgba(212, 175, 55, 0.1); border-radius: 4px; border: 1px solid rgba(212, 175, 55, 0.2);">
-                <div style="margin-bottom: 2rem;">
-                    <span style="background: var(--accent); color: var(--primary); padding: 0.3rem 1rem; border-radius: 20px; font-size: var(--text-small); font-weight: 600;">CURRENT PROJECT</span>
-                </div>
+            <!-- Two Column Layout: Our Project + Global Reach -->
+            <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: start; margin-bottom: 4rem;" class="projects-main-grid">
                 
-                <h3 style="color: white; font-size: 1.875rem; margin-bottom: 1.5rem; font-weight: 400; letter-spacing: -0.01em;">
-                    Padel Society - Muckamore Cricket Club, Antrim
-                </h3>
-                
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;" class="featured-project-grid">
-                    <div>
-                        <h4 style="color: white; margin-bottom: 1rem; font-size: var(--h4-size);">Project Overview</h4>
-                        <p style="color: rgba(255,255,255,0.9); line-height: 1.8; margin-bottom: 1.5rem;">
-                            Padel-Craft is proud to be the exclusive installer for Padel Society's groundbreaking venture - Northern Ireland's premier padel facility. Selected through competitive tender, this multi-million pound investment represents a significant milestone in bringing world-class padel infrastructure to Northern Ireland.
-                        </p>
-                        
-                        <div style="margin-bottom: 1.5rem;">
-                            <h5 style="color: #60a5fa; margin-bottom: 0.8rem; font-size: var(--h5-size);">Project Details:</h5>
-                            <ul style="color: rgba(255,255,255,0.85); line-height: 1.8; padding-left: 1.5rem;">
-                                <li><strong>4 Panoramic Premium-Grade Outdoor Courts</strong> from MANZA SPORT</li>
-                                <li><strong>Opening:</strong> July 2025</li>
-                                <li><strong>Location:</strong> Muckamore Cricket Club, Antrim</li>
-                                <li><strong>Investment:</strong> Multi-million pound project</li>
-                                <li><strong>Order to Sign off time:</strong> under 30 days</li>
-                                <li><strong>Expansion Plans:</strong> Two additional sites in South Belfast in next 12 months</li>
-                            </ul>
+                <!-- Left: Featured Padel-Craft Project -->
+                <div style="background: var(--primary); color: white; padding: 3rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <span style="background: var(--accent); color: var(--primary); padding: 0.3rem 1rem; border-radius: 20px; font-size: var(--text-small); font-weight: 600;">LIVE PROJECT</span>
+                        <span style="font-size: var(--text-small); opacity: 0.7;">Opening July 2025</span>
+                    </div>
+                    
+                    <h3 style="font-size: 1.75rem; margin-bottom: 1.5rem; font-weight: 400;">
+                        Padel Society, Antrim
+                    </h3>
+                    
+                    <!-- Project Image Placeholder -->
+                    <div style="width: 100%; height: 200px; background: rgba(255,255,255,0.1); border-radius: 8px; margin-bottom: 2rem; display: flex; align-items: center; justify-content: center;">
+                        <span style="opacity: 0.5;">[Installation Progress Photo]</span>
+                    </div>
+                    
+                    <!-- Key Metrics -->
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 2rem;">
+                        <div>
+                            <div style="font-size: 2rem; font-weight: 300; color: var(--accent);">4</div>
+                            <div style="font-size: var(--text-small); opacity: 0.8;">Panoramic Courts</div>
                         </div>
-                        
-                        <div style="padding: 1.2rem; background: rgba(59, 130, 246, 0.1); border-radius: 12px; border: 1px solid rgba(59, 130, 246, 0.3);">
-                            <p style="color: rgba(255,255,255,0.9); font-style: italic; margin: 0; font-size: var(--text-base);">
-                                "Unlike many quick-install competitors relying on second-hand equipment, Padel Society has invested in brand-new, top-tier panoramic courts from MANZA SPORT, <strong>built and installed by Padel-Craft</strong>, in line with the highest European standards."
-                            </p>
-                            <p style="color: rgba(255,255,255,0.6); margin: 0.5rem 0 0 0; font-size: var(--text-small);">
-                                — The Newsletter, December 2024
-                            </p>
+                        <div>
+                            <div style="font-size: 2rem; font-weight: 300; color: var(--accent);">€2M+</div>
+                            <div style="font-size: var(--text-small); opacity: 0.8;">Investment</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 2rem; font-weight: 300; color: var(--accent);">30</div>
+                            <div style="font-size: var(--text-small); opacity: 0.8;">Days to Sign-off</div>
                         </div>
                     </div>
                     
-                    <div>
-                        <div class="project-placeholder" style="height: 280px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
-                            <span style="font-size: var(--text-large); color: rgba(255,255,255,0.7); margin-bottom: 0.5rem;">[Padel Society Antrim Courts]</span>
-                            <span style="font-size: var(--text-small); color: rgba(255,255,255,0.5);">Installation in Progress</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <p style="font-size: var(--text-base); line-height: 1.7; margin-bottom: 1.5rem; opacity: 0.9;">
+                        Northern Ireland's premier padel facility featuring brand-new panoramic courts from MANZA SPORT, 
+                        built to the highest European standards. Selected through competitive tender for this landmark project.
+                    </p>
                     
                     <a href="https://www.newsletter.co.uk/business/our-goal-is-to-lead-padels-growth-in-northern-ireland-major-investment-brings-world-class-padel-facilities-and-community-focus-to-antrim-with-belfast-locations-to-follow-5162435" 
                        target="_blank" 
                        rel="noopener noreferrer" 
-                       class="btn btn-secondary" 
-                       style="padding: 0.8rem 1.8rem;">
-                        Read Full Article →
+                       style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent); text-decoration: none; font-weight: 500; font-size: var(--text-small);">
+                        Read Press Coverage
+                        <span style="font-size: 1.2em;">→</span>
+                    </a>
+                </div>
+                
+                <!-- Right: Global Reach Indicator -->
+                <div style="background: #f8fafc; padding: 2.5rem; border-radius: 12px; border: 1px solid rgba(0,0,0,0.08);">
+                    <h4 style="font-size: 1.25rem; margin-bottom: 1.5rem; color: var(--text-primary); font-weight: 500;">
+                        Global MANZA Network
+                    </h4>
+                    
+                    <!-- Quick Stats -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+                        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; border: 1px solid rgba(0,0,0,0.06);">
+                            <div style="font-size: 2.5rem; font-weight: 200; color: var(--accent); margin-bottom: 0.25rem;">70+</div>
+                            <div style="font-size: var(--text-tiny); color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Countries</div>
+                        </div>
+                        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px; border: 1px solid rgba(0,0,0,0.06);">
+                            <div style="font-size: 2.5rem; font-weight: 200; color: var(--accent); margin-bottom: 0.25rem;">1000</div>
+                            <div style="font-size: var(--text-tiny); color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Courts/Year</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Notable Installations List -->
+                    <div style="margin-bottom: 2rem;">
+                        <h5 style="font-size: var(--text-small); color: var(--text-secondary); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                            Notable Installations
+                        </h5>
+                        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem;">
+                            <li style="display: flex; align-items: center; gap: 0.5rem; font-size: var(--text-small);">
+                                <span style="color: var(--accent);">•</span>
+                                <span>Sport City Valencia (30 courts)</span>
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 0.5rem; font-size: var(--text-small);">
+                                <span style="color: var(--accent);">•</span>
+                                <span>ATP Miami Masters</span>
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 0.5rem; font-size: var(--text-small);">
+                                <span style="color: var(--accent);">•</span>
+                                <span>Rafa Nadal Academy Kuwait</span>
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 0.5rem; font-size: var(--text-small);">
+                                <span style="color: var(--accent);">•</span>
+                                <span>Padel Haus Brooklyn</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <a href="https://manzasport.com/works?lang=en" 
+                       target="_blank" 
+                       rel="noopener" 
+                       class="btn" 
+                       style="width: 100%; text-align: center; font-size: var(--text-small);">
+                        Explore Global Portfolio
                     </a>
                 </div>
             </div>
             
-            <!-- Global MANZA SPORT Projects -->
-            <h3 style="color: white; margin-bottom: 2rem; font-size: var(--h3-size); text-align: center;">
-                Global MANZA SPORT Installations
-            </h3>
-            
-            <!-- MANZA Projects Showcase -->
-            <div style="background: rgba(255,255,255,0.08); padding: 3rem; border-radius: 4px; margin-bottom: 3rem;">
-                <div style="text-align: center; margin-bottom: 2rem;">
-                    <p style="color: rgba(255,255,255,0.8); font-size: var(--text-base); margin-bottom: 1.5rem;">
-                        MANZA SPORT has successfully installed courts in over 70 countries worldwide
-                    </p>
-                    <a href="https://manzasport.com/works?lang=en" target="_blank" rel="noopener" 
-                       class="btn" style="background: white; color: var(--primary);">
-                        View All MANZA Projects →
-                    </a>
-                </div>
-                
-                <!-- Featured MANZA Projects Grid -->
-                <div style="margin-top: 3rem;">
-                    <h4 style="color: var(--accent); margin-bottom: 2rem; text-align: center;">Featured International Projects</h4>
-                    <div class="projects-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-                        <!-- Project Tile Template -->
-                        <a href="https://manzasport.com/works?lang=en" target="_blank" rel="noopener" 
-                           class="project-tile" style="text-decoration: none; display: block;">
-                            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); 
-                                        padding: 2rem; border-radius: 4px; height: 100%; 
-                                        transition: all 0.2s ease; cursor: pointer;">
-                                <h5 style="color: white; margin-bottom: 0.5rem; font-size: var(--h5-size);">Sport City Valencia</h5>
-                                <p style="color: var(--accent); font-size: var(--text-small); margin-bottom: 0.5rem;">Spain • 30 Courts</p>
-                                <p style="color: rgba(255,255,255,0.7); font-size: var(--text-small); line-height: 1.4;">
-                                    Europe's largest padel club installation
-                                </p>
-                            </div>
-                        </a>
-                        
-                        <a href="https://manzasport.com/works?lang=en" target="_blank" rel="noopener" 
-                           class="project-tile" style="text-decoration: none; display: block;">
-                            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); 
-                                        padding: 2rem; border-radius: 4px; height: 100%; 
-                                        transition: all 0.2s ease; cursor: pointer;">
-                                <h5 style="color: white; margin-bottom: 0.5rem; font-size: var(--h5-size);">Padel Haus Brooklyn</h5>
-                                <p style="color: var(--accent); font-size: var(--text-small); margin-bottom: 0.5rem;">USA • 3 Clubs</p>
-                                <p style="color: rgba(255,255,255,0.7); font-size: var(--text-small); line-height: 1.4;">
-                                    First major padel facility in New York
-                                </p>
-                            </div>
-                        </a>
-                        
-                        <a href="https://manzasport.com/works?lang=en" target="_blank" rel="noopener" 
-                           class="project-tile" style="text-decoration: none; display: block;">
-                            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); 
-                                        padding: 2rem; border-radius: 4px; height: 100%; 
-                                        transition: all 0.2s ease; cursor: pointer;">
-                                <h5 style="color: white; margin-bottom: 0.5rem; font-size: var(--h5-size);">Rafa Nadal Academy</h5>
-                                <p style="color: var(--accent); font-size: var(--text-small); margin-bottom: 0.5rem;">Kuwait • Premium Courts</p>
-                                <p style="color: rgba(255,255,255,0.7); font-size: var(--text-small); line-height: 1.4;">
-                                    Elite training facility installation
-                                </p>
-                            </div>
-                        </a>
-                        
-                        <a href="https://manzasport.com/works?lang=en" target="_blank" rel="noopener" 
-                           class="project-tile" style="text-decoration: none; display: block;">
-                            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); 
-                                        padding: 2rem; border-radius: 4px; height: 100%; 
-                                        transition: all 0.2s ease; cursor: pointer;">
-                                <h5 style="color: white; margin-bottom: 0.5rem; font-size: var(--h5-size);">Emirates Golf Club</h5>
-                                <p style="color: var(--accent); font-size: var(--text-small); margin-bottom: 0.5rem;">Dubai • Panoramic Courts</p>
-                                <p style="color: rgba(255,255,255,0.7); font-size: var(--text-small); line-height: 1.4;">
-                                    Luxury installation in prestigious location
-                                </p>
-                            </div>
-                        </a>
-                        
-                        <a href="https://manzasport.com/works?lang=en" target="_blank" rel="noopener" 
-                           class="project-tile" style="text-decoration: none; display: block;">
-                            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); 
-                                        padding: 2rem; border-radius: 4px; height: 100%; 
-                                        transition: all 0.2s ease; cursor: pointer;">
-                                <h5 style="color: white; margin-bottom: 0.5rem; font-size: var(--h5-size);">Esprit Padel Lyon</h5>
-                                <p style="color: var(--accent); font-size: var(--text-small); margin-bottom: 0.5rem;">France • 7 Courts</p>
-                                <p style="color: rgba(255,255,255,0.7); font-size: var(--text-small); line-height: 1.4;">
-                                    Mix of Pro and Panoramic models
-                                </p>
-                            </div>
-                        </a>
-                        
-                        <a href="https://manzasport.com/works?lang=en" target="_blank" rel="noopener" 
-                           class="project-tile" style="text-decoration: none; display: block;">
-                            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); 
-                                        padding: 2rem; border-radius: 4px; height: 100%; 
-                                        transition: all 0.2s ease; cursor: pointer;">
-                                <h5 style="color: white; margin-bottom: 0.5rem; font-size: var(--h5-size);">More Projects</h5>
-                                <p style="color: var(--accent); font-size: var(--text-small); margin-bottom: 0.5rem;">70+ Countries</p>
-                                <p style="color: rgba(255,255,255,0.7); font-size: var(--text-small); line-height: 1.4;">
-                                    View complete portfolio →
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+            <!-- Future Projects Teaser -->
+            <div style="text-align: center; padding: 3rem; background: #f8fafc; border-radius: 12px; border: 1px solid rgba(0,0,0,0.08);">
+                <p style="font-size: var(--text-large); color: var(--text-primary); margin-bottom: 0.5rem;">
+                    More Irish Projects Coming Soon
+                </p>
+                <p style="color: var(--text-secondary); font-size: var(--text-base);">
+                    Currently in planning: 2 additional sites in South Belfast • Private residence installations
+                </p>
             </div>
         </div>
     </section>
@@ -2258,6 +2194,8 @@
     <section id="services" class="section services">
         <div class="container">
             <h2 class="section-title">Installation Timeline</h2>
+            <p class="section-subtitle">
+                Timeline varies based on project scope and site conditions
             </p>
             
             <!-- Updated Timeline -->
@@ -2277,7 +2215,7 @@
                     <div style="text-align: center; position: relative; z-index: 1;">
                         <div style="width: 60px; height: 60px; background: var(--primary); border: 3px solid var(--accent); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-weight: 500; color: white;">2</div>
                         <h5 style="font-size: var(--text-small); margin-bottom: 0.5rem; color: white;">Planning / Sign off</h5>
-                        <p style="font-size: var(--text-tiny); color: rgba(255,255,255,0.6);">Finalize design, price & timeline depending on requirements</p>
+                        <p style="font-size: var(--text-tiny); color: rgba(255,255,255,0.6);">Finalize design & obtain permits</p>
                     </div>
                     
                     <!-- Phase 3 -->
@@ -2298,7 +2236,7 @@
                     <div style="text-align: center; position: relative; z-index: 1;">
                         <div style="width: 60px; height: 60px; background: var(--primary); border: 3px solid var(--accent); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-weight: 500; color: white;">5</div>
                         <h5 style="font-size: var(--text-small); margin-bottom: 0.5rem; color: white;">Testing & Handover</h5>
-                        <p style="font-size: var(--text-tiny); color: rgba(255,255,255,0.6);">Final inspection</p>
+                        <p style="font-size: var(--text-tiny); color: rgba(255,255,255,0.6);">Final inspection & training</p>
                     </div>
                 </div>
             </div>
@@ -2758,7 +2696,7 @@
         // Initialize animations
         document.addEventListener('DOMContentLoaded', function() {
             // Set initial animation states
-            document.querySelectorAll('.feature-card, .court-card, .project-card').forEach(el => {
+            document.querySelectorAll('.feature-card, .court-card').forEach(el => {
                 el.style.opacity = '0';
                 el.style.transform = 'translateY(30px)';
                 el.style.transition = 'all 0.6s ease';
@@ -2766,7 +2704,7 @@
             });
 
             // Enhanced hover effects
-            const cards = document.querySelectorAll('.feature-card, .court-card, .project-card');
+            const cards = document.querySelectorAll('.feature-card, .court-card');
             cards.forEach(card => {
                 card.addEventListener('mouseenter', function() {
                     this.style.transform = 'translateY(-6px) scale(1.02)';
