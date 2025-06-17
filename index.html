@@ -74,10 +74,7 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
 
-        /* Adjust for announcement banner */
-        body {
-            padding-top: 40px;
-        }
+        /* No top padding needed for side banner */
         
         /* MOBILE IMPROVEMENT #4: Add padding for contact bar */
         @media (max-width: 768px) {
@@ -86,35 +83,158 @@
             }
         }
 
-        /* Announcement Banner */
+        /* Side Announcement Banner */
         .announcement-banner {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(90deg, #fbbf24 0%, #f59e0b 100%);
-            color: #0f172a;
-            padding: 0.8rem 1rem;
-            text-align: center;
-            font-size: 0.9rem;
-            font-weight: 500;
-            z-index: 1001;
-            height: 40px;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 1.5rem 1rem;
+            z-index: 999;
+            width: 280px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 1px solid rgba(201, 169, 97, 0.3);
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: column;
+            gap: 1rem;
+            transition: all 0.3s ease;
+            animation: slideIn 0.5s ease-out, subtlePulse 4s ease-in-out 3s infinite;
+        }
+        
+        @keyframes slideIn {
+            from {
+                right: -300px;
+                opacity: 0;
+            }
+            to {
+                right: 20px;
+                opacity: 1;
+            }
+        }
+        
+        @keyframes subtlePulse {
+            0%, 100% {
+                transform: translateY(-50%) scale(1);
+            }
+            50% {
+                transform: translateY(-50%) scale(1.02);
+            }
+        }
+        
+        .announcement-banner:hover {
+            transform: translateY(-50%) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            animation-play-state: paused;
+        }
+        
+        .announcement-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .announcement-label {
+            background: var(--accent);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            align-self: flex-start;
+        }
+        
+        .announcement-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            line-height: 1.3;
+            color: white;
+        }
+        
+        .announcement-subtitle {
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.4;
         }
 
         .announcement-banner a {
-            color: #0f172a;
-            text-decoration: underline;
-            font-weight: 600;
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.875rem;
             transition: all 0.2s ease;
+            position: relative;
+        }
+        
+        .announcement-banner a::after {
+            content: ' →';
+            position: absolute;
+            right: -20px;
+            transition: right 0.2s ease;
         }
 
         .announcement-banner a:hover {
-            text-decoration: none;
-            opacity: 0.8;
+            color: #fbbf24;
+        }
+        
+        .announcement-banner a:hover::after {
+            right: -25px;
+        }
+        
+        .announcement-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: rgba(255,255,255,0.5);
+            font-size: 1.2rem;
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+        }
+        
+        .announcement-close:hover {
+            color: white;
+            background: rgba(255,255,255,0.1);
+        }
+        
+        /* Hide on mobile - show as bottom bar instead */
+        @media (max-width: 768px) {
+            .announcement-banner {
+                position: fixed;
+                bottom: 70px;
+                right: auto;
+                left: 10px;
+                top: auto;
+                transform: none;
+                width: calc(100% - 20px);
+                animation: slideUp 0.5s ease-out;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            
+            @keyframes slideUp {
+                from {
+                    bottom: -100px;
+                    opacity: 0;
+                }
+                to {
+                    bottom: 70px;
+                    opacity: 1;
+                }
+            }
         }
 
         .nav-container {
@@ -347,7 +467,7 @@
             text-align: center;
             color: white;
             position: relative;
-            padding-top: 120px; /* Account for fixed nav + banner */
+            padding-top: 80px; /* Only account for fixed nav */
         }
 
         .hero-content {
@@ -1092,10 +1212,10 @@
         @media (max-width: 768px) {
             .nav-links {
                 position: fixed;
-                top: 110px; /* Adjusted for announcement banner */
+                top: 70px; /* Only nav height */
                 left: -100%;
                 width: 100%;
-                height: calc(100vh - 110px);
+                height: calc(100vh - 70px);
                 background: rgba(30, 41, 59, 0.98);
                 flex-direction: column;
                 justify-content: flex-start;
@@ -1280,13 +1400,15 @@
     </style>
 </head>
 <body>
-    <!-- Announcement Banner - Simplified -->
+    <!-- Side Announcement Banner -->
     <div class="announcement-banner" id="announcementBanner">
-        <span>
-            <strong>Current Project:</strong> Installing 4 Premium Courts for Padel Society, Antrim
+        <button class="announcement-close" onclick="dismissBanner()" title="Close">×</button>
+        <div class="announcement-content">
+            <span class="announcement-label">Current Project</span>
+            <div class="announcement-title">Installing 4 Premium Courts</div>
+            <div class="announcement-subtitle">Padel Society, Muckamore Cricket Club, Antrim</div>
             <a href="#projects">Learn More</a>
-        </span>
-        <button onclick="dismissBanner()" style="background: none; border: none; color: white; font-size: 1.2rem; cursor: pointer; opacity: 0.5; position: absolute; right: 1rem;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='0.5'">×</button>
+        </div>
     </div>
     
     <!-- Navigation -->
@@ -2132,22 +2254,48 @@
         // Dismiss announcement banner
         function dismissBanner() {
             const banner = document.getElementById('announcementBanner');
-            const nav = document.querySelector('nav');
-            const body = document.body;
-            const hero = document.querySelector('.hero');
-            
-            banner.style.display = 'none';
-            nav.style.top = '0';
-            body.style.paddingTop = '0';
-            hero.style.marginTop = '0';
-            hero.style.height = '100vh';
-            
-            // Update mobile nav position
-            if (window.innerWidth <= 768) {
-                document.querySelector('.nav-links').style.top = '70px';
-                document.querySelector('.nav-links').style.height = 'calc(100vh - 70px)';
-            }
+            banner.style.animation = 'fadeOut 0.3s ease-out';
+            setTimeout(() => {
+                banner.style.display = 'none';
+            }, 300);
         }
+
+        // Add fadeOut animation dynamically
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeOut {
+                from {
+                    opacity: 1;
+                    transform: translateY(-50%) scale(1);
+                }
+                to {
+                    opacity: 0;
+                    transform: translateY(-50%) scale(0.95);
+                }
+            }
+            
+            @media (max-width: 768px) {
+                @keyframes fadeOut {
+                    from {
+                        opacity: 1;
+                        transform: none;
+                    }
+                    to {
+                        opacity: 0;
+                        transform: translateY(20px);
+                    }
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Auto-dismiss banner after 30 seconds
+        setTimeout(() => {
+            const banner = document.getElementById('announcementBanner');
+            if (banner && banner.style.display !== 'none') {
+                dismissBanner();
+            }
+        }, 30000);
 
         // Mobile menu toggle
         document.querySelector('.mobile-menu').addEventListener('click', function() {
@@ -2202,11 +2350,9 @@
                 const target = document.querySelector(targetId);
                 
                 if (target) {
-                    // Add offset for fixed navigation and announcement banner (if present)
+                    // Add offset for fixed navigation
                     const navHeight = document.querySelector('nav').offsetHeight;
-                    const announcementBanner = document.querySelector('.announcement-banner');
-                    const announcementHeight = announcementBanner && announcementBanner.style.display !== 'none' ? announcementBanner.offsetHeight : 0;
-                    const targetPosition = target.offsetTop - navHeight - announcementHeight - 20;
+                    const targetPosition = target.offsetTop - navHeight - 20;
                     
                     window.scrollTo({
                         top: targetPosition,
