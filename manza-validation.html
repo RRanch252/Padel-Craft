@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MANZA SPORT - Global Track Record | Padel-Craft</title>
+    <meta name="description" content="Design your premium padel court with MANZA SPORT's extensive customization options. Tailored solutions for Irish facilities.">
+    <title>Court Customization Studio | Padel-Craft</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
         
@@ -13,16 +14,27 @@
             box-sizing: border-box;
         }
         
+        :root {
+            --primary: #0f172a;
+            --primary-light: #1e293b;
+            --accent: #C9A961;
+            --white: #ffffff;
+            --gray-light: #f8f9fa;
+            --gray: #6c757d;
+            --text-primary: #0f172a;
+            --text-secondary: #6c757d;
+        }
+        
         body {
-            font-family: 'Inter', -apple-system, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.6;
             color: white;
-            background: #0f172a; /* Dark navy background to match main site */
+            background: var(--primary);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
         
-        /* Add navigation back link */
+        /* Navigation */
         .back-nav {
             background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(20px);
@@ -32,12 +44,13 @@
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
         
         .back-nav-content {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 2.5rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -56,7 +69,7 @@
         }
         
         .back-link:hover {
-            color: #C9A961;
+            color: var(--accent);
         }
         
         .page-brand {
@@ -66,239 +79,397 @@
             letter-spacing: 0.15em;
         }
         
-        .validation-page {
-            max-width: 1200px;
+        /* Main Content */
+        .studio-page {
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 4rem 2.5rem;
         }
         
         /* Header */
         .page-header {
             text-align: center;
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 5rem;
+            position: relative;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(201, 169, 97, 0.05) 0%, transparent 70%);
+            pointer-events: none;
         }
         
         .page-header h1 {
-            font-size: 3rem;
-            font-weight: 200;
-            letter-spacing: 0.02em;
+            font-size: 4rem;
+            font-weight: 100;
+            letter-spacing: 0.15em;
             color: white;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
+            position: relative;
         }
         
         .page-header p {
-            font-size: 1.125rem;
-            color: rgba(255,255,255,0.8);
-            max-width: 700px;
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 800px;
             margin: 0 auto;
             font-weight: 300;
-        }
-        
-        /* Key Facts Section */
-        .key-facts {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: 8px;
-            margin-bottom: 3rem;
-        }
-        
-        .facts-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            text-align: center;
-        }
-        
-        .fact {
-            padding: 1rem;
-        }
-        
-        .fact-number {
-            font-size: 2.5rem;
-            font-weight: 300;
-            color: #C9A961; /* Gold accent color */
-            margin-bottom: 0.5rem;
-        }
-        
-        .fact-label {
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.7);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        
-        /* Content Sections */
-        .section {
-            margin-bottom: 3rem;
-        }
-        
-        .section h2 {
-            font-size: 2rem;
-            color: white;
-            margin-bottom: 1.5rem;
-            font-weight: 300;
-            letter-spacing: 0.02em;
-        }
-        
-        .section p {
-            color: rgba(255,255,255,0.85);
-            margin-bottom: 1rem;
             line-height: 1.8;
-            font-weight: 300;
         }
         
-        /* Lists */
-        .validation-list {
-            list-style: none;
-            margin: 1rem 0;
+        /* Quick Navigation */
+        .quick-nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 5rem;
+            flex-wrap: wrap;
         }
         
-        .validation-list li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-            color: rgba(255,255,255,0.85);
-            font-weight: 300;
-        }
-        
-        .validation-list li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: #C9A961;
-        }
-        
-        .validation-list strong {
-            color: white;
+        .quick-nav a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
             font-weight: 400;
         }
         
-        /* Project Table */
-        .projects-table {
+        .quick-nav a:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+            background: rgba(201, 169, 97, 0.1);
+        }
+        
+        /* Section Styling */
+        .custom-section {
+            margin-bottom: 6rem;
+            scroll-margin-top: 100px;
+        }
+        
+        .section-header {
+            margin-bottom: 3rem;
+            max-width: 900px;
+        }
+        
+        .section-badge {
+            display: inline-block;
+            background: rgba(201, 169, 97, 0.1);
+            color: var(--accent);
+            padding: 0.4rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-title {
+            font-size: 3rem;
+            color: white;
+            font-weight: 200;
+            letter-spacing: 0.02em;
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            color: rgba(255,255,255,0.6);
+            font-size: 1.25rem;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        
+        .section-intro {
+            background: rgba(255,255,255,0.02);
+            border-left: 3px solid var(--accent);
+            padding: 2rem;
+            margin-bottom: 3rem;
+            border-radius: 0 12px 12px 0;
+        }
+        
+        .section-intro p {
+            color: rgba(255,255,255,0.8);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin: 0;
+        }
+        
+        /* Options Grid */
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2rem;
+        }
+        
+        .option-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        
+        .option-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.8s ease;
+        }
+        
+        .option-card:hover {
+            background: rgba(255,255,255,0.04);
+            border-color: rgba(201, 169, 97, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .option-card:hover::before {
+            transform: translateX(100%);
+        }
+        
+        .option-badge {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.1);
+            color: #60a5fa;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        
+        .option-badge.popular {
+            background: rgba(201, 169, 97, 0.1);
+            color: var(--accent);
+        }
+        
+        .option-badge.premium {
+            background: rgba(139, 92, 246, 0.1);
+            color: #a78bfa;
+        }
+        
+        .option-title {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            letter-spacing: 0.02em;
+        }
+        
+        .option-description {
+            color: rgba(255,255,255,0.7);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        
+        .option-features {
+            list-style: none;
+        }
+        
+        .option-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.95rem;
+        }
+        
+        .option-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-icon {
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        
+        /* Comparison Table */
+        .comparison-wrapper {
+            overflow-x: auto;
+            margin: 3rem 0;
+        }
+        
+        .comparison-table {
             width: 100%;
-            margin: 1.5rem 0;
-            border-collapse: collapse;
-            background: rgba(255,255,255,0.03);
+            background: rgba(255,255,255,0.02);
             border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 8px;
+            border-radius: 16px;
             overflow: hidden;
         }
         
-        .projects-table th,
-        .projects-table td {
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1.5rem;
             text-align: left;
-            padding: 1rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
         }
         
-        .projects-table th {
-            background: rgba(255,255,255,0.05);
+        .comparison-table th {
+            background: rgba(255,255,255,0.03);
+            color: var(--accent);
             font-weight: 500;
-            color: #C9A961;
-            font-size: 0.875rem;
+            font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
         
-        .projects-table td {
-            color: rgba(255,255,255,0.85);
-            font-weight: 300;
+        .comparison-table td {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.95rem;
         }
         
-        .projects-table tr:last-child td {
+        .comparison-table tr:last-child td {
             border-bottom: none;
         }
         
-        /* Technical Specs Grid */
-        .specs-grid {
+        .comparison-table tr:hover {
+            background: rgba(255,255,255,0.02);
+        }
+        
+        /* Visual Showcase */
+        .visual-showcase {
+            background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, transparent 100%);
+            border: 1px solid rgba(201, 169, 97, 0.2);
+            border-radius: 24px;
+            padding: 4rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .showcase-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin: 1.5rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
         }
         
-        .spec-block {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: 8px;
+        .showcase-item {
+            text-align: center;
         }
         
-        .spec-block h3 {
-            font-size: 1.25rem;
-            color: #C9A961;
-            margin-bottom: 1rem;
-            font-weight: 400;
+        .showcase-value {
+            font-size: 3rem;
+            font-weight: 200;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        
+        .showcase-label {
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(201, 169, 97, 0.1) 0%, rgba(201, 169, 97, 0.05) 100%);
+            border: 1px solid rgba(201, 169, 97, 0.3);
+            border-radius: 24px;
+            padding: 4rem;
+            text-align: center;
+            margin-top: 6rem;
+        }
+        
+        .cta-section h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 200;
             letter-spacing: 0.02em;
         }
         
-        .spec-block ul {
-            list-style: none;
-            color: rgba(255,255,255,0.85);
-        }
-        
-        .spec-block li {
-            padding: 0.5rem 0;
-            font-size: 0.95rem;
+        .cta-section p {
+            color: rgba(255,255,255,0.8);
+            font-size: 1.125rem;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
             font-weight: 300;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-        
-        .spec-block li:last-child {
-            border-bottom: none;
-        }
-        
-        /* CTA Button */
-        .cta-container {
-            text-align: center;
-            margin-top: 4rem;
-            margin-bottom: 2rem;
+            line-height: 1.6;
         }
         
         .btn {
             display: inline-block;
-            padding: 0.875rem 2rem;
-            background: #C9A961;
-            color: #0f172a;
+            padding: 1rem 2.5rem;
+            background: var(--accent);
+            color: var(--primary);
             text-decoration: none;
             border-radius: 4px;
             font-weight: 500;
-            font-size: 0.9375rem;
+            font-size: 1rem;
             letter-spacing: 0.01em;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
         }
         
         .btn:hover {
-            background: #0f172a;
-            color: white;
-            border: 2px solid #C9A961;
-            padding: calc(0.875rem - 2px) calc(2rem - 2px);
+            background: #b09651;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(201, 169, 97, 0.3);
+        }
+        
+        .pricing-note {
+            margin-top: 1.5rem;
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.5);
+            font-style: italic;
         }
         
         /* Responsive */
         @media (max-width: 768px) {
-            .facts-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .page-header h1 {
+                font-size: 2.5rem;
+                letter-spacing: 0.1em;
             }
             
-            .specs-grid {
+            .options-grid {
                 grid-template-columns: 1fr;
             }
             
-            .page-header h1 {
+            .showcase-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+            
+            .quick-nav {
+                gap: 1rem;
+            }
+            
+            .quick-nav a {
+                font-size: 0.8rem;
+                padding: 0.4rem 1rem;
+            }
+            
+            .section-title {
                 font-size: 2rem;
             }
             
-            .projects-table {
-                font-size: 0.875rem;
-            }
-            
-            .projects-table th,
-            .projects-table td {
-                padding: 0.75rem;
+            .comparison-wrapper {
+                margin: 2rem -1rem;
             }
             
             .back-nav-content {
@@ -306,168 +477,367 @@
                 gap: 1rem;
             }
         }
-        
-        @media (max-width: 480px) {
-            .facts-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .validation-page {
-                padding: 2rem 1rem;
-            }
-        }
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
+    <!-- Navigation -->
     <nav class="back-nav">
         <div class="back-nav-content">
-            <a href="index.html" class="back-link">
-                ← Back to Main Site
+            <a href="index.html#courts" class="back-link">
+                ← Back to Court Models
             </a>
             <div class="page-brand">PADEL / CRAFT</div>
         </div>
     </nav>
 
-    <div class="validation-page">
+    <div class="studio-page">
         <!-- Header -->
         <div class="page-header">
-            <h1>MANZA SPORT Global Track Record</h1>
-            <p>Factual overview of MANZA SPORT's position as one of the world's leading padel court manufacturers</p>
+            <h1>CUSTOMISATION STUDIO</h1>
+            <p>Design your perfect padel court with MANZA SPORT's extensive customisation programme. Every detail can be tailored to create a facility that exceeds expectations.</p>
         </div>
         
-        <!-- Key Facts -->
-        <div class="key-facts">
-            <div class="facts-grid">
-                <div class="fact">
-                    <div class="fact-number">70+</div>
-                    <div class="fact-label">Countries</div>
-                </div>
-                <div class="fact">
-                    <div class="fact-number">20+</div>
-                    <div class="fact-label">Years Experience</div>
-                </div>
-                <div class="fact">
-                    <div class="fact-number">1,000</div>
-                    <div class="fact-label">Courts/Year</div>
-                </div>
-                <div class="fact">
-                    <div class="fact-number">Top 4</div>
-                    <div class="fact-label">Global Manufacturer</div>
-                </div>
+        <!-- Quick Navigation -->
+        <div class="quick-nav">
+            <a href="#surfaces">Playing Surfaces</a>
+            <a href="#aesthetics">Court Aesthetics</a>
+            <a href="#climate">Weather Protection</a>
+            <a href="#features">Enhanced Features</a>
+            <a href="#support">Installation Support</a>
+        </div>
+        
+        <!-- Playing Surfaces Section -->
+        <section id="surfaces" class="custom-section">
+            <div class="section-header">
+                <span class="section-badge">Player Experience</span>
+                <h2 class="section-title">Professional Playing Surfaces</h2>
+                <p class="section-subtitle">The foundation of every great padel experience. Choose the surface that matches your players' needs and your facility's ambitions.</p>
             </div>
-        </div>
-        
-        <!-- Company Overview -->
-        <div class="section">
-            <h2>Company Overview</h2>
-            <p>MANZA SPORT, established in 2011 in Valencia, Spain, has grown to become one of the top four padel court manufacturers globally. The company operates a dedicated manufacturing facility in Valencia and maintains a financially robust position within the sports equipment industry.</p>
-            <p>With installations in over 70 countries and an average production capacity of 1,000 courts annually (as reported by distribution partners), MANZA SPORT has established a significant international presence in the padel court market.</p>
-        </div>
-        
-        <!-- Notable Installations -->
-        <div class="section">
-            <h2>Notable Installations</h2>
-            <p>MANZA SPORT courts have been selected for numerous high-profile venues and tournaments worldwide:</p>
             
-            <table class="projects-table">
-                <thead>
-                    <tr>
-                        <th>Project</th>
-                        <th>Location</th>
-                        <th>Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Miami Masters Series</td>
-                        <td>USA</td>
-                        <td>ATP tournament installation at Crandon Park</td>
-                    </tr>
-                    <tr>
-                        <td>World Padel Tour 2017</td>
-                        <td>Valladolid, Spain</td>
-                        <td>Official tournament courts</td>
-                    </tr>
-                    <tr>
-                        <td>Esprit Padel</td>
-                        <td>Lyon, France</td>
-                        <td>7 courts (Model Pro and Panoramic Pro)</td>
-                    </tr>
-                    <tr>
-                        <td>Dubai Sports Complexes</td>
-                        <td>UAE</td>
-                        <td>10 courts across multiple venues</td>
-                    </tr>
-                    <tr>
-                        <td>2014 Padel World Cup</td>
-                        <td>Mallorca, Spain</td>
-                        <td>Championship venue courts</td>
-                    </tr>
-                    <tr>
-                        <td>Paquito Navarro Series</td>
-                        <td>Multiple</td>
-                        <td>Signature courts endorsed by world #1 player</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        
-        <!-- Geographic Presence -->
-        <div class="section">
-            <h2>International Presence</h2>
-            <p>MANZA SPORT maintains installations across all major continents:</p>
-            <ul class="validation-list">
-                <li><strong>Europe:</strong> Spain, France, Italy, Portugal, Belgium, Finland, Sweden, Switzerland, Greece, Netherlands, Czech Republic</li>
-                <li><strong>Middle East:</strong> UAE (Dubai, Abu Dhabi), Qatar, Lebanon</li>
-                <li><strong>Americas:</strong> USA, Mexico, Venezuela, Bahamas</li>
-                <li><strong>Asia-Pacific:</strong> Japan</li>
-                <li><strong>Africa:</strong> Senegal, Equatorial Guinea</li>
-            </ul>
-        </div>
-        
-        <!-- Technical Specifications -->
-        <div class="section">
-            <h2>Technical Standards</h2>
-            <div class="specs-grid">
-                <div class="spec-block">
-                    <h3>Certifications & Compliance</h3>
-                    <ul>
-                        <li>International Padel Federation (FIP) approved</li>
-                        <li>Spanish Padel Federation standards</li>
-                        <li>CE certified materials</li>
-                        <li>NIDE 2004 sports facility regulations</li>
-                        <li>Technical Building Code compliance</li>
+            <div class="section-intro">
+                <p>Your surface choice affects everything: ball speed and bounce, player comfort during extended play, maintenance requirements, and long-term durability. Here's how each option performs in real-world conditions.</p>
+            </div>
+            
+            <div class="options-grid">
+                <div class="option-card">
+                    <span class="option-badge popular">Most Popular</span>
+                    <h3 class="option-title">Mondo STX Super Court</h3>
+                    <p class="option-description">
+                        The choice of World Padel Tour. This monofilament surface delivers consistent ball bounce and superior player comfort, making it ideal for clubs attracting serious players.
+                    </p>
+                    <ul class="option-features">
+                        <li><span class="feature-icon"></span>Perfect for 4+ hours daily play</li>
+                        <li><span class="feature-icon"></span>Maintains consistent speed in all weather</li>
+                        <li><span class="feature-icon"></span>Preferred by professional players</li>
+                        <li><span class="feature-icon"></span>Weekly brushing maintains performance</li>
+                        <li><span class="feature-icon"></span>5-7 year appearance retention</li>
                     </ul>
                 </div>
-                <div class="spec-block">
-                    <h3>Product Range</h3>
-                    <ul>
-                        <li>5 court models (Standard to Full Panoramic)</li>
-                        <li>10mm and 12mm tempered safety glass</li>
-                        <li>LED lighting systems (300-700 LUX)</li>
-                        <li>Multiple turf options (Mondo, STX)</li>
-                        <li>Custom color configurations</li>
+                
+                <div class="option-card">
+                    <span class="option-badge">Best Value</span>
+                    <h3 class="option-title">Fibrillated Professional</h3>
+                    <p class="option-description">
+                        Engineered for high-traffic facilities. Exceptional durability with lower maintenance requirements, perfect for busy clubs prioritizing reliability.
+                    </p>
+                    <ul class="option-features">
+                        <li><span class="feature-icon"></span>Handles 6+ hours daily use</li>
+                        <li><span class="feature-icon"></span>7 vibrant color options</li>
+                        <li><span class="feature-icon"></span>Excellent drainage performance</li>
+                        <li><span class="feature-icon"></span>Forgiving for beginners</li>
+                        <li><span class="feature-icon"></span>Minimal maintenance needs</li>
+                    </ul>
+                </div>
+                
+                <div class="option-card">
+                    <span class="option-badge premium">Premium Choice</span>
+                    <h3 class="option-title">Textured Elite</h3>
+                    <p class="option-description">
+                        The pinnacle of playing surfaces. Crimped texture technology provides championship-level ball response and unmatched player satisfaction.
+                    </p>
+                    <ul class="option-features">
+                        <li><span class="feature-icon"></span>Tournament-grade performance</li>
+                        <li><span class="feature-icon"></span>Superior grip in wet conditions</li>
+                        <li><span class="feature-icon"></span>Natural clay court feel</li>
+                        <li><span class="feature-icon"></span>Temperature stable year-round</li>
+                        <li><span class="feature-icon"></span>7-10 year premium warranty</li>
                     </ul>
                 </div>
             </div>
-        </div>
+            
+            <!-- Quick Comparison -->
+            <div class="comparison-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Key Considerations</th>
+                            <th>Mondo STX</th>
+                            <th>Fibrillated Pro</th>
+                            <th>Textured Elite</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Best For</td>
+                            <td>Competitive clubs</td>
+                            <td>High-traffic facilities</td>
+                            <td>Premium venues</td>
+                        </tr>
+                        <tr>
+                            <td>Player Level</td>
+                            <td>Intermediate to Pro</td>
+                            <td>All levels</td>
+                            <td>Advanced players</td>
+                        </tr>
+                        <tr>
+                            <td>Maintenance</td>
+                            <td>Weekly brushing</td>
+                            <td>Bi-weekly brushing</td>
+                            <td>Weekly grooming</td>
+                        </tr>
+                        <tr>
+                            <td>Ball Speed</td>
+                            <td>Medium-Fast</td>
+                            <td>Medium</td>
+                            <td>Fast</td>
+                        </tr>
+                        <tr>
+                            <td>Warranty Period</td>
+                            <td>5 years</td>
+                            <td>5 years</td>
+                            <td>7-10 years</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
         
-        <!-- Quality Indicators -->
-        <div class="section">
-            <h2>Quality Indicators</h2>
-            <ul class="validation-list">
-                <li>24-hour glass replacement service across Spain</li>
-                <li>In-house manufacturing facility in Valencia</li>
-                <li>Portable court rental service for events</li>
-                <li>Direct collaboration with professional federations</li>
-                <li>Registered exporter status for international markets</li>
-            </ul>
-        </div>
+        <!-- Court Aesthetics Section -->
+        <section id="aesthetics" class="custom-section">
+            <div class="section-header">
+                <span class="section-badge">Visual Impact</span>
+                <h2 class="section-title">Court Aesthetics & Branding</h2>
+                <p class="section-subtitle">Create a signature look that sets your facility apart and reinforces your brand identity.</p>
+            </div>
+            
+            <div class="section-intro">
+                <p>First impressions matter. Your court's appearance influences member satisfaction, photography for marketing, and overall facility prestige. Every visual element can be customised.</p>
+            </div>
+            
+            <div class="visual-showcase">
+                <h3 style="color: white; font-size: 2rem; font-weight: 300; margin-bottom: 1rem;">Customisation Possibilities</h3>
+                <div class="showcase-grid">
+                    <div class="showcase-item">
+                        <div class="showcase-value">200+</div>
+                        <div class="showcase-label">RAL Colors Available</div>
+                    </div>
+                    <div class="showcase-item">
+                        <div class="showcase-value">1-4</div>
+                        <div class="showcase-label">Net Logo Colors</div>
+                    </div>
+                    <div class="showcase-item">
+                        <div class="showcase-value">100%</div>
+                        <div class="showcase-label">Brand Matching</div>
+                    </div>
+                    <div class="showcase-item">
+                        <div class="showcase-value">10yr</div>
+                        <div class="showcase-label">Color Warranty</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="options-grid">
+                <div class="option-card">
+                    <h3 class="option-title">Structure Customisation</h3>
+                    <p class="option-description">
+                        Transform standard courts into branded experiences with precision color matching and premium finishes.
+                    </p>
+                    <ul class="option-features">
+                        <li><span class="feature-icon"></span>RAL powder coating in any color</li>
+                        <li><span class="feature-icon"></span>Two-tone color schemes available</li>
+                        <li><span class="feature-icon"></span>Metallic and textured finishes</li>
+                        <li><span class="feature-icon"></span>UV-stable for 10+ years</li>
+                    </ul>
+                </div>
+                
+                <div class="option-card">
+                    <h3 class="option-title">Branding Elements</h3>
+                    <p class="option-description">
+                        Integrate your identity throughout the court with professional branding solutions.
+                    </p>
+                    <ul class="option-features">
+                        <li><span class="feature-icon"></span>Custom net printing (logos/text)</li>
+                        <li><span class="feature-icon"></span>Court entrance branding panels</li>
+                        <li><span class="feature-icon"></span>LED-backlit logo displays</li>
+                        <li><span class="feature-icon"></span>Perimeter advertising zones</li>
+                    </ul>
+                </div>
+                
+                <div class="option-card">
+                    <h3 class="option-title">Premium Finishes</h3>
+                    <p class="option-description">
+                        Elevate your facility with luxury touches that create a premium atmosphere.
+                    </p>
+                    <ul class="option-features">
+                        <li><span class="feature-icon"></span>Brushed aluminum accents</li>
+                        <li><span class="feature-icon"></span>Integrated sponsor panels</li>
+                        <li><span class="feature-icon"></span>Custom court naming</li>
+                        <li><span class="feature-icon"></span>Premium corner protectors</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Climate Protection Section -->
+        <section id="climate" class="custom-section">
+            <div class="section-header">
+                <span class="section-badge">Longevity</span>
+                <h2 class="section-title">Climate Protection & Durability</h2>
+                <p class="section-subtitle">Engineered specifically for Irish weather conditions with industry-leading protection systems.</p>
+            </div>
+            
+            <div class="section-intro">
+                <p>Ireland's unique climate demands special consideration. From coastal salt spray to inland frost, your investment needs comprehensive protection to maintain appearance and performance for decades.</p>
+            </div>
+            
+            <div class="options-grid">
+                <div class="option-card">
+                    <span class="option-badge">Standard</span>
+                    <h3 class="option-title">Foundation Protection</h3>
+                    <p class="option-description">
+                        Essential weatherproofing included with every MANZA court installation.
+                    </p>
+                    <ul class="option-features">
+                        <li><span class="feature-icon"></span>Hot-dip galvanization (85μm)</li>
+                        <li><span class="feature-icon"></span>Stainless steel fixings</li>
+                        <li><span class="feature-icon"></span>Weather-sealed joints</li>
+                        <li><span class="feature-icon"></span>10-year structural warranty</li>
+                    </ul>
+                </div>
+                
+                <div class="option-card">
+                    <span class="option-badge popular">Recommended</span>
+                    <h3 class="option-title">Enhanced Marine Package</h3>
+                    <p class="option-description">
+                        Ideal for coastal locations or areas with harsh weather exposure.
+                    </p>
+                    <ul class="option-features">
+                        <li><span class="feature-icon"></span>Triple-layer zinc coating</li>
+                        <li><span class="feature-icon"></span>Marine-grade SS316 components</li>
+                        <li><span class="feature-icon"></span>Anti-corrosion treatment</li>
+                        <li><span class="feature-icon"></span>15-year warranty coverage</li>
+                    </ul>
+                </div>
+                
+                <div class="option-card">
+                    <h3 class="option-title">Premium Shield System</h3>
+                    <p class="option-description">
+                        Maximum protection for facilities requiring minimal maintenance.
+                    </p>
+                    <ul class="option-features">
+                        <li><span class="feature-icon"></span>Ceramic coating technology</li>
+                        <li><span class="feature-icon"></span>Self-cleaning surfaces</li>
+                        <li><span class="feature-icon"></span>20-year appearance guarantee</li>
+                        <li><span class="feature-icon"></span>Annual inspection included</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Enhanced Features Section -->
+        <section id="features" class="custom-section">
+            <div class="section-header">
+                <span class="section-badge">Performance</span>
+                <h2 class="section-title">Enhanced Playing Features</h2>
+                <p class="section-subtitle">Professional additions that extend playing hours, improve the experience, and increase revenue potential.</p>
+            </div>
+            
+            <div class="options-grid">
+                <div class="option-card">
+                    <h3 class="option-title">Professional LED Lighting</h3>
+                    <p class="option-description">
+                        Extend playing hours with championship-grade illumination designed for television broadcasting standards.
+                    </p>
+                    <ul class="option-features">
+                        <li><span class="feature-icon"></span>500-700 LUX output options</li>
+                        <li><span class="feature-icon"></span>Anti-glare technology</li>
+                        <li><span class="feature-icon"></span>Smart control systems</li>
+                        <li><span class="feature-icon"></span>50,000 hour lifespan</li>
+                        <li><span class="feature-icon"></span>30% energy savings</li>
+                    </ul>
+                </div>
+                
+                <div class="option-card">
+                    <h3 class="option-title">Advanced Drainage</h3>
+                    <p class="option-description">
+                        Maximise court availability with rapid-dry technology that gets players back on court faster.
+                    </p>
+                    <ul class="option-features">
+                        <li><span class="feature-icon"></span>30-minute dry time</li>
+                        <li><span class="feature-icon"></span>Integrated channel system</li>
+                        <li><span class="feature-icon"></span>Self-cleaning design</li>
+                        <li><span class="feature-icon"></span>Maintenance access points</li>
+                        <li><span class="feature-icon"></span>10-year performance guarantee</li>
+                    </ul>
+                </div>
+                
+                <div class="option-card">
+                    <h3 class="option-title">Smart Court Technology</h3>
+                    <p class="option-description">
+                        Future-proof your facility with integrated technology for the modern player experience.
+                    </p>
+                    <ul class="option-features">
+                        <li><span class="feature-icon"></span>Booking system integration</li>
+                        <li><span class="feature-icon"></span>Play tracking sensors</li>
+                        <li><span class="feature-icon"></span>Camera mounting points</li>
+                        <li><span class="feature-icon"></span>USB charging stations</li>
+                        <li><span class="feature-icon"></span>Wi-Fi infrastructure ready</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Support Section -->
+        <section id="support" class="custom-section">
+            <div class="section-header">
+                <span class="section-badge">Partnership</span>
+                <h2 class="section-title">Installation & Ongoing Support</h2>
+                <p class="section-subtitle">Your success is our priority. From first consultation through years of operation.</p>
+            </div>
+            
+            <div class="section-intro">
+                <p>Padel-Craft's turnkey service means you have a single point of contact throughout your project and beyond. Our comprehensive support ensures your investment performs optimally for decades.</p>
+            </div>
+            
+            <div class="visual-showcase">
+                <h3 style="color: white; font-size: 2rem; font-weight: 300; margin-bottom: 1rem;">Complete Support Package</h3>
+                <div class="showcase-grid">
+                    <div class="showcase-item">
+                        <div class="showcase-value">48hr</div>
+                        <div class="showcase-label">Response Time</div>
+                    </div>
+                    <div class="showcase-item">
+                        <div class="showcase-value">100%</div>
+                        <div class="showcase-label">Parts Availability</div>
+                    </div>
+                    <div class="showcase-item">
+                        <div class="showcase-value">1-on-1</div>
+                        <div class="showcase-label">Staff Training</div>
+                    </div>
+                    <div class="showcase-item">
+                        <div class="showcase-value">Annual</div>
+                        <div class="showcase-label">Health Checks</div>
+                    </div>
+                </div>
+            </div>
+        </section>
         
         <!-- CTA Section -->
-        <div class="cta-container">
-            <a href="https://manzasport.com" target="_blank" rel="noopener" class="btn">Visit MANZA SPORT Official Website →</a>
+        <div class="cta-section">
+            <h2>Ready to Create Your Perfect Court?</h2>
+            <p>Our technical team will guide you through every option to design a court that exceeds expectations and delivers lasting value.</p>
+            <a href="index.html#contact" class="btn">Schedule Design Consultation →</a>
+            <p class="pricing-note">All customisations priced on application based on your specific requirements</p>
         </div>
     </div>
 </body>
