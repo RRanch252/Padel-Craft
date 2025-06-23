@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How to finance padel courts in Ireland - grants, loans, and funding options explained. Padel-Craft financing information.">
+    <title>How to Finance Padel Courts | Padel-Craft</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #0f172a;
+            --primary-light: #1e293b;
+            --accent: #D4AF37;
+            --white: #ffffff;
+            --gray-light: #f8f9fa;
+            --gray: #6c757d;
+            --text-primary: #0f172a;
+            --text-secondary: #6c757d;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            line-height: 1.6;
+            color: white;
+            background: var(--primary);
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Navigation */
+        .back-nav {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .back-nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .back-link {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .back-link:hover {
+            color: var(--accent);
+        }
+        
+        .page-brand {
+            font-size: 1.75rem;
+            font-weight: 300;
+            color: white;
+            letter-spacing: 0.15em;
+        }
+        
+        /* Main Content */
+        .financing-page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        /* Header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 200;
+            letter-spacing: 0.02em;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .page-header p {
+            font-size: 1.125rem;
+            color: rgba(255,255,255,0.8);
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+        
+        /* Section Styles */
+        .section {
+            margin-bottom: 4rem;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            text-align: center;
+        }
+        
+        /* Grant Section */
+        .grant-section {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 3rem;
+            border-radius: 16px;
+            margin-bottom: 4rem;
+        }
+        
+        .grant-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .grant-item {
+            padding: 2rem;
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+        }
+        
+        .grant-item h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .grant-item p {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        
+        .grant-details {
+            list-style: none;
+            margin-top: 1rem;
+        }
+        
+        .grant-details li {
+            padding: 0.4rem 0;
+            color: rgba(255,255,255,0.85);
+            font-size: 0.9rem;
+        }
+        
+        /* Lender List */
+        .lender-section {
+            background: rgba(255,255,255,0.03);
+            padding: 3rem;
+            border-radius: 16px;
+        }
+        
+        .lender-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .lender-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 12px;
+        }
+        
+        .lender-card h4 {
+            color: white;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .lender-type {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        .lender-card p {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        /* FAQ Style */
+        .faq-section {
+            margin-top: 4rem;
+        }
+        
+        .faq-item {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .faq-item h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .faq-item p {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.7;
+        }
+        
+        /* CTA */
+        .bottom-cta {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 3rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+        }
+        
+        .bottom-cta h2 {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+        
+        .bottom-cta p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.875rem 2rem;
+            background: var(--accent);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 0.9375rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .grant-grid,
+            .lender-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .back-nav-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="back-nav">
+        <div class="back-nav-content">
+            <a href="index.html" class="back-link">
+                ← Back to Main Site
+            </a>
+            <div class="page-brand">PADEL / CRAFT</div>
+        </div>
+    </nav>
+
+    <div class="financing-page">
+        <!-- Header -->
+        <div class="page-header">
+            <h1>How to Finance Padel Courts</h1>
+            <p>Most padel court projects in Ireland use a combination of grants and financing. 
+               Here's what you need to know about funding options.</p>
+        </div>
+        
+        <!-- Grants Section -->
+        <section class="section">
+            <h2 class="section-title">Available Grants in Ireland</h2>
+            <div class="grant-section">
+                <p style="text-align: center; color: rgba(255,255,255,0.8); margin-bottom: 2rem;">
+                    Grant funding can significantly reduce your investment. Many projects secure €30,000-70,000 before arranging any loans.
+                </p>
+                
+                <div class="grant-grid">
+                    <div class="grant-item">
+                        <h3>Community Sport Facilities Fund</h3>
+                        <p>The main grant for sports equipment in Ireland. Previously called the Sports Capital Programme.</p>
+                        <ul class="grant-details">
+                            <li>• Up to €70,000 for equipment</li>
+                            <li>• 95% funding rate</li>
+                            <li>• Annual application windows</li>
+                            <li>• €230 million allocated in 2024</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="grant-item">
+                        <h3>Sport Ireland Funding</h3>
+                        <p>Various programs supporting sports development and infrastructure.</p>
+                        <ul class="grant-details">
+                            <li>• €31.3 million budget (2025)</li>
+                            <li>• Dormant Accounts Fund available</li>
+                            <li>• Priority for underserved areas</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="grant-item">
+                        <h3>LEADER Programme</h3>
+                        <p>For rural community projects and facilities.</p>
+                        <ul class="grant-details">
+                            <li>• Variable amounts</li>
+                            <li>• Rural areas only</li>
+                            <li>• Applied through Local Action Groups</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Finance Options -->
+        <section class="section">
+            <h2 class="section-title">Finance Options</h2>
+            <div class="lender-section">
+                <p style="text-align: center; color: rgba(255,255,255,0.8); margin-bottom: 2rem;">
+                    After grants, most projects use asset finance or bank loans for the remaining investment.
+                </p>
+                
+                <div class="lender-grid">
+                    <div class="lender-card">
+                        <h4>Traditional Banks</h4>
+                        <div class="lender-type">Business Loans & Asset Finance</div>
+                        <p><strong>AIB:</strong> 0818 724 724<br>
+                        <strong>Bank of Ireland:</strong> 1890 365 222<br>
+                        <strong>Permanent TSB:</strong> 0818 50 24 24</p>
+                        <p style="margin-top: 1rem;">Standard business lending with 3-7 year terms.</p>
+                    </div>
+                    
+                    <div class="lender-card">
+                        <h4>Finance Ireland</h4>
+                        <div class="lender-type">Equipment Finance Specialist</div>
+                        <p>Ireland's largest non-bank lender. Specializes in equipment finance with 2-5 year terms. Often faster decisions than banks.</p>
+                    </div>
+                    
+                    <div class="lender-card">
+                        <h4>SBCI Schemes</h4>
+                        <div class="lender-type">Government-Backed Loans</div>
+                        <p>Low-cost loans through approved lenders. Good for projects with sustainability features (LED lighting, solar panels).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Common Questions -->
+        <section class="faq-section">
+            <h2 class="section-title">Common Financing Questions</h2>
+            
+            <div class="faq-item">
+                <h3>What's the typical investment for padel courts?</h3>
+                <p>A single court typically ranges from €35,000-60,000 depending on the model and site requirements. 
+                   Most clubs start with 2-4 courts. Groundworks can add 30-40% to the total project cost.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Do I need to pay everything upfront?</h3>
+                <p>No. Most projects use a combination of grants and financing. Typical structure might be: 
+                   30-40% from grants, 60-70% financed over 3-7 years. Many clubs start generating revenue 
+                   before construction is complete through memberships and pre-bookings.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>What do lenders look for?</h3>
+                <p>Lenders typically want to see: a solid business plan, suitable location, some industry experience 
+                   (sports/hospitality helps), and realistic projections. The strong growth in padel makes it 
+                   attractive to lenders familiar with the sport.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Can the courts pay for themselves?</h3>
+                <p>Well-located padel courts typically achieve 50-70% utilization within 12-18 months. 
+                   At standard rates (€40-60/hour), this generates strong cash flow. Most operators 
+                   report break-even within 24-36 months.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Should I buy or lease?</h3>
+                <p>Both options work. Buying (through asset finance) builds equity and offers more control. 
+                   Leasing keeps it off your balance sheet and may have lower monthly payments. 
+                   Your accountant can advise what's best for your situation.</p>
+            </div>
+        </section>
+        
+        <!-- CTA -->
+        <div class="bottom-cta">
+            <h2>Ready to Discuss Your Project?</h2>
+            <p>We'll help you understand the total investment and can introduce you to appropriate funding partners.</p>
+            <a href="index.html#contact" class="btn">Get a Quote</a>
+        </div>
+    </div>
+</body>
+</html>
