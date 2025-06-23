@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Technical specifications for MANZA SPORT padel courts. Detailed construction requirements, materials, and engineering data for contractors.">
+    <title>Technical Specifications | Padel-Craft</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #0f172a;
+            --primary-light: #1e293b;
+            --accent: #D4AF37;
+            --white: #ffffff;
+            --gray-light: #f8f9fa;
+            --gray: #6c757d;
+            --text-primary: #0f172a;
+            --text-secondary: #6c757d;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            line-height: 1.6;
+            color: white;
+            background: var(--primary);
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Navigation */
+        .back-nav {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .back-nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .back-link {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .back-link:hover {
+            color: var(--accent);
+        }
+        
+        .page-brand {
+            font-size: 1.75rem;
+            font-weight: 300;
+            color: white;
+            letter-spacing: 0.15em;
+        }
+        
+        /* Main Content */
+        .specs-page {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        /* Header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 200;
+            letter-spacing: 0.02em;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .page-header p {
+            font-size: 1.125rem;
+            color: rgba(255,255,255,0.8);
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+        
+        /* Quick Reference */
+        .quick-ref {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+        }
+        
+        .quick-ref-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .quick-ref-item h3 {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .quick-ref-item p {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.875rem;
+        }
+        
+        /* Spec Sections */
+        .spec-section {
+            margin-bottom: 3rem;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 2.5rem;
+        }
+        
+        .spec-section h2 {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+        }
+        
+        .spec-table th {
+            text-align: left;
+            padding: 1rem;
+            background: rgba(255,255,255,0.05);
+            color: var(--accent);
+            font-weight: 500;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .spec-table td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            color: rgba(255,255,255,0.85);
+        }
+        
+        .spec-table tr:hover {
+            background: rgba(255,255,255,0.02);
+        }
+        
+        /* Model Comparison */
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .model-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+        
+        .model-card h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .model-specs {
+            list-style: none;
+        }
+        
+        .model-specs li {
+            padding: 0.5rem 0;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        /* Downloads */
+        .download-section {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .download-section h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .download-section p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.875rem 2rem;
+            background: var(--accent);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 0.9375rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+        }
+        
+        /* Technical Notes */
+        .tech-note {
+            background: rgba(255,255,255,0.05);
+            border-left: 3px solid var(--accent);
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .quick-ref-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .model-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .spec-table {
+                font-size: 0.875rem;
+            }
+            
+            .spec-table th,
+            .spec-table td {
+                padding: 0.75rem 0.5rem;
+            }
+            
+            .back-nav-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="back-nav">
+        <div class="back-nav-content">
+            <a href="index.html" class="back-link">
+                ← Back to Main Site
+            </a>
+            <div class="page-brand">PADEL / CRAFT</div>
+        </div>
+    </nav>
+
+    <div class="specs-page">
+        <!-- Header -->
+        <div class="page-header">
+            <h1>Technical Specifications</h1>
+            <p>Complete technical data for MANZA SPORT padel courts. All specifications meet or exceed 
+               International Padel Federation (FIP) standards and European CE requirements.</p>
+        </div>
+        
+        <!-- Quick Reference -->
+        <div class="quick-ref">
+            <div class="quick-ref-grid">
+                <div class="quick-ref-item">
+                    <h3>20m x 10m</h3>
+                    <p>Court Dimensions</p>
+                </div>
+                <div class="quick-ref-item">
+                    <h3>4m</h3>
+                    <p>Perimeter Height</p>
+                </div>
+                <div class="quick-ref-item">
+                    <h3>10-12mm</h3>
+                    <p>Glass Thickness</p>
+                </div>
+                <div class="quick-ref-item">
+                    <h3>200-240W</h3>
+                    <p>LED per Fixture</p>
+                </div>
+                <div class="quick-ref-item">
+                    <h3>85μm</h3>
+                    <p>Galvanization</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Model Comparison - MOVED TO TOP -->
+        <section class="spec-section">
+            <h2>Court Model Specifications</h2>
+            <table class="spec-table">
+                <tr>
+                    <th>Model</th>
+                    <th>Glass Config</th>
+                    <th>Structure</th>
+                    <th>Best For</th>
+                </tr>
+                <tr>
+                    <td><strong>MANZA Model</strong></td>
+                    <td>10mm standard panels</td>
+                    <td>Standard mesh sides</td>
+                    <td>Entry-level clubs</td>
+                </tr>
+                <tr>
+                    <td><strong>PRO Model</strong></td>
+                    <td>12mm reinforced</td>
+                    <td>Heavy-duty pillars</td>
+                    <td>High-traffic venues</td>
+                </tr>
+                <tr>
+                    <td><strong>Miami Panoramic</strong></td>
+                    <td>12mm full height</td>
+                    <td>Minimal pillars</td>
+                    <td>Spectator venues</td>
+                </tr>
+                <tr>
+                    <td><strong>Paquito Navarro</strong></td>
+                    <td>12mm competition</td>
+                    <td>Signature design</td>
+                    <td>Premium clubs</td>
+                </tr>
+                <tr>
+                    <td><strong>Full Panoramic</strong></td>
+                    <td>12mm all sides</td>
+                    <td>No visual barriers</td>
+                    <td>Tournament venues</td>
+                </tr>
+                <tr>
+                    <td><strong>Singles Court</strong></td>
+                    <td>10mm standard</td>
+                    <td>Reduced dimensions</td>
+                    <td>Training/limited space</td>
+                </tr>
+            </table>
+        </section>
+        
+        <!-- Court Dimensions -->
+        <section class="spec-section">
+            <h2>Court Dimensions & Layout</h2>
+            <table class="spec-table">
+                <tr>
+                    <th>Specification</th>
+                    <th>Measurement</th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    <td>Playing Area</td>
+                    <td>20m x 10m</td>
+                    <td>Internal dimensions</td>
+                </tr>
+                <tr>
+                    <td>Total Footprint</td>
+                    <td>21m x 11m minimum</td>
+                    <td>Includes structure</td>
+                </tr>
+                <tr>
+                    <td>Recommended Site</td>
+                    <td>23m x 13m</td>
+                    <td>Allows perimeter access</td>
+                </tr>
+                <tr>
+                    <td>Service Box</td>
+                    <td>6.95m x 5m</td>
+                    <td>Each side</td>
+                </tr>
+                <tr>
+                    <td>Back Wall Height</td>
+                    <td>4m total (3m glass + 1m mesh)</td>
+                    <td>Standard configuration</td>
+                </tr>
+                <tr>
+                    <td>Side Wall Height</td>
+                    <td>3m glass at ends, 2m centre</td>
+                    <td>Stepped configuration</td>
+                </tr>
+                <tr>
+                    <td>Net Height</td>
+                    <td>0.88m centre, 0.92m posts</td>
+                    <td>FIP standard</td>
+                </tr>
+                <tr>
+                    <td>Door Openings</td>
+                    <td>2 x (0.9m x 2m)</td>
+                    <td>One each side</td>
+                </tr>
+            </table>
+        </section>
+        
+        <!-- Structural Specifications -->
+        <section class="spec-section">
+            <h2>Structural Components</h2>
+            <table class="spec-table">
+                <tr>
+                    <th>Component</th>
+                    <th>Specification</th>
+                    <th>Standard</th>
+                </tr>
+                <tr>
+                    <td>Main Pillars</td>
+                    <td>100x50x3mm rectangular steel</td>
+                    <td>EN 10219</td>
+                </tr>
+                <tr>
+                    <td>Secondary Posts</td>
+                    <td>80x40x2mm rectangular steel</td>
+                    <td>EN 10219</td>
+                </tr>
+                <tr>
+                    <td>Mesh Panels</td>
+                    <td>50x50x4mm electro-welded</td>
+                    <td>High resistance steel</td>
+                </tr>
+                <tr>
+                    <td>Glass Type</td>
+                    <td>10mm or 12mm tempered safety</td>
+                    <td>EN 12150-1</td>
+                </tr>
+                <tr>
+                    <td>Glass Treatment</td>
+                    <td>Heat soaked, polished edges</td>
+                    <td>CE certified</td>
+                </tr>
+                <tr>
+                    <td>Fixings</td>
+                    <td>Stainless steel throughout</td>
+                    <td>A2/A4 grade</td>
+                </tr>
+                <tr>
+                    <td>Wind Resistance</td>
+                    <td>Up to 150 km/h</td>
+                    <td>Eurocode certified</td>
+                </tr>
+            </table>
+            
+            <div class="tech-note">
+                <strong>Note:</strong> All structural steel undergoes hot-dip galvanization (85μm minimum) as standard. 
+                Coastal installations require enhanced marine package with additional zinc coating.
+            </div>
+        </section>
+        
+        <!-- Surface Options -->
+        <section class="spec-section">
+            <h2>Playing Surface Specifications</h2>
+            
+            <div class="model-grid">
+                <div class="model-card">
+                    <h3>Mondo STX Super Court</h3>
+                    <ul class="model-specs">
+                        <li><strong>Type:</strong> Monofilament</li>
+                        <li><strong>Pile Height:</strong> 12mm</li>
+                        <li><strong>Dtex:</strong> 6,600</li>
+                        <li><strong>Colors:</strong> Blue, Green, Pink</li>
+                        <li><strong>Infill:</strong> 18-20kg/m² silica sand</li>
+                        <li><strong>Usage:</strong> Professional/Tournament</li>
+                    </ul>
+                </div>
+                
+                <div class="model-card">
+                    <h3>Fibrillated Professional</h3>
+                    <ul class="model-specs">
+                        <li><strong>Type:</strong> Fibrillated</li>
+                        <li><strong>Pile Height:</strong> 10-12mm</li>
+                        <li><strong>Dtex:</strong> 8,800</li>
+                        <li><strong>Colors:</strong> 7 options available</li>
+                        <li><strong>Infill:</strong> 16-18kg/m² silica sand</li>
+                        <li><strong>Usage:</strong> High-traffic clubs</li>
+                    </ul>
+                </div>
+                
+                <div class="model-card">
+                    <h3>Textured Elite</h3>
+                    <ul class="model-specs">
+                        <li><strong>Type:</strong> Crimped/Textured</li>
+                        <li><strong>Pile Height:</strong> 12-15mm</li>
+                        <li><strong>Dtex:</strong> 9,000+</li>
+                        <li><strong>Colors:</strong> Premium range</li>
+                        <li><strong>Infill:</strong> 20-22kg/m² silica sand</li>
+                        <li><strong>Usage:</strong> Premium installations</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <table class="spec-table">
+                <tr>
+                    <th>Surface Requirement</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Total Area per Court</td>
+                    <td>200m² (20m x 10m)</td>
+                </tr>
+                <tr>
+                    <td>Sand Specification</td>
+                    <td>0.4-0.8mm rounded silica</td>
+                </tr>
+                <tr>
+                    <td>Drainage Capacity</td>
+                    <td>50+ litres/m²/minute</td>
+                </tr>
+                <tr>
+                    <td>UV Stability</td>
+                    <td>8,000+ hours guaranteed</td>
+                </tr>
+                <tr>
+                    <td>Warranty</td>
+                    <td>5-10 years depending on product</td>
+                </tr>
+            </table>
+        </section>
+        
+        <!-- Lighting Specifications -->
+        <section class="spec-section">
+            <h2>LED Lighting System</h2>
+            <table class="spec-table">
+                <tr>
+                    <th>Configuration</th>
+                    <th>Specification</th>
+                    <th>Performance</th>
+                </tr>
+                <tr>
+                    <td>Standard (8 fixtures)</td>
+                    <td>8 x 200W LED</td>
+                    <td>300-500 LUX average</td>
+                </tr>
+                <tr>
+                    <td>Competition (8 fixtures)</td>
+                    <td>8 x 240W LED</td>
+                    <td>500-700 LUX average</td>
+                </tr>
+                <tr>
+                    <td>Pole Height</td>
+                    <td>6m standard</td>
+                    <td>Optimized light distribution</td>
+                </tr>
+                <tr>
+                    <td>Pole Positions</td>
+                    <td>4 corners, 2 per pole</td>
+                    <td>Eliminates shadows</td>
+                </tr>
+                <tr>
+                    <td>Color Temperature</td>
+                    <td>5000K</td>
+                    <td>Daylight equivalent</td>
+                </tr>
+                <tr>
+                    <td>Beam Angle</td>
+                    <td>60° asymmetric</td>
+                    <td>Anti-glare design</td>
+                </tr>
+                <tr>
+                    <td>Control Options</td>
+                    <td>Timer/Smart/Motion</td>
+                    <td>Energy optimization</td>
+                </tr>
+                <tr>
+                    <td>Lifespan</td>
+                    <td>50,000+ hours</td>
+                    <td>10+ years typical use</td>
+                </tr>
+            </table>
+        </section>
+        
+        <!-- Foundation Requirements -->
+        <section class="spec-section">
+            <h2>Foundation & Groundworks</h2>
+            <table class="spec-table">
+                <tr>
+                    <th>Element</th>
+                    <th>Specification</th>
+                    <th>Critical Points</th>
+                </tr>
+                <tr>
+                    <td>Base Type</td>
+                    <td>Reinforced concrete slab</td>
+                    <td>C25/30 minimum strength</td>
+                </tr>
+                <tr>
+                    <td>Slab Thickness</td>
+                    <td>100-150mm</td>
+                    <td>Depends on ground conditions</td>
+                </tr>
+                <tr>
+                    <td>Sub-base</td>
+                    <td>150-200mm MOT Type 1</td>
+                    <td>Properly compacted</td>
+                </tr>
+                <tr>
+                    <td>Tolerance</td>
+                    <td>±3mm over 3m</td>
+                    <td>Laser-leveled finish</td>
+                </tr>
+                <tr>
+                    <td>Drainage Fall</td>
+                    <td>1% maximum</td>
+                    <td>Corner to corner preferred</td>
+                </tr>
+                <tr>
+                    <td>Perimeter Drainage</td>
+                    <td>100mm French drain</td>
+                    <td>Connected to soakaway/mains</td>
+                </tr>
+                <tr>
+                    <td>Anchor Points</td>
+                    <td>M16 chemical anchors</td>
+                    <td>150mm embedment minimum</td>
+                </tr>
+            </table>
+            
+            <div class="tech-note">
+                <strong>Critical:</strong> Foundation must cure for minimum 28 days before court installation. 
+                Groundworks typically represent 30-40% of total project cost.
+            </div>
+        </section>
+        
+        <!-- Additional Options -->
+        <section class="spec-section">
+            <h2>Customization & Options</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div>
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">Structure Customization</h3>
+                    <ul style="list-style: none; color: rgba(255,255,255,0.8);">
+                        <li>• RAL powder coating (200+ colors)</li>
+                        <li>• Two-tone color schemes</li>
+                        <li>• Metallic finishes available</li>
+                        <li>• Enhanced marine coating</li>
+                        <li>• Anti-graffiti treatment</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">Technical Upgrades</h3>
+                    <ul style="list-style: none; color: rgba(255,255,255,0.8);">
+                        <li>• Smart court sensors</li>
+                        <li>• Integrated cameras</li>
+                        <li>• Advanced drainage systems</li>
+                        <li>• Solar panel integration</li>
+                        <li>• Extended warranties</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">Branding Options</h3>
+                    <ul style="list-style: none; color: rgba(255,255,255,0.8);">
+                        <li>• Custom net printing</li>
+                        <li>• Court entrance logos</li>
+                        <li>• LED logo displays</li>
+                        <li>• Perimeter advertising</li>
+                        <li>• Sponsor integration</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Compliance -->
+        <section class="spec-section">
+            <h2>Standards & Compliance</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <div>
+                    <h4 style="color: var(--accent); margin-bottom: 1rem;">International Standards</h4>
+                    <ul style="list-style: none; color: rgba(255,255,255,0.8); font-size: 0.9rem;">
+                        <li>✓ FIP (International Padel Federation)</li>
+                        <li>✓ CE Marking (European Conformity)</li>
+                        <li>✓ EN 12150-1 (Glass Safety)</li>
+                        <li>✓ EN 10219 (Steel Structures)</li>
+                        <li>✓ ISO 9001 (Quality Management)</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--accent); margin-bottom: 1rem;">Warranties</h4>
+                    <ul style="list-style: none; color: rgba(255,255,255,0.8); font-size: 0.9rem;">
+                        <li>✓ 10 years structural</li>
+                        <li>✓ 5-10 years surface</li>
+                        <li>✓ 5 years LED fixtures</li>
+                        <li>✓ 2 years installation</li>
+                        <li>✓ 24-hour glass replacement</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--accent); margin-bottom: 1rem;">Safety Features</h4>
+                    <ul style="list-style: none; color: rgba(255,255,255,0.8); font-size: 0.9rem;">
+                        <li>✓ Tempered safety glass</li>
+                        <li>✓ Rounded edge protection</li>
+                        <li>✓ Anti-slip surfaces</li>
+                        <li>✓ Emergency exit compliance</li>
+                        <li>✓ Electrical safety (IP65)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Download Section -->
+        <div class="download-section">
+            <h3>Need Detailed Technical Drawings?</h3>
+            <p>Full CAD drawings, foundation details, and installation manuals available for confirmed projects.</p>
+            <a href="index.html#contact" class="btn">Request Technical Package</a>
+        </div>
+    </div>
+</body>
+</html>
